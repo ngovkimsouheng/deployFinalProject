@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap');
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+@theme {
+    --color-primary: #0A4536;
+    --color-secondary: #FF914D;
+    --color-accent: #565452;
+    --color-background: #F8F3E9;
+    --font-primary: "Kantumruy Pro", sans-serif;
+    /* --font-Secondary: "Kantumruy Pro", sans-serif; */
+    --color-dark-primary: darkblue;
+    --color-dark-secondary:#CC2302;
+
+}
+
+/* test color */
+
+
+@keyframes slideInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 100;
+    }
+}
+
+.animate-slide-up {
+
+    animation: slideInUp 600ms ease-out forwards;
+}
+
+.blinking-cursor {
+    font-weight: bold;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.btn {
+    @apply px-3 py-1 bg-white text-green-900 border border-gray-300 rounded-full hover:bg-green-200 transition;
+}
+
+.card {
+    @apply bg-white p-4 rounded shadow;
+}
+
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-left {
+    animation: scroll-left 20s linear infinite;
+}
+

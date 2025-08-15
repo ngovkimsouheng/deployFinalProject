@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Example</title>
+
+    <!-- Tailwind CSS -->
+    <link href="output.css" rel="stylesheet" />
+
+    <!-- Font Awesome for Sun/Moon Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <style>
+      /* Smooth transition for dark mode */
+      html {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen flex flex-col items-center justify-center"
+  >
+    <!-- Dark Mode Toggle Button -->
+    <button
+      id="toggleDark"
+      class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 shadow-md hover:scale-110 transition-transform"
+    >
+      <i class="fa-solid fa-sun text-2xl"></i>
+    </button>
+
+    <h1 class="mt-6 dark:bg-primary text-4xl font-bold">Hello bby 😏</h1>
+    <p class="mt-2 text-lg">Click the sun/moon to switch theme.</p>
+
+    <!-- Dark Mode Script -->
+    <script>
+      const toggleDark = document
+        .getElementById("toggleDark")
+        .querySelector("i");
+      const html = document.documentElement;
+
+      // Load saved mode from localStorage
+      if (localStorage.theme === "dark") {
+        html.classList.add("dark");
+        toggleDark.classList.replace("fa-sun", "fa-moon");
+      } else {
+        html.classList.remove("dark");
+        toggleDark.classList.replace("fa-moon", "fa-sun");
+      }
+
+      document.getElementById("toggleDark").addEventListener("click", () => {
+        html.classList.toggle("dark");
+
+        if (html.classList.contains("dark")) {
+          toggleDark.classList.replace("fa-sun", "fa-moon");
+          localStorage.theme = "dark";
+        } else {
+          toggleDark.classList.replace("fa-moon", "fa-sun");
+          localStorage.theme = "light";
+        }
+      });
+    </script>
+  </body>
+</html>

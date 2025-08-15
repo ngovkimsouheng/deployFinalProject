@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Province Places</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="bg-background font-primary">
+    <header class="bg-white w-full shadow sticky top-0 z-10">
+      <nav
+        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a href="#" class="">
+          <img
+            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
+            src="../img/home/logo.png"
+            alt="Logo"
+          />
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="lg:hidden cursor-pointer text-3xl text-gray-850 focus:outline-none"
+        >
+          <ion-icon name="menu" id="menu-icon"></ion-icon>
+        </button>
+
+        <div
+          id="nav-links"
+          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+        >
+          <ul
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
+          >
+            <li>
+              <a href="/index.html" class="text-secondary transition-colors">ទំព័រដើម</a>
+            </li>
+            <li>
+              <a href="../html/about.html" class="text-accent transition-colors"
+                >អំពីពួកយើង</a
+              >
+            </li>
+            <li>
+              <a href="../html/desti.html" class="text-accent transition-colors"
+                >គោលដៅ</a
+              >
+            </li>
+          </ul>
+
+          <div
+            class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
+          >
+            <button
+              class="px-6 py-2 border cursor-pointer border-gray-300 rounded-[10px] text-accent hover:bg-gray-100 transition-colors"
+            >
+              ចូលគណនី
+            </button>
+            <button
+              class="px-6 py-2 cursor-pointer bg-primary text-white rounded-[10px] hover:bg-green-900 transition-colors"
+            >
+              ចុះឈ្មោះ
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="container mx-auto">
+        <h1
+          id="pageTitle"
+          class="text-2xl mt-4 text-center font-bold "
+        ></h1>
+        <h3 class="text-teal-800 text-3xl sm:text-4xl lg:text-4xl font-extrabold  flex flex-col">តំបន់ទេសចរណ៍តាមខេត្ត</h3>
+        <div
+          id="renderDetailPlace"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-4 gap-6"
+        ></div>
+      </section>
+    </main>
+    <script src="../js/script.js"></script>
+    <script src="../js/provinceDetails.js"></script>
+    <!-- <script src="../js/filter.js"></script> -->
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+</html>

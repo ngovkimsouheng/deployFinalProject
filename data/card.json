@@ -1,0 +1,592 @@
+
+[
+ {
+        "id": 45,
+        "uuid": "34c981ef-b04c-41a7-a839-a2912439d3c7",
+        "name": "កោះកុង ក្រៅ",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "ជាកោះធំបំផុតរបស់កម្ពុជា មានឆ្នេរស្អាត ក្រុមកោះតូចៗជុំវិញ និងព្រៃដ៏សំបូរបែប។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/e0d72df2-c601-48e7-b3da-4febdbf70480.jpeg",
+            "https://tos-der.sokpheng.com/images/ffed99f7-79db-4d12-8802-f43f5b50d97c.jpeg",
+            "https://tos-der.sokpheng.com/images/9caf0096-6774-4619-956d-b9f693c4c89b.jpeg",
+            "https://tos-der.sokpheng.com/images/6604210c-c286-46cc-9f7f-beb9ba7db9a1.jpeg",
+            "https://tos-der.sokpheng.com/images/9aace474-3be2-4b01-b816-056d80fcad9b.avif"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T12:50:03.498541091",
+        "updatedAt": "2025-08-06T12:50:03.498582449",
+        "disabled": false
+    },
+    {
+        "id": 38,
+        "uuid": "52bae3b2-03cb-4bb3-bc61-95458f20c1e8",
+        "name": "តាតៃ",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "ទឹកធ្លាក់ធម្មជាតិដ៏ខ្លាំង និងបរិយាកាសស្រស់ត្រកាលក្នុងភាគខាងលិចនៃខេត្ត Mondol Seima—ជាកន្លែងល្អសម្រាប់ហែលទឹក និងផ្សងព្រេងធម្មជាតិ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/79a3b06a-4504-45ca-a525-3fbc254aa8b8.jpeg",
+            "https://tos-der.sokpheng.com/images/0aeabdd1-c798-4751-a91f-75c5e4e00c70.webp",
+            "https://tos-der.sokpheng.com/images/f7bae7f1-b235-468b-a88a-c83f7106edaa.jpeg",
+            "https://tos-der.sokpheng.com/images/65a6cc1e-d584-4eca-a6d8-3107bf9bcf02.avif",
+            "https://tos-der.sokpheng.com/images/f7031d11-c07b-440a-aa0f-e4704f806708.webp"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T09:46:00.749306679",
+        "updatedAt": "2025-08-06T09:46:00.749342683",
+        "disabled": false
+    },
+    {
+        "id": 39,
+        "uuid": "2fe69366-43d3-44cf-a269-e5c2b8bd3561",
+        "name": "អង្គវត្ត",
+        "category": {
+            "name": "siem reap"
+        },
+        "description": "ប្រាសាទអង្គរវត្តគឺជាប្រាសាទសំខាន់ជាងគេនៅកម្ពុជា និងជាសញ្ញាប្រទេស។មានសំណង់ដ៏អស្ចារ្យ និងស្ថិតក្នុងបញ្ជីបេតិកភណ្ឌពិភពលោក។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/65803bc8-a07f-4f90-ad70-5daf4fcb70c4.jpeg",
+            "https://tos-der.sokpheng.com/images/ecb04feb-0fd9-44b8-836e-fa9b6964a979.jpeg",
+            "https://tos-der.sokpheng.com/images/4adf6c51-4a2c-4308-aa39-3e7ac0677db9.jpeg",
+            "https://tos-der.sokpheng.com/images/5ce98b97-7008-4c52-b40d-5f80b212b423.jpeg",
+            "https://tos-der.sokpheng.com/images/367fdde2-b185-44e0-9fed-c33f40e1f3aa.avif"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T09:46:32.644314146",
+        "updatedAt": "2025-08-06T09:46:32.644349240",
+        "disabled": false
+    },
+    {
+        "id": 40,
+        "uuid": "4013018a-bdf3-44b8-908a-308c015f6803",
+        "name": "ព្រះបរមរាជវាំង",
+        "category": {
+            "name": "Phnom Penh"
+        },
+        "description": "ព្រះបរមរាជវាំងនៃព្រះរាជាណាចក្រកម្ពុជា ឬព្រះបរមរាជវាំងចតុមុខមង្គល គឺជាព្រះរាជវាំងដែលជាទីប្រថាប់នៃព្រះមហាក្សត្រខ្មែរ តាំងតែរជ្ជកាលព្រះបាទនរោត្តមព្រហ្មបរិរក្សបរមរាមាទេវតា រហូតរជ្ជកាលបច្ចុប្បន្នគឺព្រះបាទសម្តេច ព្រះបរមនាថនរោត្តមសីហមុនី ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/4db16d74-a837-43f3-8e73-2b7c6feb29bd.jpeg",
+            "https://tos-der.sokpheng.com/images/d3e328e2-f062-40c1-b1bb-a325ed95eebd.webp",
+            "https://tos-der.sokpheng.com/images/8cc12766-d7d7-4ae6-b145-56c0a2ea7ca9.webp",
+            "https://tos-der.sokpheng.com/images/fc53d345-4948-4599-b06b-015aad6654f8.jpeg",
+            "https://tos-der.sokpheng.com/images/8eeb91c7-0650-4a79-b079-497cf2c4c377.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T10:21:28.739590824",
+        "updatedAt": "2025-08-06T10:21:28.739627411",
+        "disabled": false
+    },
+    {
+        "id": 41,
+        "uuid": "a84c1fa4-7aad-4899-9fe6-f77019f26195",
+        "name": "ភ្នំពូលេន",
+        "category": {
+            "name": "siem reap"
+        },
+        "description": "ភ្នំបុរាណដែលមាន ទឹកជ្រោះធម្មជាតិ ស្អាត,ស្រះល្បីៗ, និង ព្រះបាទជ័យវរ្ម័នទី២ បានឡើងថ្វាយព្រះអង្គទីនេះ។កន្លែងល្អសម្រាប់ទេសចរណ៍ធម្មជាតិ និងបុរាណ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/e84bdb66-ce39-4d3d-9e9c-5d846ecba82f.jpeg",
+            "https://tos-der.sokpheng.com/images/e14397d2-5e60-4011-8f76-cc4f5c393060.jpeg",
+            "https://tos-der.sokpheng.com/images/b0ab33d1-cb17-4f72-94a3-da35cc08c081.jpeg",
+            "https://tos-der.sokpheng.com/images/7bd3d6ba-8d98-4115-8eea-9176507713a1.webp",
+            "https://tos-der.sokpheng.com/images/215c7acb-0ed9-4ea1-9e70-b6ed717cc492.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T11:24:43.260296342",
+        "updatedAt": "2025-08-06T11:24:43.260350850",
+        "disabled": false
+    },
+    {
+        "id": 42,
+        "uuid": "1ae27ee4-5121-4f85-94dd-0102f517f9ba",
+        "name": "ប្រាសាទតាព្រហ្ម",
+        "category": {
+            "name": "siem reap"
+        },
+        "description": "ប្រាសាទដែលមានដើមឈើធំៗកើនឡើងលើជញ្ជាំងនិងដំបូលប្រាសាទ។ជាប់នឹងធម្មជាតិ និងល្បីពីភាពយន្ត Tomb Raider ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/510c018f-196d-4884-9be0-c91135b22aa2.jpeg",
+            "https://tos-der.sokpheng.com/images/7475cd45-f1f3-4226-8537-421294971176.jpeg",
+            "https://tos-der.sokpheng.com/images/a598301c-dd3e-4410-89dc-4230d81a1159.webp",
+            "https://tos-der.sokpheng.com/images/1f3b91be-707b-4585-a200-14b9f8a912b7.png",
+            "https://tos-der.sokpheng.com/images/c71b01de-828e-4b5f-a76e-da8a068fb868.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T11:39:16.334356743",
+        "updatedAt": "2025-08-06T11:39:16.334398738",
+        "disabled": false
+    },
+    {
+        "id": 43,
+        "uuid": "6445d140-bcfe-4224-a91f-033990e3a75f",
+        "name": "ប្រាសាទបាយ័ន",
+        "category": {
+            "name": "siem reap"
+        },
+        "description": "ប្រាសាទដែលល្បីដោយមានរូបមុខព្រះបរមិន្ធជាច្រើន។ស្ថិតនៅចំកណ្តាលអង្គរធំ និងផ្សាយពីសិល្បៈខ្មែរចម្រុះជាសិទ្ធិធម្មជាតិ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/237cb894-7c45-44fa-a3d5-550e9fed21b4.jpeg",
+            "https://tos-der.sokpheng.com/images/beb5040d-76ec-43a2-9332-0febcae60b3a.jpeg",
+            "https://tos-der.sokpheng.com/images/da11bbfa-ec8a-4717-b10d-fb733f5d2310.jpeg",
+            "https://tos-der.sokpheng.com/images/8728776f-ca33-4447-b5c2-e85c900b72ff.webp",
+            "https://tos-der.sokpheng.com/images/1a9f1f67-db7a-4f50-8e1e-255037093cab.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T11:54:23.540494398",
+        "updatedAt": "2025-08-06T11:54:23.540533545",
+        "disabled": false
+    },
+    {
+        "id": 44,
+        "uuid": "4445d940-f3f5-4545-bb43-145a8db637dd",
+        "name": "សារមន្ទីរជាតិអង្គរ",
+        "category": {
+            "name": "siem reap"
+        },
+        "description": "សារមន្ទីរដែលបង្ហាញអំពីអរិយធម៌ខ្មែរ បុរាណវត្ថុ និងប្រាសាទអង្គរមានការបកប្រែជាភាសាខ្មែរ ងាយស្រួលសិក្សាសម្រាប់ជនខ្មែរ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/43f2d261-9073-4d45-a6d9-766058c70cc1.jpeg",
+            "https://tos-der.sokpheng.com/images/79d4d035-2222-411c-87fd-ecfbfd5e80da.jpeg",
+            "https://tos-der.sokpheng.com/images/4f5d2597-aca6-4f2f-b893-669cc73fc38d.jpeg",
+            "https://tos-der.sokpheng.com/images/005c9fd3-89a7-49a1-956a-2eaf2eefffab.jpeg",
+            "https://tos-der.sokpheng.com/images/13b6a64f-03da-4354-8864-c99daec3fcda.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T12:02:57.830613536",
+        "updatedAt": "2025-08-06T12:02:57.830676377",
+        "disabled": false
+    },
+    {
+        "id": 46,
+        "uuid": "b2d40808-4362-429d-95e3-daba51813cab",
+        "name": "សហគមន៍ទេសចរណ៍ជីផាត់",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "សហគមន៍ CBET ដែលមានគម្រោងអភិរក្សធម្មជាតិ​​​​​​​​ អាចធ្វើ Trekking, bike tour, ទស្សនាបក្សី, ឬស្នាក់នៅផ្ទះអ្នកភូមិ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/23324f57-a0c4-4cfa-8d8b-ee3d1268afc9.jpeg",
+            "https://tos-der.sokpheng.com/images/0e9a9ca2-8e67-4461-ad35-f0ccd33b632d.jpeg",
+            "https://tos-der.sokpheng.com/images/8dfa2321-b611-40de-bf81-4f52b75ad5c6.jpeg",
+            "https://tos-der.sokpheng.com/images/1f5f8def-8adc-4396-b694-377642b4aa47.jpeg",
+            "https://tos-der.sokpheng.com/images/6b1f3ee1-0b4d-4d62-9eb8-f26c622f53f7.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T13:24:46.248057001",
+        "updatedAt": "2025-08-06T13:24:46.248093618",
+        "disabled": false
+    },
+    {
+        "id": 47,
+        "uuid": "2bd9024f-fbb2-45ec-9412-123633c4c747",
+        "name": "ភ្នំបូកគោ",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": "ជាតំបន់ខ្នាតធំ មានអាកាសធាតុត្រជាក់ សម្បូរទៅដោយព្រៃឈើ សត្វព្រៃ និងទេសភាពព្រិលព្រែក។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/741adcee-17c9-4ac1-a052-e10e6313e592.jpeg",
+            "https://tos-der.sokpheng.com/images/e695b0a7-1977-4447-918d-498040bd7621.jpeg",
+            "https://tos-der.sokpheng.com/images/44f408d0-ee82-4dc8-9f4d-605327079691.jpeg",
+            "https://tos-der.sokpheng.com/images/5f539f5c-a906-4ac6-983a-279a2138b525.jpeg",
+            "https://tos-der.sokpheng.com/images/bbc307cc-d627-4c68-88db-4f53b1f44e71.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T13:32:54.821752286",
+        "updatedAt": "2025-08-06T13:32:54.821789737",
+        "disabled": false
+    },
+    {
+        "id": 49,
+        "uuid": "c5ab826e-774f-4ca6-a5ea-701e5419bb3d",
+        "name": " កោះស្តេច",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "កោះខ្នាតតូច មានសហគមន៍តូចៗសន្តិភាព មានផ្ទះសំណាក់ និងresortលើកោះ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/9527be0d-574f-450b-b722-5a987f75af36.jpeg",
+            "https://tos-der.sokpheng.com/images/4852a878-5f1a-4b48-bdc9-1cf82999c7fe.jpeg",
+            "https://tos-der.sokpheng.com/images/46656c66-7989-4386-b858-f7a991691736.jpeg",
+            "https://tos-der.sokpheng.com/images/ac73c856-4f76-4a97-a4ad-aaa42e0d837c.jpeg",
+            "https://tos-der.sokpheng.com/images/c8a909b6-20d5-4ee0-8f72-3bf8dff84c83.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T13:48:32.574171599",
+        "updatedAt": "2025-08-06T13:48:32.574294500",
+        "disabled": false
+    },
+    {
+        "id": 50,
+        "uuid": "450342a8-637b-4eb1-94cd-f6979cfbbed4",
+        "name": " ស្ពានចាស់កំពត",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": "ស្ពានបែបបុរាណកាលសម័យបារាំង មានរចនាប័ទ្មគួរឲ្យចាប់អារម្មណ៍។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/9dca6d38-9880-43ea-ae90-d58750fda93d.png",
+            "https://tos-der.sokpheng.com/images/5c4924f3-dcdb-40b5-af8e-ffd4e53fa5f5.jpeg",
+            "https://tos-der.sokpheng.com/images/5ab3fcf9-4541-426e-8c1b-da9afb91dd29.jpeg",
+            "https://tos-der.sokpheng.com/images/59d6952b-c6eb-45d4-8ecf-de8aadc210c3.jpeg",
+            "https://tos-der.sokpheng.com/images/5e172b18-6d19-4f4a-95f3-3d978237061d.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T13:48:46.900411892",
+        "updatedAt": "2025-08-06T13:48:46.900447799",
+        "disabled": false
+    },
+    {
+        "id": 51,
+        "uuid": "dbf0639a-adfa-4609-ab0a-73ef492774a6",
+        "name": " ស្ពានកោះកុង",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "ជាស្ពានបេតុងវែងស្ទើរតែល្បីជាងគេនៅកម្ពុជា មានទេសភាពលើទន្លេ និងពេលថ្ងៃលិចគឺស្រស់ស្អាតខ្លាំង។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/12be212b-4c0c-4823-bf15-346d24e4e9b4.jpeg",
+            "https://tos-der.sokpheng.com/images/0d8b9b05-bd83-4c16-ae06-c86b28bc57b1.jpeg",
+            "https://tos-der.sokpheng.com/images/be82c9eb-a904-41f1-b77f-caacd8d65e88.jpeg",
+            "https://tos-der.sokpheng.com/images/7ada5113-2b9f-43b9-82f1-a294da122ae0.jpeg",
+            "https://tos-der.sokpheng.com/images/c498d273-5e28-46bc-8320-615bbd1613ea.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T14:10:05.894655139",
+        "updatedAt": "2025-08-06T14:10:05.894697693",
+        "disabled": false
+    },
+    {
+        "id": 52,
+        "uuid": "5f03dbb9-850d-4725-aed2-e3a4e6f87840",
+        "name": " ទឹកជ្រោះតាច់",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "ទឹកជ្រោះសម្បូរទឹកនៅរដូវវស្សា តំបន់ស្ងប់ស្ងាត់ និងស្រស់ស្អាត។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/813f889e-ef6b-4cff-bb26-41862e905e5f.webp",
+            "https://tos-der.sokpheng.com/images/0b4e65e8-37b9-474b-bf82-d1b60a0a855f.jpeg",
+            "https://tos-der.sokpheng.com/images/29fc7599-8b33-4164-ac79-53a601c6faf2.jpeg",
+            "https://tos-der.sokpheng.com/images/9f076d90-8df8-4dfd-accf-407918694d28.jpeg",
+            "https://tos-der.sokpheng.com/images/7a8516b0-da19-4cd4-9f37-a3e4235a4593.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T14:27:24.003858878",
+        "updatedAt": "2025-08-06T14:27:24.003893396",
+        "disabled": false
+    },
+    {
+        "id": 53,
+        "uuid": "5b21e840-72fa-4730-8be1-36865eee1e02",
+        "name": " សួនជម្រកសត្វព្រៃពាមក្រសោប",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "អាចជិះទូក, មើលសត្វបក្សី, និងថតរូបតាមផ្លូវស្លាបឈើ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/c7552188-be73-4081-8040-f5164a270c45.jpeg",
+            "https://tos-der.sokpheng.com/images/05fd869e-9f1e-4670-8cb6-15d9288c95ec.jpeg",
+            "https://tos-der.sokpheng.com/images/925ffbb4-22d9-41a1-9877-b2a073d32db5.jpeg",
+            "https://tos-der.sokpheng.com/images/d4466ab7-77dc-4eae-a611-88ba56b1e70f.jpeg",
+            "https://tos-der.sokpheng.com/images/480d90ed-4dd7-44b2-a5dd-bd339ce4e257.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T14:44:46.514369356",
+        "updatedAt": "2025-08-06T14:44:46.514405734",
+        "disabled": false
+    },
+    {
+        "id": 54,
+        "uuid": "eaa4a850-b590-4ac6-bbcd-0529533ee86a",
+        "name": " ព្រៃភ្នំកាដាម៉ូម",
+        "category": {
+            "name": "Koh Kong"
+        },
+        "description": "តំបន់ព្រៃសម្បូរជីវចម្រុះធម្មជាតិ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/71926636-d8c2-4b9d-87b7-00e98e4ab6d0.jpeg",
+            "https://tos-der.sokpheng.com/images/5e1b1c3e-09d8-45cf-971e-787bc85e649a.jpeg",
+            "https://tos-der.sokpheng.com/images/2551d1c1-82bb-41bd-be28-7275bebfb660.jpeg",
+            "https://tos-der.sokpheng.com/images/7c5b4ed3-f299-421d-a2dc-6c6ed8d21111.jpeg",
+            "https://tos-der.sokpheng.com/images/3468e37a-8218-4e1d-a3f9-876a593244e7.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:02:49.958869684",
+        "updatedAt": "2025-08-06T15:02:49.958942067",
+        "disabled": false
+    },
+    {
+        "id": 55,
+        "uuid": "d6a29a69-c050-4506-b18c-91131df658be",
+        "name": "សារមន្ទីរជាតិ",
+        "category": {
+            "name": "Phnom Penh"
+        },
+        "description": "សារមន្ទីរជាតិកម្ពុជា គឺជាកន្លែងទេសចរណ៍ដែលចាំបាច់ទស្សនាសម្រាប់អ្នកដែលចាប់​អារម្មណ៍លើ​​​វប្បធម៌ និងប្រវត្តិសាស្ត្រខ្មែរ​។ សារមន្ទីរនេះមានកន្លែងប្រមូលផ្តុំវត្ថុបុរាណ​​និងស្នាដៃសិល្បៈដ៏គួរ​ឱ្យចាប់អារម្ម​ណ៍​ពី សម័យកាលផ្សេងៗគ្នា ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/d2ba42bc-a9f7-4609-8477-9e9617989ea5.jpeg",
+            "https://tos-der.sokpheng.com/images/311d3b87-eb5c-49e8-a45a-880ea1b4dce7.jpeg",
+            "https://tos-der.sokpheng.com/images/d0043663-2597-4cea-b612-905d3a982acf.jpeg",
+            "https://tos-der.sokpheng.com/images/ff9fe6ae-a438-42e5-8088-2481b58a34a2.jpeg",
+            "https://tos-der.sokpheng.com/images/5c8147a3-97d9-4aa9-8677-c707b843e067.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:05:38.732751768",
+        "updatedAt": "2025-08-06T15:05:38.732796691",
+        "disabled": false
+    },
+    {
+        "id": 56,
+        "uuid": "008c0427-eb66-486b-852c-a38288a11a1d",
+        "name": "សេះសមុទ្រ",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": "គឺជាសត្វសមុទ្រតូចមួយដែលមានរាងប្លែក និងគួរឱ្យចាប់អារម្មណ៍។ នៅខ្មែរ គេហៅវាថា សេះសមុទ្រ ព្រោះវាមានរាងស្រដៀងនឹងក្បាលសេះតិចតួច។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/635bf532-692f-4e25-a69c-ab653e2eeccc.png",
+            "https://tos-der.sokpheng.com/images/3d23bd0e-d4fd-46da-a281-5b6a01dfc784.jpeg",
+            "https://tos-der.sokpheng.com/images/a898fdf7-8ae2-4010-922d-a514c78798ad.jpeg",
+            "https://tos-der.sokpheng.com/images/989819bb-d1f0-4f4e-8402-61a246432f21.jpeg",
+            "https://tos-der.sokpheng.com/images/e48c0383-f97d-40f1-ba72-43371044039a.webp"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:15:19.932181158",
+        "updatedAt": "2025-08-06T15:15:19.932230939",
+        "disabled": false
+    },
+    {
+        "id": 57,
+        "uuid": "fd4dfa2e-015e-47b4-97fa-90aebe66532f",
+        "name": "សារមន្ទីរខេត្តបាត់ដំបង",
+        "category": {
+            "name": "Battambang"
+        },
+        "description": "រក្សាទុកវត្ថុបុរាណសម័យមុនអង្គរ និងអង្គរជាកន្លែងល្អសម្រាប់ស្វែងយល់អំពីប្រវត្តិសាស្ត្រនិងវប្បធម៌ខ្មែរ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/91424e15-5135-4c19-9662-b4c43e8c0f70.png",
+            "https://tos-der.sokpheng.com/images/f55ac608-61be-40c4-8b4f-7c9d2279900f.png",
+            "https://tos-der.sokpheng.com/images/f3be4b17-b889-4798-82c0-d470cdb81f3f.jpeg",
+            "https://tos-der.sokpheng.com/images/abdcc01b-fe90-4453-9ab6-6953446f0c9d.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:20:18.723381064",
+        "updatedAt": "2025-08-06T15:20:18.723427721",
+        "disabled": false
+    },
+    {
+        "id": 58,
+        "uuid": "406b38ea-418f-4c89-ba4e-e2533461cc8b",
+        "name": "វត្តឯកភ្នំ",
+        "category": {
+            "name": "Battambang"
+        },
+        "description": "វត្តឯកភ្នំជាកន្លែងទេសចរណ៍សម្រាប់អ្នកចូលចិត្តប្រាសាទបុរាណ ស្ថាបត្យកម្មខ្មែរបុរាណ និងការស្វែងយល់អំពីប្រវត្តិសាស្ត្រ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/74166dae-80e9-4b74-8869-ef36a8499d23.webp",
+            "https://tos-der.sokpheng.com/images/fbedf640-772e-48d7-a1e5-5ed0ec3d2360.jpeg",
+            "https://tos-der.sokpheng.com/images/5db8397e-e440-4240-a142-40db160ada44.jpeg",
+            "https://tos-der.sokpheng.com/images/3dd8025e-145c-4d42-9b51-8103b4a9b3f7.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:24:22.203978075",
+        "updatedAt": "2025-08-06T15:24:22.204024209",
+        "disabled": false
+    },
+    {
+        "id": 59,
+        "uuid": "903fbf86-c153-48d3-bf29-2a7939c26d8c",
+        "name": "ភ្នំសំពៅ",
+        "category": {
+            "name": "Battambang"
+        },
+        "description": "ជាព្រៃភ្នំដែលមានវត្ត ប្រាសាទ និងរូងសម្លាប់សម័យខ្មែរក្រហម មានឱកាសទស្សនាខ្ទមបាតដែលហើរចេញរៀងរាល់ពេលថ្ងៃលិច ជាព្រឹត្តិការណ៍ធម្មជាតិដ៏អស្ចារ្យ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/f679d1a7-4364-4092-aee2-c86a12f8ed6c.jpeg",
+            "https://tos-der.sokpheng.com/images/573ba2ed-6649-40a9-970c-cfb4661d5602.jpeg",
+            "https://tos-der.sokpheng.com/images/4dbf3172-dd4f-4872-bf4d-913b9247cef2.jpeg",
+            "https://tos-der.sokpheng.com/images/13282e28-daff-4cef-99cd-69b9b0652acb.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:27:21.428661724",
+        "updatedAt": "2025-08-06T15:27:21.428734548",
+        "disabled": false
+    },
+    {
+        "id": 60,
+        "uuid": "1d661e91-dd9e-407b-8192-044c9298d794",
+        "name": "ស្ទឹងសង្កែ",
+        "category": {
+            "name": "Battambang"
+        },
+        "description": "ស្ទឹងសង្កែ ជាគោលដៅទេសចរណ៍បែបធម្មជាតិ និងកសិទេសចរណ៍។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/ae95070b-3709-4e15-9999-359062d84178.jpeg",
+            "https://tos-der.sokpheng.com/images/223c9b07-d277-4cb5-9c44-a5d893a21951.jpeg",
+            "https://tos-der.sokpheng.com/images/fba4bb0f-f906-47a4-b8e6-8daf030fa500.jpeg",
+            "https://tos-der.sokpheng.com/images/2fac119b-b06d-4598-8d38-e9dcc27ecdd1.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:31:59.668182755",
+        "updatedAt": "2025-08-06T15:31:59.668225946",
+        "disabled": false
+    },
+    {
+        "id": 61,
+        "uuid": "c0c25c7d-29db-4148-81c8-616e582b2e02",
+        "name": "ដូងទេរ",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": "រមណីយដ្ឋានដូងទេរ គឺជាកន្លែងកំសាន្តមួយដែលអាចឲ្យបងប្អូនគេចផុតពីភាពតានតឹងដោយសម្រាកលំហែរកាយនៅលើឆ្នេរធម្មជាតិដ៏ស្រស់ស្អាត ថែមទាំងមានការកំសាន្តផ្សេងៗនៅលើទឹក ដូចជាការជិះទូកកៃយ៉ាកជាដើម។ ",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/d6eff026-a2c0-4add-a4aa-9dd279c0b3c6.jpeg",
+            "https://tos-der.sokpheng.com/images/29d760ba-babc-439f-b862-8791af7547d5.jpeg",
+            "https://tos-der.sokpheng.com/images/fec329b1-6b76-4595-bd28-6f960376fed1.jpeg",
+            "https://tos-der.sokpheng.com/images/3f678836-a523-47a0-a818-4d743f0e0f2f.jpeg",
+            "https://tos-der.sokpheng.com/images/56a269d1-5459-4a29-b878-825d46448979.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:35:47.715428976",
+        "updatedAt": "2025-08-06T15:35:47.715481094",
+        "disabled": false
+    },
+    {
+        "id": 62,
+        "uuid": "deadca36-2c1f-4af2-8690-c539720d7b46",
+        "name": "វត្តភ្នំដូនពេញ",
+        "category": {
+            "name": "Phnom Penh"
+        },
+        "description": "វត្តភ្នំដូនពេញ ឬ វត្តភ្នំ គឺជាវត្តដ៏ចំណាស់មួយ ក្នុងប្រទេសកម្ពុជា ដែលមានអាយុកាលប្រមាណជា៦៥០ឆ្នាំ ឆ្លងកាត់ការសាងសង់ និងជួសជុលជាបន្តបន្ទាប់ ដោយរជ្ជកាលស្ដេចចំនួន ៤អង្គ វត្តនេះមានកម្ពស់សរុប ៤៦ ម៉ែត្រ ដោយស្មើនិងកម្ពស់ហ្វីត (១៥០ហ្វីត) ។",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/b80d5630-f055-4c23-af8f-2b5881dc760a.jpeg",
+            "https://tos-der.sokpheng.com/images/454abd69-0923-42ee-a6e0-34a2813a3c16.jpeg",
+            "https://tos-der.sokpheng.com/images/8e4e0d99-c71f-4dbc-93ab-88b75d64b82c.jpeg",
+            "https://tos-der.sokpheng.com/images/1cd89c36-e515-4129-b74a-cd7917eb02a1.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:43:08.911683612",
+        "updatedAt": "2025-08-06T15:43:08.911726303",
+        "disabled": false
+    },
+    {
+        "id": 63,
+        "uuid": "44efa8c9-ef26-490a-9f04-f5122543d4b0",
+        "name": "ទឹកធ្លាក់អន្លង់ធំ",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": "ទឹកធ្លាក់អន្លង់ធំ​ គឺជារមណីយដ្ឋាន​ ដែល​ទាក់ទាញចិត្តភ្ញៀវទេសចរណ៍បំផុត ព្រោះមានទឹកធ្លាក់ពីលើ​ភ្នំបូកគោ ហើយ​ទឹក​ហូរ​ធ្លាក់ទៅ​កាន់​តំបន់​សមុទ្រ ហើយមានព្រៃឈើ​ច្រើន និង​មាន​ថ្មដុះច្រូងច្រាង ធ្វើ​ឲ្យ​ទឹក​ហូរ​បោក​លើ​ផ្ទៃថ្មធំ​ ជាទីចាប់អារម្មណ៍ ",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/50b59467-e4a4-4163-a70f-12610860c0d9.jpeg",
+            "https://tos-der.sokpheng.com/images/b094f683-4c1e-4c55-ba7a-b04dbd5f63c1.jpeg",
+            "https://tos-der.sokpheng.com/images/908c209f-1369-4e07-9022-79644ef9ba36.jpeg",
+            "https://tos-der.sokpheng.com/images/5fb12ae4-22c8-491b-836c-0886fa810b73.jpeg",
+            "https://tos-der.sokpheng.com/images/c2b7ba2d-9f8b-4e00-a4cb-f80dfd6a8a38.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T15:51:06.042819046",
+        "updatedAt": "2025-08-06T15:51:06.042862963",
+        "disabled": false
+    },
+    {
+        "id": 64,
+        "uuid": "2ce86cfc-e9ea-494e-bfba-bc4bd7de49f0",
+        "name": "ទឺកឈូ",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": " រមណីយដ្ឋានទឹកឈូជាតំបន់មានទឹកធ្លាក់ហូរកាត់តាមជ្រលងភ្នំកំចាយកាត់តាមដៃព្រែករហូតដល់ទីរួមខេត្តកំពតដែលជាប្រភពទឹកសាបយ៉ាងសំខាន់សម្រាប់ផ្គត់ផ្គង់ដល់ការប្រើប្រាស់របស់ប្រជាពលរដ្ឋនៅជុំវិញទីរួមខេត្តកំពត។ ",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/491e5963-436c-4496-9df2-1e4c5cf0305f.jpeg",
+            "https://tos-der.sokpheng.com/images/5db64821-f244-40cf-93e0-bd8926c90ad1.jpeg",
+            "https://tos-der.sokpheng.com/images/618c93bd-bad4-4269-a7e2-734b6d776c64.jpeg",
+            "https://tos-der.sokpheng.com/images/3a5e2c7b-dc57-4a47-a36e-ca8bceccfac6.webp",
+            "https://tos-der.sokpheng.com/images/5f60b245-eefd-4c8d-a869-1658e30095ef.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T16:05:26.419676958",
+        "updatedAt": "2025-08-06T16:05:26.419869367",
+        "disabled": false
+    },
+    {
+        "id": 65,
+        "uuid": "a2895711-0882-4be4-9504-ce5f127cfb8b",
+        "name": "ធម្មជាតិម្លេច",
+        "category": {
+            "name": "Kom pot"
+        },
+        "description": " រមណីយដ្ឋានធម្មជាតិម្លេច គឺជារមណីយដ្ឋានបែបកែច្នៃមួយកន្លែងដែលបង្កើតឡើងនៅលើផ្ទៃទឹកក្នុងតំបន់បឹងម្លេច មានទីតាំងស្ថិតនៅភូមិត្រពាំងឈើទាល ឃុំច្រេស ស្រុកជុំគិរី ខេត្តកំពត ជាប់ព្រំប្រទល់ខេត្តតាកែវ ចុះពីផ្លូវជាតិលេខ ៣​ ប្រហែល ៥.៨​គីឡូម៉ែត្រ។ ",
+        "openHours": "Open 24 hours",
+        "entryFee": 0.0,
+        "imageUrls": [
+            "https://tos-der.sokpheng.com/images/9eab0484-b734-4acf-97ab-d9be39014dc2.jpeg",
+            "https://tos-der.sokpheng.com/images/b4219bd9-4d7f-42a8-b0c1-c51e4103181d.jpeg",
+            "https://tos-der.sokpheng.com/images/1a2c808a-c1e4-415a-88fa-c350a5f3a407.jpeg",
+            "https://tos-der.sokpheng.com/images/9dfb0ec4-ece2-48d5-9be9-9d8adbf9f4f8.webp",
+            "https://tos-der.sokpheng.com/images/4317b4d4-7377-4449-90e8-9e93d8fb7bc8.jpeg"
+        ],
+        "location": "10.7131,103.2343",
+        "createdAt": "2025-08-06T16:16:43.587485211",
+        "updatedAt": "2025-08-06T16:16:43.587533306",
+        "disabled": false
+    }
+]

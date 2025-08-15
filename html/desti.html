@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="../src/output.css" />
+    <!-- animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/5ce14b4205.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="bg-background font-primary">
+    <!-- header -->
+    <header class="bg-white w-full shadow sticky top-0 z-99">
+      <nav
+        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a href="#" class="">
+          <img
+            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
+            src="../img/home/logo.png"
+            alt="Logo"
+          />
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="lg:hidden cursor-pointer text-3xl text-accent focus:outline-none"
+        >
+          <ion-icon name="menu" id="menu-icon"></ion-icon>
+        </button>
+
+        <div
+          id="nav-links"
+          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+        >
+          <ul
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
+          >
+            <li>
+              <a href="/index.html" class="text-primary transition-colors"
+                >ទំព័រដើម</a
+              >
+            </li>
+            <li>
+              <a href="about.html" class="text-primary transition-colors"
+                >អំពីពួកយើង</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-secondary transition-colors">គោលដៅ</a>
+            </li>
+          </ul>
+
+          <div
+            class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
+          >
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              ចូលគណនី
+            </button>
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              ចុះឈ្មោះ
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- 
+    main -->
+    <main class="font-primary z-0">
+      <!-- hero section -->
+      <section class="w-[100%] h-screen overflow-x-hidden relative">
+        <div class="absolute inset-0 bg-black/40 z-5"></div>
+        <!-- Text overlay  -->
+        <div
+          class="animation-slide-up absolute inset-0 z-10 flex flex-col items-center justify-center text-white text-center"
+        >
+          <h1
+            data-aos="fade-down"
+            class="max-md:text-5xl sm:text-3xl leading-[60px] md:text-6xl pt-[5px] pb-[20px] lg:text-7xl font-bold bg-gradient-to-r from-teal-200 to-white text-transparent bg-clip-text"
+          >
+            ចូលរួមក្នុងការផ្សងព្រេង
+          </h1>
+          <p
+            data-aos="fade-up"
+            class="mt-7 font-semibold text-xl sm:text-2xl md:text-3xl lg:mt-[55px] text-white"
+          >
+            ស្វែងរកគោលដៅដ៏អស្ចារ្យនៅកម្ពុជា
+          </p>
+          <button
+            data-aos="fade-up"
+            src="./destination.html"
+            class="animate-slide-up text-white mt-12 px-8 py-3 lg:mt-[55px] font-semibold bg-none rounded-md ring-1 ring-white hover:bg-primary hover:text-white shadow-[1px_1px_15px] shadow-gray-300"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            ដំណើរកម្សាន្ត
+          </button>
+        </div>
+
+        <div
+          id="slider"
+          class="flex transition-transform duration-700 ease-in-out w-screen h-screen"
+        >
+          <div class="w-screen h-screen flex-shrink-0">
+            <img
+              src="../img/hero/slide2.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="w-screen h-screen flex-shrink-0">
+            <img
+              src="../images/Prasat_Bayon_2014.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="w-screen h-screen flex-shrink-0">
+            <img
+              src="../img/hero/slide3.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="w-screen h-screen flex-shrink-0">
+            <img
+              src="../img/hero/slide4.jpg"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="relative overflow-hidden sm:mt-8 sm:pb-4">
+        <div class="lg:container px-4 sm:py-4 max-sm:py-3 lg:mx-auto relative">
+          <!-- Background Decorative Text -->
+          <div class="absolute inset-0 flex p-4 opacity-8 pointer-events-none">
+            <span
+              class="text-8xl max-sm:text-center font-bold text-teal-400 whitespace-nowrap"
+            >
+              ផ្សងព្រេង
+            </span>
+          </div>
+
+          <!-- Decorative Shapes -->
+          <div class="absolute inset-0 pointer-events-none">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              class="absolute top-20 left-180 w-24 h-24 max-lg:top-80 max sm:left-170 max-sm:top-0 bg-teal-300 rounded-[10px] opacity-80"
+            ></div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="400"
+              class="absolute bottom-0 right-20 w-16 h-16 max-sm:bottom-0 bg-yellow-400 rounded-[10px]"
+            ></div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="600"
+              class="absolute top-40 right-40 w-20 h-20 max-lg:right-190 max-lg:top-110 bg-orange-300 rounded-[10px] opacity-90"
+            ></div>
+          </div>
+
+          <!-- Main Content -->
+          <div
+            class="grid lg:grid-cols-2 justify-between items-center gap-12 relative z-10"
+          >
+            <!-- Text -->
+            <div class="space-y-6">
+              <h1
+                data-aos="fade-up"
+                class="text-3xl max-lg:text-center max-sm:mt-4 sm:text-5xl md:text-6xl leading-[80px] font-bold text-teal-800 sm:py-"
+              >
+                ចូលរួមក្នុងដំណើរផ្សងព្រេងដ៏អស្ចារ្យ
+              </h1>
+              <p
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="font-semibold text-lg max-lg:text-center sm:text-xl max-sm:font-medium md:text-4xl text-secondary"
+              >
+               ភាពស្រស់ស្អាត និងវប្បធម៌ដ៏សម្បូរបែប
+              </p>
+
+              <div class="sm:mt-8 flex justify-center lg:justify-start">
+                <a
+                  href="/index.html"
+                  class="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium tracking-tighter text-white bg-primary rounded-lg group hover:bg-teal-600 transition-all duration-300"
+                >
+                  <span
+                    class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-10"
+                  ></span>
+                  <span class="relative z-10">ទំព័រដើម</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Images -->
+            <div class="relative">
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="300"
+                class="w-80 h-80 max-sm:w-[250px] max-sm:h-[250px] rounded-[10px] overflow-hidden mx-auto mb-8 shadow-[10px]"
+              >
+                <img
+                  src="../image/1.jpg"
+                  alt="Adventure in Cambodia"
+                  class="w-full max-sm:w-[250px] max-sm:h-[250px] h-full object-cover"
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="500"
+                class="absolute -top-4 max-sm:-top-10 max-sm:right-0 sm:right-20 w-24 h-24 rounded-[10px] overflow-hidden shadow-lg"
+              >
+                <img
+                  src="../image/8.jpg"
+                  alt="Destination Highlight"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="700"
+                class="absolute max-lg:-left-0 max-sm:left-0 bottom-8 max-sm:top-45 max-sm:right-180 -left-8 w-32 h-32 rounded-[10px] overflow-hidden shadow-lg"
+              >
+                <img
+                  src="../image/9.jpg"
+                  alt="Local Culture Experience"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container max-sm:pt-4 px-4 mx-auto rounded-[10px] flex flex-col"
+        >
+          <h2
+            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+          >
+            <span
+              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
+              >១</span
+            >
+            តំបន់ទេសចរណ៍តាមខេត្តនៅកម្ពុជា
+          </h2>
+
+          <p class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent">
+            កម្ពុជាជាប្រទេសមួយដែលសម្បូរទៅដោយតំបន់ទេសចរណ៍គ្រប់ប្រភេទ។
+            មិនថាជាកន្លែងប្រវត្តិសាស្ត្រ ព្រៃភ្នំ ព្រះសមុទ្រ និងកោះ
+            ឬកន្លែង​​​កម្សាន្តផ្សេងៗទៀតទេ
+            គ្រប់ខេត្តនីមួយៗមានឯកសណ្ឋានភាពនិងសក្ដានុពលទេសចរណ៍ផ្ទាល់ខ្លួន។
+            តទៅនេះគឺជាតំបន់ទេសចរណ៍សំខាន់ៗតាមខេត្តនីមួយៗ
+            ដែលអ្នកអាចស្វែងរកនិងទស្សនា ដើម្បីស្គាល់អំពីភាពស្រស់ស្អាត
+            និងវប្បធម៌ដ៏សម្បូរបែបរបស់ប្រទេសកម្ពុជា។
+          </p>
+        </div>
+      </section>
+
+      <section class="sm:mt-8 max-sm:mt-3">
+        <div
+          class="max-w-7xl mx-auto sm:px-6 lg:px-4 space-y-6 overflow-hidden font-sans"
+        >
+          <!-- Top Row -->
+          <div class="relative overflow-hidden group">
+            <div
+              class="flex w-max animate-scroll-left group-hover:[animation-play-state:paused] gap-4"
+            >
+              <template id="top-images">
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../images/Angkor_wat.webp"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 0 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../images/bakheng.jpg"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../images/pub street.webp"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../images/museum.avif"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../images/siem-reap-city.webp"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../image/17​.jpg"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../image/19.jpg"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+                <div
+                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                >
+                  <img
+                    src="../image/12.jpg"
+                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                  >
+                    <span class="text-white text-lg font-semibold"></span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <!-- Lightbox Modal -->
+        </div>
+      </section>
+      <section class="lg:container lg:mx-auto px-4">
+        <!-- Filters Section -->
+        <section>
+          <div
+            class="flex flex-wrap gap-4 mt-6 py-2 mb-8 w-full sticky top-[12vh] z-10"
+          >
+            <!-- Search Input -->
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="ស្វែងរកតំបន់ទេសចរណ៍..."
+              class="flex-1 min-w-[220px] px-4 py-2 rounded-xl border border-primary/50 bg-white/50 shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+            />
+            <!-- Category Select -->
+            <div class="relative min-w-[160px]">
+              <select
+                id="categorySelect"
+                class="w-full max-sm:py-2 px-4 py-[14px] focus:bg-white rounded-xl border border-primary/50 bg-white/50 shadow-sm appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
+              >
+                <option value="">ទាំងអស់</option>
+                <option value="Phnom Penh">ភ្នំពេញ</option>
+                <option value="Koh Kong">កោះកុង</option>
+                <option value="siem reap">សៀមរាប</option>
+                <option value="Battambang">បាត់ដំបង</option>
+                <option value="Kom pot">កំពត</option>
+                <option value="Kep">កែប</option>
+              </select>
+              <!-- Custom Arrow Icon -->
+              <div
+                class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Travel Cards Grid -->
+          <section class="flex flex-col items-center">
+            <div
+              id="categories"
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+            ></div>
+            <button
+              id="seeMoreBtn"
+              class="group flex mt-8 justify-center relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary px-6 font-medium text-white transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+            >
+              See more
+            </button>
+          </section>
+        </section>
+      </section>
+
+      <!-- section3 -->
+      <section class="lg:container py-4 px-4 lg:mx-auto">
+        <div class="rounded-[10px] flex flex-col">
+          <h2
+            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+          >
+            <span
+              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
+              >២</span
+            >
+            បេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រកម្ពុជា
+          </h2>
+          <p class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent">
+            កម្ពុជា មានបេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រដ៏សម្បូរបែប
+            ចាប់ពីប្រាសាទអង្គរវត្ត និងប្រាសាទបុរាណជាច្រើន ដល់វប្បធម៌ប្រពៃណីដូចជា
+            រាំព្រះរាជទ្រព្យ និងសិល្បៈជំនាញបុរាណ។ ទាំងនេះជាមរតកមានតម្លៃ
+            បង្ហាញពីអត្តសញ្ញាណ និងមោទនភាពជាតិ
+            ហើយស្ថិតក្នុងសារៈសំខាន់សម្រាប់ការអភិរក្ស និងបន្តទៅជំនាន់ក្រោយ។
+          </p>
+        </div>
+        <section
+          class="flex max-sm:justify-center max-sm:items-center flex-col max-sm:gap-8 sm:gap-y-12"
+        >
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="lg:flex lg:flex-row-reverse max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
+          >
+            <div
+              data-aos-delay="300"
+              data-aos="fade-left"
+              class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
+            >
+              <h3 class="text-secondary text-[28px] font-medium">
+                អង្គរវត្ត - សម្បត្តិបេតិកភណ្ឌពិភពលោក
+              </h3>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ប្រាសាទអង្គរវត្តជារមណីយដ្ឋានប្រវត្តិសាស្ត្រដ៏ធំបំផុតនៅអាស៊ីអាគ្នេយ៍។
+                ប្រាសាទនេះត្រូវបានសាងសង់ក្នុងសតវត្សរ៍ទី១២
+                ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសថ្វាយដល់ព្រះវិស្ណុ។
+                អ្នកនឹងភ្ញាក់ផ្អើលនឹងស្ថាបត្យកម្មដ៏អស្ចារ្យ
+                និងចម្លាក់ដ៏លម្អិតដែលបង្ហាញពីរឿងរាមកេរ្តិ៍ និងទេវកថាហិណ្ឌូ។
+              </p>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ការមើលព្រះអាទិត្យរះឬលិចពីលើប្រាសាទគឺជាបទពិសោធន៍ដ៏ពិសេសមួយ។
+                អ្នកអាចជិះយន្តហោះចម្ងាយខ្លី
+                ឬជិះទូកតាមបឹងទន្លេសាបដើម្បីមើលទេសភាពពីខ្ពស់។
+                កុំភ្លេចស្លៀកពាក់សមស្រប និងជួបជាមួយអ្នកណែនាំទេសចរណ៍មានជំនាញ។
+              </p>
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="300"
+              data-aos-delay="300"
+              class="lg:w-1/2 max-lg:w-full"
+            >
+              <img
+                src="../img/section2/angkor.png"
+                alt="ប្រាសាទអង្គរវត្ត"
+                class="w-full h-[410px] max-lg:mt-5 rounded-[10px] object-cover shadow-md"
+              />
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="lg:flex lg:flex-row max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
+          >
+            <div
+              data-aos="fade-right"
+              data-aos-delay="300"
+              class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
+            >
+              <h3 class="text-secondary text-[28px] font-medium">
+                ព្រះបរមរាជវាំង - និមិត្តរូបនៃរាជ្យ
+              </h3>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ព្រះបរមរាជវាំងគឺជាកន្លែងស្នាក់នៅរបស់ព្រះមហាក្សត្រកម្ពុជា
+                និងជាទីតាំងប្រារព្ធពិធីបុណ្យជាតិផ្សេងៗ។
+                វាំងនេះត្រូវបានសាងសង់ឡើងនៅឆ្នាំ១៨៦៦
+                ដែលជាការបង្ហាញពីស្ថាបត្យកម្មប្រពៃណីខ្មែរដ៏ល្អឯក។
+              </p>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                នៅទីនេះ អ្នកអាចទស្សនាព្រះវិហារព្រះកែវមរកត
+                ដែលមានផ្ទុកព្រះពុទ្ធរូបមាសដ៏មានតម្លៃ។ កុំភ្លេចគយគន់សាលប្រជុំ
+                ព្រះពន្លា និងសួនច្បារដ៏ស្រស់ស្អាតដែលស្ថិតនៅជុំវិញវាំង។
+                ការទស្សនានេះនឹងផ្ដល់បទពិសោធន៍ដ៏ស៊ីជម្រៅអំពីរបបរាជានិយមនៅកម្ពុជា។
+              </p>
+            </div>
+            <div
+              data-aos-delay="300"
+              data-aos="fade-left"
+              class="lg:w-1/2 max-lg:w-full mt-6 md:mt-0"
+            >
+              <img
+                src="../img/royalPalace.png"
+                alt="រូបភាពព្រះបរមរាជវាំងនៅទីក្រុងភ្នំពេញ"
+                class="w-full h-[410px] max-lg:mt-5 rounded-[10px] object-cover shadow-md"
+              />
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="lg:flex lg:flex-row-reverse max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
+          >
+            <div
+              data-aos-delay="300"
+              data-aos="fade-left"
+              class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
+            >
+              <h3 class="text-secondary text-[28px] font-medium">
+                ប្រាសាទបន្ទាយស្រី - ប្រាសាទផ្កាឈូក
+              </h3>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ប្រាសាទបន្ទាយស្រី ដែលមានន័យថា "បន្ទាយរបស់ស្រី"
+                គឺជាប្រាសាទបុរាណមួយដែលស្ថិតនៅជិតប្រាសាទអង្គរវត្ត។
+                ប្រាសាទនេះត្រូវបានសាងសង់ពីថ្មភក់ពណ៌ផ្កាឈូក
+                និងមានចម្លាក់ដ៏វិចិត្រល្អឥតខ្ចោះ។ អ្នកជំនាញហៅប្រាសាទនេះថាជា
+                "ត្បូងពេជ្រនៃសិល្បៈខ្មែរ"។
+              </p>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ប្រាសាទនេះមានលក្ខណៈពិសេសត្រង់ចម្លាក់ក្បាច់ផ្កា និងទេពអប្សរ
+                ដែលមានលក្ខណៈល្អិតល្អន់ និងមានសោភ័ណភាពជាងប្រាសាទដទៃទៀត។
+                ការទស្សនានៅទីនេះនឹងផ្ដល់ឱ្យអ្នកនូវការយល់ដឹងពីភាពប៉ិនប្រសប់នៃសិល្បករខ្មែរបុរាណ។
+              </p>
+            </div>
+            <div
+              data-aos="fade-right"
+              data-aos-delay="300"
+              class="lg:w-1/2 max-lg:w-full mt-6 md:mt-0"
+            >
+              <img
+                src="../img/banteaySreySr.png"
+                alt="រូបភាពប្រាសាទបន្ទាយស្រីនៅខេត្តសៀមរាប"
+                class="w-full h-[410px] max-lg:mt-5 rounded-[10px] object-cover shadow-md"
+              />
+            </div>
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="lg:flex lg:flex-row max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
+          >
+            <div
+              data-aos="fade-right"
+              data-aos-delay="300"
+              class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
+            >
+              <h3 class="text-secondary text-[28px] font-medium">
+                ក្រុងព្រះសីហនុ - សមុទ្រខ្មែរដ៏ស្រស់ស្អាត
+              </h3>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                ក្រុងព្រះសីហនុ ដែលគេស្គាល់ថាជា "កំពង់ផែសន្សើម"
+                គឺជាចំណុចទាក់ទាញទេសចរណ៍សមុទ្រនៅកម្ពុជា។ ឆ្នេរខ្សាច់ស
+                ទឹកខៀវស្រងាត់ និងកោះដ៏ស្រស់ស្អាតដូចជា កោះរ៉ុង កោះរ៉ុងសានូអែល
+                និងកោះទន្សេង ធ្វើឱ្យទីនេះក្លាយជាកន្លែងល្អសម្រាប់កម្សាន្ត
+                និងសម្រាកពីភាពរវល់។
+              </p>
+              <p class="text-accent text-base md:text-lg leading-relaxed">
+                អ្នកអាចជ្រមុជទឹក បរបាញ់កំណាត់ ឬធ្វើដំណើរទៅកាន់កោះដោយទូក។ នៅល្ងាច
+                អ្នកអាចសប្បាយជាមួយអាហារសមុទ្រស្រស់ៗ និងភ្លេងតន្រ្តីនៅតាមឆ្នេរ។
+                កុំភ្លេចទស្សនាផ្សារនាឡិណ្ឌវិថី ដែលជាផ្សារយប់ដ៏អស្ចារ្យ។
+              </p>
+            </div>
+            <div
+              data-aos-delay="300"
+              data-aos="fade-left"
+              class="lg:w-1/2 max-lg:w-full mt-6 md:mt-0"
+            >
+              <img
+                src="https://lp-cms-production.imgix.net/2019-06/03e6607ff396692329d686cdc5f677b2-independence-beach.jpg"
+                alt="ឆ្នេរក្រុងព្រះសីហនុ"
+                class="w-full h-[410px] max-lg:mt-5 rounded-[10px] object-cover shadow-md"
+              />
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="bg-white mt-10 py-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
+      >
+        <div class="flex justify-center md:justify-start gap-4">
+          <img
+            src="../img/footer.PNG"
+            alt="Logo 1"
+            class="w-32 h-32 object-contain"
+          />
+          <img
+            src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
+            alt="Logo 2"
+            class="w-27 h-27 object-contain mt-3"
+          />
+        </div>
+
+        <div
+          class="flex flex-col max-lg:mt-3 items-center md:items-start gap-5"
+        >
+          <h4 class="text-primary font-semibold text-lg">បណ្តាញសង្គម</h4>
+          <div class="flex gap-4 text-primary">
+            <!-- Facebook -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-facebook-f text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- TikTok -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-tiktok text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- YouTube -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-youtube text-3xl text-primary"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg">តំណភ្ជាប់រហ័ស</h4>
+          <a href="index.html" class="hover:text-green-600 transition"
+            >ទំព័រដើម</a
+          >
+          <a href="/html/about.html" class="hover:text-green-600 transition"
+            >អំពីពួកយើង</a
+          >
+          <a
+            href="/html/destination.html"
+            class="hover:text-green-600 transition"
+            >គោលដៅ</a
+          >
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg max-sm:text-center">
+            ឧបត្ថម្ភដោយ
+          </h4>
+          <p>
+            Institute of Science and Technology Advanced Development (ISTAD)
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+  <script src="../js/filter.js"></script>
+  <script src="../js/script.js"></script>
+  <script type="module" src="../js/detailPlace.js"></script>
+  <script src="../js/infinitslide.js"></script>
+</html>

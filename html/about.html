@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <!-- icon -->
+    <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
+    <!-- style -->
+    <link rel="stylesheet" href="../src/output.css" />
+    <!-- animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/5ce14b4205.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="bg-background font-primary">
+    <!-- header -->
+    <header class="bg-white w-full shadow sticky top-0 z-10">
+      <nav
+        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <a href="#" class="">
+          <img
+            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
+            src="../img/home/logo.png"
+            alt="Logo"
+          />
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="lg:hidden cursor-pointer text-3xl text-accent focus:outline-none"
+        >
+          <ion-icon name="menu" id="menu-icon"></ion-icon>
+        </button>
+
+        <div
+          id="nav-links"
+          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+        >
+          <ul
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
+          >
+            <li>
+              <a href="/index.html" class="text-primary transition-colors"
+                >ទំព័រដើម</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-secondary transition-colors"
+                >អំពីពួកយើង</a
+              >
+            </li>
+            <li>
+              <a href="./desti.html" class="text-primary transition-colors"
+                >គោលដៅ</a
+              >
+            </li>
+          </ul>
+          <div
+            class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
+          >
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              ចូលគណនី
+            </button>
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              ចុះឈ្មោះ
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- 
+    main -->
+    <main>
+      <!-- hero section -->
+      <section class="relative overflow-hidden z-0">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+          <img
+            class="w-full md:h-[90vh] max-md:h-[100vh] object-cover"
+            src="/img/heroSection.png"
+            alt="Ancient Temple Ruins"
+          />
+        </div>
+
+        <!-- Black Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+
+        <!-- Content -->
+        <div
+          class="relative px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-center max-md:h-[100vh] md:h-[90vh] z-10"
+        >
+          <div class="text-center">
+            <h2
+              class="text-4xl sm:text-6xl lg:text-6xl xl:text-[75px] font-extrabold text-white flex flex-col"
+              data-aos="fade-up"
+            >
+              <span
+                class="block md:p-[18px] bg-gradient-to-r from-white to-teal-200 text-transparent bg-clip-text"
+              >
+                អំពីពួកយើង
+              </span>
+            </h2>
+            <p
+              class="animate-slide-up mt-4 md:max-w-2xl lg:mt-[55px] mx-auto md:text-[26px] max-md:text-[20px] text-shadow-md text-shadow-gray-700 leading-relaxed text-white"
+              data-aos="fade-up"
+            >
+              គេហទំព័ររបស់យើង ត្រូវបានបង្កើតឡើង
+              ដើម្បីលើកស្ទួយនិងផ្សព្វផ្សាយអំពីសម្បត្តិធម្មជាតិ
+              និងវប្បធម៌ដ៏ចម្រុះរបស់ប្រទេសកម្ពុជា។ នៅទីនេះ
+              អ្នកអាចស្វែងយល់អំពីប្រវត្តិសាស្ត្រ ទេសភាពស្រស់ស្អាត វប្បធម៌
+              ម្ហូបអាហារ ទំនៀមទម្លាប់ និងសកម្មភាពទេសចរណ៍ជាច្រើន។
+            </p>
+            <div data-aos="fade-up" class="flex justify-center">
+              <a href="./html/desti.html">
+                <button
+                  class="group flex justify-center lg:mt-[40px] mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+                >
+                  គោលដៅ
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Goals Section -->
+      <section class="container mx-auto">
+        <section class="flex flex-col px-4 justify-center items-center">
+          <h2
+            class="max-md:text-[38px] md:text-[48px] sm:text-[28px] max-sm:text-[22px] text-center text-teal-800 font-bold sm:py-10 max-sm:py-4 max-md:mt-5"
+          >
+            <span id="typing-text"></span><span class="blinking-cursor">|</span>
+          </h2>
+
+          <!-- Cards -->
+          <div
+            class="container flex flex-col justify-center items-center mx-auto"
+          >
+            <!-- Reason -->
+            <!-- Reason -->
+            <div
+              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/reason.gif"
+                alt="Reason"
+                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+
+              <!-- Text container with background shapes -->
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[40px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <h3 class="text-secondary text-[28px] font-medium">ហេតុផល</h3>
+                <p class="text-accent text-lg md:text-xl leading-relaxed">
+                  ហេតុផលសំខាន់នៃការបង្កើតគេហទំព័រនេះ
+                  គឺដើម្បីលើកស្ទួយវិស័យទេសចរណ៍ក្នុងប្រទេសកម្ពុជា។
+                  ការធ្វើដំណើរមិនមែនគ្រាន់តែជាការកម្សាន្តទេ
+                  ប៉ុន្តែជាការស្វែងយល់ពីវប្បធម៌ប្រពៃណី
+                  និងជីវិតរស់នៅដ៏ចម្រុះរបស់មនុស្សក្នុងតំបន់។
+                  យើងចង់ជួយអោយអ្នកធ្វើដំណើររកឃើញទីកន្លែងថ្មីៗ
+                  និងទទួលបានបទពិសោធន៍ដ៏អស្ចារ្យ។
+                </p>
+              </div>
+            </div>
+
+            <!-- Vision -->
+            <div
+              class="relative flex lg:flex-row-reverse max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/Shared goals (1).gif"
+                alt="Vision"
+                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[40px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <h3 class="text-secondary text-[28px] font-medium">
+                  ចក្ខុវិស័យ
+                </h3>
+                <p class="text-accent text-base md:text-xl leading-relaxed">
+                  ចក្ខុវិស័យរបស់យើង គឺក្លាយជាវេទិកាទេសចរណ៍ឌីជីថលឈានមុខគេ
+                  ដែលផ្ដល់ព័ត៌មានត្រឹមត្រូវ
+                  និងទាន់សម័យអំពីទីតាំងទេសចរណ៍ទូទាំងប្រទេស។
+                  យើងស្រមៃឃើញអនាគតមួយដែលប្រទេសកម្ពុជា
+                  ក្លាយជាគោលដៅទេសចរណ៍លំដាប់ពិភពលោក។
+                </p>
+              </div>
+            </div>
+
+            <!-- Purpose -->
+            <div
+              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/Website Creator (2).gif"
+                alt="Purpose"
+                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[2000px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <h3 class="text-secondary text-[28px] font-medium">គោលបំណង</h3>
+                <p class="text-accent text-base md:text-xl leading-relaxed">
+                  គោលបំណងរបស់គេហទំព័រនេះ
+                  គឺដើម្បីផ្ដល់បទពិសោធន៍ស្វែងយល់អំពីកម្ពុជា
+                  តាមរយៈព័ត៌មានទេសចរណ៍ដែលងាយស្រួលស្វែងរក។
+                  យើងចង់ជួយដល់សហគមន៍ក្នុងតំបន់ ដោយលើកកម្ពស់សេវាកម្មទេសចរណ៍
+                  និងបង្កើនចំណូលសម្រាប់ប្រជាជនក្នុងស្រុក។
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section>
+        <section class="px-6 py-4 overflow-hidden">
+          <div class="max-w-5xl mx-auto">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-center p-4 text-teal-800 dark:text-dark-primary"
+              data-aos="fade-down"
+              data-aos-delay="200"
+            >
+              Mentor របស់ពួកយើង
+            </h2>
+            <div
+              class="flex justify-center sm:gap-20"
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="p-6 text-center transition-transform hover:-translate-y-2 duration-500"
+              >
+                <img
+                  src="/img/CHAN CHHAYA.jpeg"
+                  alt="ចាន់ ឆៃយ៉ា"
+                  class="sm:w-45 max-sm:w-30 max-sm:h-30 sm:h-45 mx-auto rounded-full object-cover shadow-md"
+                />
+                <h3
+                  class="text-xl font-semibold mt-4 text-primary dark:text-dark-primary"
+                >
+                  ចាន់ ឆៃយ៉ា
+                </h3>
+                <p class="text-gray-500 mt-1 text-md">Mentor</p>
+                <div
+                  class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-github"></i>
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
+              </div>
+              <div
+                class="p-6 text-center transition-transform hover:-translate-y-2 duration-500"
+              >
+                <img
+                  src="/img/EUNG LYZHIA.jpeg"
+                  alt="អុឹង លីហ៊្សា"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover shadow-md"
+                />
+                <h3
+                  class="text-xl font-semibold mt-4 text-primary dark:text-dark-primary"
+                >
+                  អុឹង លីហ៊្សា
+                </h3>
+                <p class="text-gray-500 mt-1 text-md">Mentor</p>
+                <div
+                  class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-github"></i>
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="container mx-auto p-6 overflow-hidden">
+          <div class="w-full mx-auto z-1">
+            <h2
+              class="text-3xl md:text-4xl font-bold text-center text-teal-800 dark:text-dark-primary mb-12"
+              data-aos="fade-up"
+            >
+              សមាជិកក្រុម
+            </h2>
+            <div
+              class="grid md:gap-10 max-md:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform hover:-translate-y-2 duration-500"
+              >
+                <img
+                  src="/img/EAT SOMBAT.jpg"
+                  alt="អៀត សម្បត្តិ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    អៀត សម្បត្តិ
+                  </h3>
+                  <p class="text-md text-secondary">ប្រធានក្រុម</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition transition-transform hover:-translate-y-2 duration-500"
+              >
+                <img
+                  src="/img/NGOV KIMSOUHENG.jpg"
+                  alt="ង៉ូវ គឹមស៊ូហេង"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    ង៉ូវ គឹមស៊ូហេង
+                  </h3>
+                  <p class="text-md text-secondary">អនុប្រធានក្រុម</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform hover:-translate-y-2 duration-500"
+              >
+                <img
+                  src="/img/PHOEURN SOLYTA.jpg"
+                  alt="ភឿន សូលីតា"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    ភឿន សូលីតា
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+              >
+                <img
+                  src="/img/THOEUN SOPHEAK.jpg"
+                  alt="ធឿន សុភ័ក្តិ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    ធឿន សុភ័ក្តិ
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+              >
+                <img
+                  src="/img/YOUT KONGHOUR.jpg"
+                  alt="យ៉ត គង្គហួរ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    យ៉ត គង្គហួរ
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+              >
+                <img
+                  src="/img/CHHI ROTHA.jpg"
+                  alt="អៀត សម្បត្តិ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    អៀត សម្បត្តិ
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+              >
+                <img
+                  src="/img/SAVUTH DAVIN.jpg"
+                  alt="អៀត សម្បត្តិ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    អៀត សម្បត្តិ
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+              >
+                <img
+                  src="/img/KEO CHING CHOU.png"
+                  alt="អៀត សម្បត្តិ"
+                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
+                />
+                <div>
+                  <h3
+                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
+                  >
+                    អៀត សម្បត្តិ
+                  </h3>
+                  <p class="text-md text-secondary">សមាជិក</p>
+                  <div
+                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
+                  >
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-telegram"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Contact Form -->
+      <section
+        class="p- container mx-auto px-4"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="w-full my-6 p-6 mx-auto bg-white shadow-xl rounded-2xl">
+          <h3
+            class="text-2xl font-semibold text-primary dark:text-dark-primary mb-4"
+          >
+            តើលោកអ្នកមានចម្ងល់ឬសំណួរអ្វីមែនទេ?
+          </h3>
+          <p class="text-gray-700 font-light mb-6">
+            ប្រសិនជាមានចម្ងល់ ឬសំណួរទៅកាន់យើង សូមសរសេរមកខាងក្រោម
+            និងបំពេញអុីម៉ែល។
+          </p>
+          <textarea
+            placeholder="សរសេរចម្ងល់របស់អ្នក..."
+            class="w-full p-4 border rounded-lg mb-6 font-light resize-none"
+            rows="5"
+          ></textarea>
+
+          <form>
+            <label
+              for="search"
+              class="text-md font-medium text-gray-900 sr-only dark:text-white"
+              >Search</label
+            >
+            <div class="relative">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+              ></div>
+              <input
+                type="search"
+                id="search"
+                class="block w-full p-4 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary"
+                placeholder="Email "
+                required
+              />
+              <button
+                type="submit"
+                class="text-white absolute end-2.5 bottom-2.5 bg-primary hover:bg-green-800 focus:ring-1 focus:ring-green-800 font-medium rounded-lg text-md px-6 py-2"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-white mt-10 py-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
+      >
+        <div class="flex justify-center md:justify-start gap-4">
+          <img
+            src="../img/footer.PNG"
+            alt="Logo 1"
+            class="w-32 h-32 object-contain"
+          />
+          <img
+            src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
+            alt="Logo 2"
+            class="w-27 h-27 object-contain mt-3"
+          />
+        </div>
+
+        <div
+          class="flex flex-col max-lg:mt-3 items-center md:items-start gap-5"
+        >
+          <h4 class="text-primary font-semibold text-lg">បណ្តាញសង្គម</h4>
+          <div class="flex gap-4 text-primary">
+            <!-- Facebook -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-facebook-f text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- TikTok -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-tiktok text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- YouTube -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-youtube text-3xl text-primary"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg">តំណភ្ជាប់រហ័ស</h4>
+          <a href="index.html" class="hover:text-green-600 transition"
+            >ទំព័រដើម</a
+          >
+          <a href="/html/about.html" class="hover:text-green-600 transition"
+            >អំពីពួកយើង</a
+          >
+          <a
+            href="/html/destination.html"
+            class="hover:text-green-600 transition"
+            >គោលដៅ</a
+          >
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg max-sm:text-center">
+            ឧបត្ថម្ភដោយ
+          </h4>
+          <p>
+            Institute of Science and Technology Advanced Development (ISTAD)
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 500, once: true });
+  </script>
+  <script src="../js/script.js"></script>
+</html>
