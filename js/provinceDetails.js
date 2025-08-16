@@ -9,9 +9,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const categoryName = urlParams.get("category");
 
 // 2. Set page title
-pageTitle.textContent = categoryName
-  ? ``
-  : "គ្មានប្រភេទត្រូវបានជ្រើសរើស";
+pageTitle.textContent = categoryName ? `` : "គ្មានប្រភេទត្រូវបានជ្រើសរើស";
 
 async function fetchAllDetails() {
   try {
@@ -29,7 +27,7 @@ async function fetchAllDetails() {
       .filter((place) => categoryName.includes(place.category.name))
       .map((place) => {
         // get data with siem reap category
-        if (place.category.name === "Siem reap") {
+        if (place.category.name === "Siem Reap") {
           return ` <a 
  id="${place.name}"
  href="./ParamDetail.html?id=${place.id}"
