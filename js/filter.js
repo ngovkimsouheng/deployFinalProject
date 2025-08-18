@@ -46,6 +46,7 @@ function renderPlaces(places, isInitial = false) {
   if (places.length === 0) {
     popularPlacesCategories.innerHTML = `
       <div class="flex justify-center">
+        <img src="../img/cannotfind.gif" alt="place not found">
         <p class="text-center ">
           រកមិនឃើញទេ
         </p>
@@ -72,14 +73,14 @@ function renderPlaces(places, isInitial = false) {
         <a href="./ParamDetail.html?placeUuid=${data.uuid}" 
            class="block bg-white rounded-lg shadow  overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
           <div class="relative h-64 w-full">
-            <img src="${data.imageUrls[0]}" 
+            <img src="${data.imageUrls[1]}" 
                  alt="${data.name}" 
                  class="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div class="p-4">
             <div class="flex justify-between items-center">
               <h3 class="text-primary text-[22px] font-primary font-semibold">${data.name}</h3>
-              <i class="fa-regular fa-heart text-xl text-gray-900"></i>
+        
             </div>
             <p class="text-gray-600 text-[17px] line-clamp-2 mt-2">${data.description}</p>
           </div>

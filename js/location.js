@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const locationDetail = document.querySelector('#location');
 
     if (!place) {
-      locationDetail.innerHTML = '<h2>Place not found</h2>';
+      locationDetail.innerHTML = '<h2 class=""></h2>';
       return;
     }
 

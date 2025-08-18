@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambodian Cultural Festivals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5ce14b4205.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A4536',
+                        secondary: '#FF914D',
+                        accent: '#565452',
+                        background: '#f8f5f0',
+                    },
+                    fontFamily: {
+                        primary: ['"Khmer OS Battambang"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Battambang', sans-serif;
+            background-color: #f8f5f0;
+        }
+        
+        .festival-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #0A4536 0%, #127458 100%);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg) translate(15px, -15px);
+        }
+        
+        .khmer-number {
+            font-family: 'Battambang', sans-serif;
+            font-weight: 700;
+        }
+        
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #FF914D;
+        }
+    </style>
+</head>
+<body class="bg-background text-accent">
+    <!-- Cultural Festivals Section -->
+    <section class="relative py-16 md:py-24 overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="decorative-circle w-64 h-64 bg-secondary/10 top-20 left-10" 
+             data-aos="zoom-in" data-aos-delay="300"></div>
+        <div class="decorative-circle w-40 h-40 bg-primary/10 bottom-1/4 right-10" 
+             data-aos="zoom-in" data-aos-delay="500"></div>
+        <div class="decorative-circle w-32 h-32 bg-accent/10 top-1/3 right-1/4" 
+             data-aos="zoom-in" data-aos-delay="700"></div>
+        
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16 relative z-10">
+                <div class="absolute -top-20 left-1/2 transform -translate-x-1/2 text-[10rem] md:text-[14rem] 
+                            font-bold text-primary/5 opacity-80" 
+                     data-aos="fade-down">
+                    <span class="khmer-number">៣</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6" 
+                    data-aos="fade-up">
+                    បុណ្យប្រពៃណីនៅកម្ពុជា
+                </h2>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-accent" 
+                   data-aos="fade-up" data-aos-delay="200">
+                    សូមជ្រាបពីប្រពៃណីវប្បធម៌ដ៏រុងរឿងរបស់ខ្មែរ តាមរយៈបុណ្យប្រពៃណីសំខាន់ៗដែលបង្ហាញពីភាពអស្ចារ្យនៃសម្បត្តិវប្បធម៌ជាតិ។
+                </p>
+            </div>
+            
+            <!-- Festival Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Festival 1 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីបុណ្យចូលឆ្នាំខ្មែរ</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">មេសា ១៣-១៦</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            បុណ្យដ៏ធំបំផុតក្នុងឆ្នាំ ដែលគេប្រារព្ធអស់រយៈពេលបីថ្ងៃ។ ប្រជាជនខ្មែរនិយមទៅវត្តអារាធ្វើបុណ្យ លេងល្បែងប្រជាប្រិយ និងជួបជុំគ្រួសារ។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>ទៅវត្តអារាធ្វើបុណ្យ</li>
+                            <li>លេងល្បែងប្រជាប្រិយ</li>
+                            <li>សំណាក់ទឹកដី</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">ពីរោះព្រំ</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 2 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីបុណ្យភ្ជុំបិណ្ឌ</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">កញ្ញា-តុលា</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            បុណ្យដែលគេនាំគ្នារៀបចំចង្ហាន់បូជាដល់អ្នកស្លាប់ ដែលមានរយៈពេល១៥ថ្ងៃ។ ក្នុងឱកាសនេះ ពុទ្ធបរិស័ទទៅវត្តធ្វើបុណ្យរាល់ថ្ងៃ។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>បូជាដល់បុព្វការីជន</li>
+                            <li>ចូលវស្សា</li>
+                            <li>ភ្ជុំបិណ្ឌ</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">ខេត្តតាកែវ</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 3 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីបុណ្យអុំទូក</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">វិច្ឆិកា</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            បុណ្យជាតិធំមួយដែលប្រារព្ធធ្វើឡើងរាល់ឆ្នាំនៅទន្លេមេគង្គ។ មានការប្រកួតទូករាងរាងពងត្រី និងការកំសាន្តផ្សេងៗ។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>ប្រកួតទូក</li>
+                            <li>ព្រះច័ន្ទឡើងរះ</li>
+                            <li>ព្រះរាជពិធី</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">ទីក្រុងភ្នំពេញ</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 4 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីច្រត់ព្រះនង្គ័ល</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">ឧសភា</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            ពិធីបុរាណដែលព្រះមហាក្សត្រទ្រង់ធ្វើដំណើរទៅច្រត់ព្រះនង្គ័ល ដើម្បីទាយទស្សន៍ពីរដូវកាលដំណាំ។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>ព្រះរាជពិធី</li>
+                            <li>ទាយទស្សន៍ដំណាំ</li>
+                            <li>ប្រពៃណីដីស្រែ</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">ព្រះបរមរាជវាំង</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 5 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីបុណ្យកឋិនទាន</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">តុលា-វិច្ឆិកា</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            បុណ្យដែលពុទ្ធបរិស័ទនាំគ្នារៀបចំអាវាសដ៏ប្រណិត និងវត្ថុផ្សេងៗទៅថ្វាយដល់ព្រះសង្ឃក្នុងវស្សា។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>ថ្វាយអាវាសដល់ព្រះសង្ឃ</li>
+                            <li>ចូលរួមពីប្រជាជនគ្រប់វណ្ណៈ</li>
+                            <li>រៀបចំដោយពិធីចម្រុះ</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">ទូទាំងប្រទេស</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 6 -->
+                <div class="festival-card" 
+                     data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-header">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl md:text-2xl font-bold">ពិធីបុណ្យភ្ផុំបិណ្ឌ</h3>
+                            <span class="bg-secondary px-3 py-1 rounded-full text-sm font-bold">កញ្ញា-តុលា</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="text-accent mb-4">
+                            ពិធីបុណ្យដែលរំលឹកដល់ញាតិសន្ដានដែលបានទទួលមរណភាព ដោយធ្វើទានដល់ព្រះសង្ឃ។
+                        </p>
+                        <ul class="feature-list mb-4">
+                            <li>ធ្វើបុណ្យឧទ្ទិសដល់អ្នកស្លាប់</li>
+                            <li>ចំរើនបុណ្យជូនខ្លួនឯង</li>
+                            <li>ប្រមូលផលបុណ្យដ៏ច្រើន</li>
+                        </ul>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-primary font-medium">វត្តអារាម</span>
+                            <a href="#" class="text-primary font-bold hover:text-secondary transition">
+                                ស្វែងយល់បន្ថែម
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View More Button -->
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+                <a href="#" class="inline-block bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-secondary transition shadow-lg hover:shadow-xl">
+                    មើលបុណ្យប្រពៃណីផ្សេងៗទៀត
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-quart'
+        });
+    </script>
+</body>
+</html>

@@ -107,7 +107,7 @@
             data-aos="fade-up"
             src="./destination.html"
             class="animate-slide-up text-white mt-12 px-8 py-3 lg:mt-[55px] font-semibold bg-none rounded-md ring-1 ring-white hover:bg-primary hover:text-white shadow-[1px_1px_15px] shadow-gray-300"
-            data-aos="fade-up"
+            data-aos="zoom-out"
             data-aos-delay="600"
           >
             ដំណើរកម្សាន្ត
@@ -150,6 +150,8 @@
           <!-- Background Decorative Text -->
           <div class="absolute inset-0 flex p-4 opacity-8 pointer-events-none">
             <span
+              data-aos="fade-left"
+              data-aos-delay="700"
               class="text-8xl max-sm:text-center font-bold text-teal-400 whitespace-nowrap"
             >
               ផ្សងព្រេង
@@ -161,7 +163,7 @@
             <div
               data-aos="zoom-in"
               data-aos-delay="200"
-              class="absolute top-20 left-180 w-24 h-24 max-lg:top-80 max sm:left-170 max-sm:top-0 bg-teal-300 rounded-[10px] opacity-80"
+              class="absolute top-20 left-180 w-22 h-22 max-lg:top-80 max sm:left-170 max-sm:top-0 bg-teal-300 rounded-[10px] opacity-80"
             ></div>
             <div
               data-aos="zoom-in"
@@ -172,6 +174,11 @@
               data-aos="zoom-in"
               data-aos-delay="600"
               class="absolute top-40 right-40 w-20 h-20 max-lg:right-190 max-lg:top-110 bg-orange-300 rounded-[10px] opacity-90"
+            ></div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="800"
+              class="absolute top-7 right-8 max-sm:hidden max-sm:-top-10 max-sm:right-0 bg-orange-300 sm:right-5 w-24 h-24 rounded-[10px] overflow-hidden shadow-lg"
             ></div>
           </div>
 
@@ -195,7 +202,7 @@
                 ភាពស្រស់ស្អាត និងវប្បធម៌ដ៏សម្បូរបែប
               </p>
 
-              <div class="sm:mt-8 flex justify-center lg:justify-start">
+              <!-- <div class="sm:mt-8 flex justify-center lg:justify-start">
                 <a
                   href="/index.html"
                   class="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium tracking-tighter text-white bg-primary rounded-lg group hover:bg-teal-600 transition-all duration-300"
@@ -205,7 +212,7 @@
                   ></span>
                   <span class="relative z-10">ទំព័រដើម</span>
                 </a>
-              </div>
+              </div> -->
             </div>
 
             <!-- Images -->
@@ -224,7 +231,7 @@
               <div
                 data-aos="zoom-in"
                 data-aos-delay="500"
-                class="absolute -top-4 max-sm:-top-10 max-sm:right-0 sm:right-20 w-24 h-24 rounded-[10px] overflow-hidden shadow-lg"
+                class="absolute -top-4 left-94 max-sm:-top-10 max-sm:right-0 sm:right-5 w-24 h-24 rounded-[10px] overflow-hidden shadow-lg"
               >
                 <img
                   src="../image/8.jpg"
@@ -235,7 +242,7 @@
               <div
                 data-aos="zoom-in"
                 data-aos-delay="700"
-                class="absolute max-lg:-left-0 max-sm:left-0 bottom-8 max-sm:top-45 max-sm:right-180 -left-8 w-32 h-32 rounded-[10px] overflow-hidden shadow-lg"
+                class="absolute max-lg:-left-0 max-sm:left-0 bottom-8 max-sm:top-30 max-sm:right-180 -left-8 w-32 h-32 rounded-[10px] overflow-hidden shadow-lg"
               >
                 <img
                   src="../image/9.jpg"
@@ -246,11 +253,134 @@
             </div>
           </div>
         </div>
+      </section>
+      <section>
+        <!-- autoslide -->
+        <div class="sm:mt-8 max-sm:mt-3">
+          <div
+            class="max-w-7xl mx-auto sm:px-6 lg:px-4 space-y-6 overflow-hidden font-sans"
+          >
+            <!-- Top Row -->
+            <div class="relative overflow-hidden group">
+              <div
+                class="flex w-max animate-scroll-left group-hover:[animation-play-state:paused] gap-4"
+              >
+                <template id="top-images">
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../images/Angkor_wat.webp"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 0 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../images/bakheng.jpg"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../images/pub street.webp"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../images/museum.avif"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../images/siem-reap-city.webp"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../image/17​.jpg"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../image/19.jpg"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                  <div
+                    class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  >
+                    <img
+                      src="../image/12.jpg"
+                      class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
+                    />
+                    <div
+                      class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
+                    >
+                      <span class="text-white text-lg font-semibold"></span>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+            <!-- Lightbox Modal -->
+          </div>
+        </div>
         <div
           class="container max-sm:pt-4 px-4 mx-auto rounded-[10px] flex flex-col"
         >
           <h2
-            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-10 max-md:mt-5"
           >
             <span
               class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
@@ -258,8 +388,7 @@
             >
             តំបន់ទេសចរណ៍តាមខេត្តនៅកម្ពុជា
           </h2>
-
-          <p class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent">
+          <p class="text-[17px] md:pt-6 max-md:py-5 md:text-[20px] text-accent">
             កម្ពុជាជាប្រទេសមួយដែលសម្បូរទៅដោយតំបន់ទេសចរណ៍គ្រប់ប្រភេទ។
             មិនថាជាកន្លែងប្រវត្តិសាស្ត្រ ព្រៃភ្នំ ព្រះសមុទ្រ និងកោះ
             ឬកន្លែង​​​កម្សាន្តផ្សេងៗទៀតទេ
@@ -268,127 +397,6 @@
             ដែលអ្នកអាចស្វែងរកនិងទស្សនា ដើម្បីស្គាល់អំពីភាពស្រស់ស្អាត
             និងវប្បធម៌ដ៏សម្បូរបែបរបស់ប្រទេសកម្ពុជា។
           </p>
-        </div>
-      </section>
-
-      <section class="sm:mt-8 max-sm:mt-3">
-        <div
-          class="max-w-7xl mx-auto sm:px-6 lg:px-4 space-y-6 overflow-hidden font-sans"
-        >
-          <!-- Top Row -->
-          <div class="relative overflow-hidden group">
-            <div
-              class="flex w-max animate-scroll-left group-hover:[animation-play-state:paused] gap-4"
-            >
-              <template id="top-images">
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../images/Angkor_wat.webp"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 0 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../images/bakheng.jpg"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../images/pub street.webp"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../images/museum.avif"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../images/siem-reap-city.webp"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../image/17​.jpg"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../image/19.jpg"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-                <div
-                  class="relative group/card hover:scale-105 transition-transform duration-500 cursor-pointer"
-                >
-                  <img
-                    src="../image/12.jpg"
-                    class="w-64 h-48 object-cover rounded-[10px] shadow-lg"
-                  />
-                  <div
-                    class="absolute inset-0 bg-opacity-30 rounded-[10px] opacity-0 group-hover/card:opacity-100 transition duration-300 flex items-center justify-center"
-                  >
-                    <span class="text-white text-lg font-semibold"></span>
-                  </div>
-                </div>
-              </template>
-            </div>
-          </div>
-          <!-- Lightbox Modal -->
         </div>
       </section>
       <section class="lg:container lg:mx-auto px-4">

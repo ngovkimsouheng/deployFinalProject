@@ -5,6 +5,7 @@ const base_url = "https://tos-der.sokpheng.com/api/v1/categories";
 
 const targetCategoryNames = ["Siem reap", "Phnom Penh", "Kom pot", "Kep"];
 
+// section2
 async function fetchProvinceCategories() {
   try {
     const res = await fetch(base_url);
@@ -42,7 +43,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">សៀមរាប</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl">សៀមរាប</h3>
         </div>
       </a>
 
@@ -97,3 +98,65 @@ async function fetchProvinceCategories() {
 }
 
 fetchProvinceCategories();
+
+// section4
+const base_url1 = "https://tos-der.sokpheng.com/api/v1/places";
+const PlaceSuggestions = document.getElementById("place_Suggestion");
+const targetPlaceInProvinceName = [
+  "ប្រាសាទអង្គរវត្ត",
+  "ឆ្នេរកែប",
+  "ដូងទេរ",
+  "ប្រាសាទភ្នំបាណន់",
+];
+
+async function PlaceSuggestionsList() {
+  try {
+    const res = await fetch(base_url1);
+    const data = await res.json();
+
+    if (!Array.isArray(data)) {
+      console.error("Unexpected data format:", data);
+      return;
+    }
+
+    // Filter
+    const filteredPlaces = data.filter((place) =>
+      targetPlaceInProvinceName.some(
+        (name) => name.toLowerCase() === place.name.toLowerCase()
+      )
+    );
+
+    console.log("Filtered places:", filteredPlaces);
+
+    PlaceSuggestions.innerHTML = filteredPlaces
+      .map(
+        (place) => `
+        <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <a href="../html/ParamDetail.html?uuid=${place.uuid}" >
+          <div class="bg-green-800 p-4 flex justify-between items-center">
+            <h3 class="text-white font-bold">${place.name}</h3>
+            <span
+              class="bg-orange-500 text-white text-sm px-3 py-1 rounded-full"
+              >${place.category.name}</span
+            >
+          </div>
+          <div class="p-6 text-gray-700">
+            <p class="mb-4">${place.description.slice(0, 116)}...</p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>${place.openHours}</li>
+              <li>${place.entryFee}</li>
+      
+            </ul>
+         <a class="text-teal-700 float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
+          </div>
+          </a>
+      </div>
+      `
+      )
+      .join("");
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+PlaceSuggestionsList();

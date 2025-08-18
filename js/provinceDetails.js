@@ -30,7 +30,7 @@ async function fetchAllDetails() {
         if (place.category.name === "Siem Reap") {
           return ` <a 
  id="${place.name}"
- href="./ParamDetail.html?id=${place.id}"
+ href="./ParamDetail.html?uuid=${place.uuid}"
   class="block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
 >
   <div class="relative h-64 w-full">
@@ -55,7 +55,7 @@ async function fetchAllDetails() {
         } else if (place.category.name === "Phnom Penh") {
           return ` <a 
  id="${place.name}"
- href="./ParamDetail.html?id=${place.id}"
+ href="./ParamDetail.html?uuid=${place.uuid}"
   class="block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
 >
   <div class="relative h-64 w-full">
@@ -80,7 +80,7 @@ async function fetchAllDetails() {
         } else if (place.category.name === "Kep") {
           return ` <a 
  id="${place.name}"
- href="./ParamDetail.html?id=${place.id}"
+ href="./ParamDetail.html?uuid=${place.uuid}"
   class="block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
 >
   <div class="relative h-64 w-full">
@@ -105,7 +105,7 @@ async function fetchAllDetails() {
         } else if (place.category.name === "Kom pot") {
           return ` <a 
  id="${place.name}"
- href="./ParamDetail.html?id=${place.id}"
+ href="./ParamDetail.html?uuid=${place.uuid}"
   class="block bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
 >
   <div class="relative h-64 w-full">
