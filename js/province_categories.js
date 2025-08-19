@@ -63,7 +63,7 @@ async function fetchProvinceCategories() {
       </a>
 
       <a
-        data-aos="fade-up"
+        data-aos="fade-right"
          
         href="../html/provinceDetails.html?category=${filteredCategories[2].name}"
         class="relative overflow-hidden rounded-[10px] shadow-lg group"
@@ -78,7 +78,7 @@ async function fetchProvinceCategories() {
       </a>
 
       <a
-       data-aos="fade-up"
+       data-aos="fade-left"
           
         href="../html/provinceDetails.html?category=${filteredCategories[3].name}"
         class="relative overflow-hidden rounded-[10px] shadow-lg group"
@@ -131,23 +131,23 @@ async function PlaceSuggestionsList() {
     PlaceSuggestions.innerHTML = filteredPlaces
       .map(
         (place) => `
-        <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-xl shadow-lg overflow-hidden">
-          <a href="../html/ParamDetail.html?uuid=${place.uuid}" >
-          <div class="bg-green-800 p-4 flex justify-between items-center">
-            <h3 class="text-white font-bold">${place.name}</h3>
+        <div data-aos="fade-right" data-aos-delay="200" class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <a href="../html/ParamDetail.html?placeUuid=${place.uuid}" >
+          <div class="bg-teal-900 px-6 py-3  flex justify-between items-center">
+            <h3 class="text-white text-[24px] font-bold">${place.name}</h3>
             <span
-              class="bg-orange-500 text-white text-sm px-3 py-1 rounded-full"
-              >${place.category.name}</span
+              class=" text-white text-sm px-3 py-1 rounded-[10px]"
+              ></span
             >
           </div>
-          <div class="p-6 text-gray-700">
-            <p class="mb-4">${place.description.slice(0, 116)}...</p>
-            <ul class="list-disc pl-6 space-y-1">
+          <div  class="p-4 text-accent text-[18px]">
+            <p class="line-clamp-3">${place.description}...</p>
+            <ul class="list-disc pt-6 pl-6 space-y-1">
               <li>${place.openHours}</li>
               <li>${place.entryFee}</li>
       
             </ul>
-         <a class="text-teal-700 float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
+            <a class="text-teal-700 float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
           </div>
           </a>
       </div>

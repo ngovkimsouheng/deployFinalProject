@@ -67,4 +67,11 @@
 .animate-scroll-left {
     animation: scroll-left 20s linear infinite;
 }
+.animate-scroll-left:hover {
+    animation-play-state: paused;
+    /* stop scrolling */
+    transform: scale(1.05);
+    /* zoom effect */
+    transition-delay: 500ms
+}
 
