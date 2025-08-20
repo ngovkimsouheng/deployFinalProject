@@ -9,8 +9,10 @@
     --color-background: #F8F3E9;
     --font-primary: "Kantumruy Pro", sans-serif;
     /* --font-Secondary: "Kantumruy Pro", sans-serif; */
-    --color-dark-primary: darkblue;
-    --color-dark-secondary:#CC2302;
+    --color-dark_background: #000235;
+    --color-dark-primary: #3E3E78;
+    --color-dark-secondary: #AAD9D9;
+    --color-dark-light-primary: #5858A7;
 
 }
 
@@ -67,6 +69,7 @@
 .animate-scroll-left {
     animation: scroll-left 20s linear infinite;
 }
+
 .animate-scroll-left:hover {
     animation-play-state: paused;
     /* stop scrolling */
@@ -75,3 +78,4 @@
     transition-delay: 500ms
 }
 
+@custom-variant dark (&:where(.dark, .dark *));

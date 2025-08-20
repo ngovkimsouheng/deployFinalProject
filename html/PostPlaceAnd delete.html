@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Creator with Image Upload</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              spin: "spin 1s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-600 p-5"
+  >
+    <div
+      class="max-w-4xl mx-auto bg-white/95 backdrop-blur-lg rounded-3xl p-10 shadow-2xl"
+    >
+      <h1
+        class="text-center text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent"
+      >
+        🏞️ Place Creator
+      </h1>
+
+      <!-- Action Toggle -->
+      <div class="mb-8 flex justify-center">
+        <div class="bg-gray-100 p-1 rounded-full inline-flex">
+          <button
+            type="button"
+            id="createModeBtn"
+            class="px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-indigo-500 text-white shadow-md"
+          >
+            ➕ Create Place
+          </button>
+          <button
+            type="button"
+            id="deleteModeBtn"
+            class="px-6 py-2 rounded-full font-semibold transition-all duration-300 text-gray-600 hover:text-gray-800"
+          >
+            🗑️ Delete Place
+          </button>
+        </div>
+      </div>
+
+      <!-- Create Form -->
+      <form id="placeForm" class="space-y-6">
+        <div class="space-y-2">
+          <label for="name" class="block text-gray-700 font-semibold text-lg"
+            >Place Name *</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង"
+            required
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="description"
+            class="block text-gray-700 font-semibold text-lg"
+            >Description *</label
+          >
+          <textarea
+            id="description"
+            name="description"
+            required
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base resize-y min-h-[120px] transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          >
+ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។</textarea
+          >
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="openHours"
+            class="block text-gray-700 font-semibold text-lg"
+            >Opening Hours</label
+          >
+          <input
+            type="text"
+            id="openHours"
+            name="openHours"
+            value="Open 24h"
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="entryFee"
+            class="block text-gray-700 font-semibold text-lg"
+            >Entry Fee ($)</label
+          >
+          <input
+            type="number"
+            id="entryFee"
+            name="entryFee"
+            value="0.00"
+            step="0.01"
+            min="0"
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="location"
+            class="block text-gray-700 font-semibold text-lg"
+            >Location (lat,lng)</label
+          >
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value="10.7131,103.2343"
+            placeholder="10.7131,103.2343"
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-2">
+            <label
+              for="latitude"
+              class="block text-gray-700 font-semibold text-lg"
+              >Latitude</label
+            >
+            <input
+              type="text"
+              id="latitude"
+              name="latitude"
+              value="00.00"
+              class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label
+              for="longitude"
+              class="block text-gray-700 font-semibold text-lg"
+              >Longitude</label
+            >
+            <input
+              type="text"
+              id="longitude"
+              name="longitude"
+              value="00.00"
+              class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+            />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label
+            for="categoryName"
+            class="block text-gray-700 font-semibold text-lg"
+            >Category</label
+          >
+          <select
+            id="categoryName"
+            name="categoryName"
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-indigo-500 focus:shadow-lg focus:shadow-indigo-200/50 hover:-translate-y-0.5"
+          >
+            <option value="Phnom Penh">ភ្នំពេញ</option>
+            <option value="Siem Reap">សៀមរាប</option>
+            <option value="Kom pot">កំពត</option>
+            <option value="Kep">កែប</option>
+            <option value="Battambong">បាត់ដំបង</option>
+            <option value="Sihanoukville">ព្រះសីហនុ</option>
+            <option value="Koh kong">កោះកុង</option>
+          </select>
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-gray-700 font-semibold text-lg"
+            >Images</label
+          >
+          <div class="file-upload relative overflow-hidden w-full">
+            <input
+              type="file"
+              id="images"
+              accept="image/*"
+              multiple
+              class="absolute left-[-9999px]"
+            />
+            <label
+              for="images"
+              class="cursor-pointer block p-8 border-3 border-dashed border-indigo-500 rounded-xl text-center bg-indigo-50/50 transition-all duration-300 hover:bg-indigo-100/70 hover:border-purple-600"
+            >
+              <div class="text-4xl mb-4">📁</div>
+              <span class="text-lg font-medium text-gray-700"
+                >Click to select images or drag and drop</span
+              >
+              <div class="text-sm text-gray-500 mt-2">
+                Support multiple image files (JPG, PNG, GIF)
+              </div>
+            </label>
+          </div>
+
+          <div
+            id="imagePreview"
+            class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          ></div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white py-4 px-8 rounded-full text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/40 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+          id="submitBtn"
+        >
+          🚀 Create Place
+        </button>
+      </form>
+
+      <!-- Delete Form -->
+      <div id="deleteForm" class="space-y-6 hidden">
+        <div class="space-y-2">
+          <label class="block text-gray-700 font-semibold text-lg"
+            >Search Places</label
+          >
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search places by name..."
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-red-500 focus:shadow-lg focus:shadow-red-200/50 hover:-translate-y-0.5"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-gray-700 font-semibold text-lg"
+            >Select Place to Delete</label
+          >
+          <select
+            id="placeSelect"
+            class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl text-base transition-all duration-300 focus:outline-none focus:border-red-500 focus:shadow-lg focus:shadow-red-200/50 hover:-translate-y-0.5"
+          >
+            <option value="">Loading places...</option>
+          </select>
+        </div>
+
+        <div id="placeDetails" class="bg-gray-50 p-6 rounded-xl hidden">
+          <h3 class="font-bold text-lg mb-4 text-gray-800">Place Details</h3>
+          <div id="placeInfo" class="space-y-2 text-gray-600"></div>
+          <div
+            id="placeImages"
+            class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          ></div>
+        </div>
+
+        <button
+          type="button"
+          id="deleteBtn"
+          disabled
+          class="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 px-8 rounded-full text-lg font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-red-500/40 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+        >
+          🗑️ Delete Selected Place
+        </button>
+      </div>
+
+      <div id="status" class="mt-6 p-4 rounded-xl font-medium hidden"></div>
+    </div>
+
+    <script>
+      const API_BASE = "https://tos-der.sokpheng.com/api/v1";
+      let selectedFiles = [];
+      let allPlaces = [];
+      let isCreateMode = true;
+
+      const imageInput = document.getElementById("images");
+      const imagePreview = document.getElementById("imagePreview");
+      const form = document.getElementById("placeForm");
+      const deleteForm = document.getElementById("deleteForm");
+      const statusDiv = document.getElementById("status");
+      const submitBtn = document.getElementById("submitBtn");
+      const deleteBtn = document.getElementById("deleteBtn");
+      const createModeBtn = document.getElementById("createModeBtn");
+      const deleteModeBtn = document.getElementById("deleteModeBtn");
+      const searchInput = document.getElementById("searchInput");
+      const placeSelect = document.getElementById("placeSelect");
+      const placeDetails = document.getElementById("placeDetails");
+      const placeInfo = document.getElementById("placeInfo");
+      const placeImages = document.getElementById("placeImages");
+
+      // Mode switching
+      createModeBtn.addEventListener("click", () => switchMode(true));
+      deleteModeBtn.addEventListener("click", () => switchMode(false));
+
+      function switchMode(createMode) {
+        isCreateMode = createMode;
+
+        if (createMode) {
+          // Switch to create mode
+          form.classList.remove("hidden");
+          deleteForm.classList.add("hidden");
+          createModeBtn.className =
+            "px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-indigo-500 text-white shadow-md";
+          deleteModeBtn.className =
+            "px-6 py-2 rounded-full font-semibold transition-all duration-300 text-gray-600 hover:text-gray-800";
+          statusDiv.classList.add("hidden");
+        } else {
+          // Switch to delete mode
+          form.classList.add("hidden");
+          deleteForm.classList.remove("hidden");
+          createModeBtn.className =
+            "px-6 py-2 rounded-full font-semibold transition-all duration-300 text-gray-600 hover:text-gray-800";
+          deleteModeBtn.className =
+            "px-6 py-2 rounded-full font-semibold transition-all duration-300 bg-red-500 text-white shadow-md";
+          statusDiv.classList.add("hidden");
+          loadPlaces();
+        }
+      }
+
+      // Load all places for deletion
+      async function loadPlaces() {
+        try {
+          showStatus(
+            '<div class="inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin mr-2"></div>Loading places...',
+            "loading"
+          );
+
+          const response = await fetch(`${API_BASE}/places`);
+          if (!response.ok) {
+            throw new Error(`Failed to load places: ${response.status}`);
+          }
+
+          const result = await response.json();
+          allPlaces = Array.isArray(result)
+            ? result
+            : result.data || result.places || [];
+
+          populatePlaceSelect();
+          statusDiv.classList.add("hidden");
+        } catch (error) {
+          console.error("Failed to load places:", error);
+          showStatus(`❌ Error loading places: ${error.message}`, "error");
+          placeSelect.innerHTML =
+            '<option value="">Failed to load places</option>';
+        }
+      }
+
+      function populatePlaceSelect(filteredPlaces = null) {
+        const places = filteredPlaces || allPlaces;
+        placeSelect.innerHTML =
+          '<option value="">Select a place to delete...</option>';
+
+        places.forEach((place) => {
+          const option = document.createElement("option");
+          option.value = place.id || place._id;
+          option.textContent = `${place.name} - ${
+            place.categoryName || "Unknown"
+          }`;
+          placeSelect.appendChild(option);
+        });
+      }
+
+      // Search functionality
+      searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        if (searchTerm) {
+          const filteredPlaces = allPlaces.filter(
+            (place) =>
+              place.name.toLowerCase().includes(searchTerm) ||
+              (place.description &&
+                place.description.toLowerCase().includes(searchTerm)) ||
+              (place.categoryName &&
+                place.categoryName.toLowerCase().includes(searchTerm))
+          );
+          populatePlaceSelect(filteredPlaces);
+        } else {
+          populatePlaceSelect();
+        }
+        placeDetails.classList.add("hidden");
+        deleteBtn.disabled = true;
+      });
+
+      // Place selection
+      placeSelect.addEventListener("change", (e) => {
+        const selectedId = e.target.value;
+        if (selectedId) {
+          const selectedPlace = allPlaces.find(
+            (place) => (place.id || place._id) == selectedId
+          );
+          if (selectedPlace) {
+            showPlaceDetails(selectedPlace);
+            deleteBtn.disabled = false;
+          }
+        } else {
+          placeDetails.classList.add("hidden");
+          deleteBtn.disabled = true;
+        }
+      });
+
+      function showPlaceDetails(place) {
+        placeInfo.innerHTML = `
+          <div><strong>Name:</strong> ${place.name}</div>
+          <div><strong>Description:</strong> ${place.description || "N/A"}</div>
+          <div><strong>Category:</strong> ${place.categoryName || "N/A"}</div>
+          <div><strong>Opening Hours:</strong> ${place.openHours || "N/A"}</div>
+          <div><strong>Entry Fee:</strong> ${place.entryFee || "0.00"}</div>
+          <div><strong>Location:</strong> ${place.location || "N/A"}</div>
+          <div><strong>Coordinates:</strong> ${place.latitude || "N/A"}, ${
+          place.longitude || "N/A"
+        }</div>
+        `;
+
+        // Show images if available
+        placeImages.innerHTML = "";
+        if (place.imageUrls && place.imageUrls.length > 0) {
+          place.imageUrls.forEach((imageUrl, index) => {
+            const imgDiv = document.createElement("div");
+            imgDiv.className =
+              "relative rounded-xl overflow-hidden aspect-square shadow-lg";
+            imgDiv.innerHTML = `<img src="${imageUrl}" alt="Place Image ${
+              index + 1
+            }" class="w-full h-full object-cover" onerror="this.parentElement.style.display='none'">`;
+            placeImages.appendChild(imgDiv);
+          });
+        }
+
+        placeDetails.classList.remove("hidden");
+      }
+
+      // Delete functionality
+      deleteBtn.addEventListener("click", async () => {
+        const selectedId = placeSelect.value;
+        if (!selectedId) return;
+
+        const selectedPlace = allPlaces.find(
+          (place) => (place.id || place._id) == selectedId
+        );
+        if (!selectedPlace) return;
+
+        const confirmDelete = confirm(
+          `Are you sure you want to delete "${selectedPlace.name}"? This action cannot be undone.`
+        );
+        if (!confirmDelete) return;
+
+        try {
+          deleteBtn.disabled = true;
+          showStatus(
+            '<div class="inline-block w-5 h-5 border-2 border-gray-300 border-t-red-600 rounded-full animate-spin mr-2"></div>Deleting place...',
+            "loading"
+          );
+
+          const response = await fetch(`${API_BASE}/places/${selectedId}`, {
+            method: "DELETE",
+          });
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(
+              `Delete failed: ${response.status} ${response.statusText} - ${errorText}`
+            );
+          }
+
+          showStatus(
+            `✅ Place "${selectedPlace.name}" deleted successfully!`,
+            "success"
+          );
+
+          // Refresh the places list
+          await loadPlaces();
+          placeDetails.classList.add("hidden");
+          placeSelect.value = "";
+          searchInput.value = "";
+        } catch (error) {
+          console.error("Delete failed:", error);
+          showStatus(`❌ Error deleting place: ${error.message}`, "error");
+        } finally {
+          deleteBtn.disabled = false;
+        }
+      });
+
+      // Handle file selection (CREATE MODE ONLY)
+      imageInput.addEventListener("change", function (e) {
+        if (isCreateMode) {
+          const files = Array.from(e.target.files);
+          selectedFiles = files;
+          displayImagePreviews();
+        }
+      });
+
+      function displayImagePreviews() {
+        imagePreview.innerHTML = "";
+
+        selectedFiles.forEach((file, index) => {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const previewDiv = document.createElement("div");
+            previewDiv.className =
+              "relative rounded-xl overflow-hidden aspect-square shadow-lg";
+            previewDiv.innerHTML = `
+              <img src="${e.target.result}" alt="Preview ${
+              index + 1
+            }" class="w-full h-full object-cover">
+              <button type="button" onclick="removeImage(${index})" class="absolute top-2 right-2 bg-red-500/80 hover:bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold transition-colors">×</button>
+            `;
+            imagePreview.appendChild(previewDiv);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function removeImage(index) {
+        selectedFiles.splice(index, 1);
+        displayImagePreviews();
+      }
+
+      function showStatus(message, type) {
+        statusDiv.innerHTML = message;
+        statusDiv.className = `mt-6 p-4 rounded-xl font-medium ${getStatusClasses(
+          type
+        )}`;
+        statusDiv.classList.remove("hidden");
+      }
+
+      function getStatusClasses(type) {
+        switch (type) {
+          case "success":
+            return "bg-green-100 text-green-800 border border-green-300";
+          case "error":
+            return "bg-red-100 text-red-800 border border-red-300";
+          case "loading":
+            return "bg-blue-100 text-blue-800 border border-blue-300";
+          default:
+            return "bg-gray-100 text-gray-800 border border-gray-300";
+        }
+      }
+
+      async function uploadImages() {
+        if (selectedFiles.length === 0) {
+          return [];
+        }
+
+        const formData = new FormData();
+        selectedFiles.forEach((file) => {
+          formData.append("files", file);
+        });
+
+        try {
+          const response = await fetch(`${API_BASE}/upload/multiple`, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error(
+              `Upload failed: ${response.status} ${response.statusText}`
+            );
+          }
+
+          const result = await response.json();
+          console.log("Upload response:", result);
+
+          // Handle different possible response structures
+          if (result.urls && Array.isArray(result.urls)) {
+            return result.urls;
+          } else if (result.data && Array.isArray(result.data.urls)) {
+            return result.data.urls;
+          } else if (Array.isArray(result)) {
+            return result;
+          } else if (result.files && Array.isArray(result.files)) {
+            return result.files.map((f) => f.url || f.path || f.filename);
+          } else if (result.images && Array.isArray(result.images)) {
+            return result.images.map((img) => img.url || img.path || img);
+          } else {
+            console.warn("Unexpected upload response structure:", result);
+            const possibleUrls = Object.values(result)
+              .flat()
+              .filter(
+                (val) =>
+                  typeof val === "string" &&
+                  val.includes("tos-der.sokpheng.com/images/")
+              );
+            return possibleUrls.length > 0 ? possibleUrls : [];
+          }
+        } catch (error) {
+          console.error("Image upload error:", error);
+          throw new Error(`Image upload failed: ${error.message}`);
+        }
+      }
+
+      async function createPlace(placeData) {
+        try {
+          const response = await fetch(`${API_BASE}/places`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(placeData),
+          });
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(
+              `Place creation failed: ${response.status} ${response.statusText} - ${errorText}`
+            );
+          }
+
+          const result = await response.json();
+          console.log("Place creation response:", result);
+          return result;
+        } catch (error) {
+          console.error("Place creation error:", error);
+          throw error;
+        }
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        if (!isCreateMode) return; // Only handle create mode
+
+        submitBtn.disabled = true;
+        showStatus(
+          '<div class="inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin mr-2"></div>Processing...',
+          "loading"
+        );
+
+        try {
+          // Step 1: Upload images if any
+          let imageUrls = [];
+          if (selectedFiles.length > 0) {
+            showStatus(
+              '<div class="inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin mr-2"></div>Uploading images...',
+              "loading"
+            );
+            imageUrls = await uploadImages();
+            console.log("Uploaded image URLs:", imageUrls);
+          }
+
+          const names = imageUrls.map((developer) => developer.uri);
+          console.log("Uploaded image:", names);
+
+          // Step 2: Prepare place data
+          const formData = new FormData(form);
+          const placeData = {
+            name: formData.get("name"),
+            description: formData.get("description"),
+            openHours: formData.get("openHours"),
+            entryFee: parseFloat(formData.get("entryFee")) || 0.0,
+            imageUrls: names,
+            location: formData.get("location"),
+            latitude: formData.get("latitude"),
+            longitude: formData.get("longitude"),
+            categoryName: formData.get("categoryName"),
+          };
+
+          console.log("Sending place data:", placeData);
+
+          // Step 3: Create place
+          showStatus(
+            '<div class="inline-block w-5 h-5 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin mr-2"></div>Creating place...',
+            "loading"
+          );
+          const result = await createPlace(placeData);
+
+          showStatus(
+            `✅ Place created successfully! ${
+              imageUrls.length > 0
+                ? `Uploaded ${imageUrls.length} image(s).`
+                : "No images uploaded."
+            }`,
+            "success"
+          );
+
+          // Reset form
+          form.reset();
+          selectedFiles = [];
+          imagePreview.innerHTML = "";
+
+          // Restore default values
+          document.getElementById("name").value =
+            "ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង";
+          document.getElementById("description").value =
+            "ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។";
+          document.getElementById("openHours").value = "Open 24h";
+          document.getElementById("entryFee").value = "0.00";
+          document.getElementById("location").value = "10.7131,103.2343";
+          document.getElementById("latitude").value = "00.00";
+          document.getElementById("longitude").value = "00.00";
+          document.getElementById("categoryName").value = "Phnom";
+        } catch (error) {
+          console.error("Operation failed:", error);
+          showStatus(`❌ Error: ${error.message}`, "error");
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Drag and drop functionality (CREATE MODE ONLY)
+      const fileUpload = document.querySelector(".file-upload");
+      const fileLabel = fileUpload.querySelector("label");
+
+      fileUpload.addEventListener("dragover", function (e) {
+        if (!isCreateMode) return;
+        e.preventDefault();
+        fileLabel.classList.remove("bg-indigo-50/50");
+        fileLabel.classList.add("bg-indigo-100/70", "border-purple-600");
+      });
+
+      fileUpload.addEventListener("dragleave", function (e) {
+        if (!isCreateMode) return;
+        e.preventDefault();
+        fileLabel.classList.add("bg-indigo-50/50");
+        fileLabel.classList.remove("bg-indigo-100/70", "border-purple-600");
+      });
+
+      fileUpload.addEventListener("drop", function (e) {
+        if (!isCreateMode) return;
+        e.preventDefault();
+        fileLabel.classList.add("bg-indigo-50/50");
+        fileLabel.classList.remove("bg-indigo-100/70", "border-purple-600");
+
+        const files = Array.from(e.dataTransfer.files).filter((file) =>
+          file.type.startsWith("image/")
+        );
+        if (files.length > 0) {
+          selectedFiles = files;
+          displayImagePreviews();
+        }
+      });
+    </script>
+  </body>
+</html>

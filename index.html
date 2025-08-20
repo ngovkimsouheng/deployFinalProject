@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,24 +12,30 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-
     <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./src/output.css" />
     <script
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"
     ></script>
-    <script>
-      // Enable dark mode via class strategy
-      tailwind.config = {
-        darkMode: "class",
-      };
-    </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- icondark -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
   </head>
 
-  <body class="bg-background dark:bg-white font-primary dark:text-blue-900">
-    <header class="bg-white w-full shadow sticky top-0 z-10">
+  <body class="bg-background dark:text-white  font-primary ">
+    <header class="bg-white  dark:text-white w-full shadow sticky top-0 z-10">
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-3"
       >
@@ -50,7 +56,7 @@
 
         <div
           id="nav-links"
-          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full  lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
         >
           <ul
             class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
@@ -58,17 +64,17 @@
             <li>
               <a
                 href="#"
-                class="text-secondary dark:text-dark-secondary transition-colors"
+                class="text-secondary  dark:text-dark-secondary transition-colors"
                 >ទំព័រដើម</a
               >
             </li>
             <li>
-              <a href="html/about.html" class="text-accent transition-colors"
+              <a href="html/about.html"  class="text-accent   transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="./html/desti.html" class="text-accent transition-colors"
+              <a href="./html/desti.html" class="text-accent  transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -77,7 +83,19 @@
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
+            <!-- <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleTheme()"
+            >
+              Toggle Dark Mode
+            </button> -->
             <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleDarkMode()"
+            >
+              Toggle Dark Mode
+            </button>
+            <!-- <button
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
             >
@@ -87,12 +105,12 @@
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
               ចុះឈ្មោះ
-            </button>
+            </button> -->
           </div>
         </div>
       </nav>
     </header>
-    <main class="font-primary z-0">
+    <main class="font-primary dark:text-white  dark:bg-dark_background z-0">
       <!-- hero section -->
       <section class="relative overflow-hidden">
         <div class="absolute inset-0">
@@ -114,7 +132,7 @@
               data-aos="fade-down"
             >
               <span
-                class="block md:p-[18px] bg-gradient-to-r from-white to-teal-200 text-transparent bg-clip-text"
+                class="block md:p-[18px] dark:bg-gradient-to-r dark:form-white dark:to-blue-200 bg-gradient-to-r from-white to-teal-200 text-transparent bg-clip-text"
               >
                 សូមស្វាគមន៍មកកាន់គេហទំព័រ <br class="mt-4" />ទេសចរណ៍កម្ពុជា
               </span>
@@ -167,12 +185,12 @@
           <p
             data-aos="fade-up"
             data-aos-delay="300"
-            class="text-[17px] text-center md:py-8 max-md:py-5 md:text-[20px] text-accent"
+            class="text-[17px] text-center dark:text-white  md:py-8 max-md:py-5 md:text-[20px] text-accent"
           >
             កម្ពុជាជាប្រទេសមួយដែលសម្បូរទៅដោយតំបន់ទេសចរណ៍ប្លែកៗ គ្រប់ប្រភេទ។
             មិនថាជាកន្លែងប្រវត្តិសាស្ត្រ ព្រៃភ្នំ សមុទ្រ និងកោះ
             ឬកន្លែង​​​កម្សាន្តផ្សេងៗទៀតទេ យើងមានជម្រើសជាច្រើន។
-            តទៅនេះគឺជាកន្លែងទេសចរណ៍ពេញនិយមទាំង ៦ នៅក្នុងប្រទេសកម្ពុជា។
+            តទៅនេះគឺជាកន្លែងទេសចរណ៍ពេញនិយមទាំង ៤ នៅក្នុងប្រទេសកម្ពុជា។
             សម្រាប់អ្នកដែលចង់ទៅលេងកម្សាន្តនៅកម្ពុជា
             មួយក្នុងចំណោមកន្លែងទេសចរណ៍ទាំង ខាងក្រោមនេះ គឺជាជម្រើសដ៏ល្អបំផុត។
           </p>
@@ -206,22 +224,22 @@
             <div
               data-aos="zoom-in"
               data-aos-delay="500"
-              class="absolute max-sm:top-60 top-20 right-20 w-32 h-32 max-sm:h-10 max-sm:w-10 max-sm:left-10 bg-green-700 dark:bg-blue-700 rounded-[10px] opacity-80"
+              class="absolute max-sm:top-60 top-20 right-20 w-32 h-32 max-sm:h-10 max-sm:w-10 max-sm:left-10 bg-green-700 dark:bg-dark_background rounded-[10px] opacity-80"
             ></div>
             <div
               data-aos="zoom-in"
               data-aos-delay="400"
-              class="absolute top-40 right-120 w-16 h-16 bg-green-400 dark:bg-blue-500 rounded-[10px]"
+              class="absolute top-40 right-120 w-16 h-16 bg-green-400 dark:bg-dark-light-primary rounded-[10px]"
             ></div>
             <div
               data-aos="zoom-in"
               data-aos-delay="100"
-              class="absolute bottom-0 right-150 w-20 h-20 bg-yellow-500 dark:bg-red-500 rounded-[10px]"
+              class="absolute bottom-0 right-150 w-20 h-20 bg-yellow-500 dark:bg-dark-secondary rounded-[10px]"
             ></div>
             <div
               data-aos="zoom-in"
               data-aos-delay="200"
-              class="absolute bottom-40 right-15 w-12 h-12 bg-orange-300 dark:bg-red-600 rounded-[10px]"
+              class="absolute bottom-40 right-15 w-12 h-12 bg-orange-300 dark:bg-dark-primary rounded-[10px]"
             ></div>
           </div>
 
@@ -239,9 +257,10 @@
                   >|</span
                 >
               </h1>
-              <p data-aos-delay="300"
+              <p
+                data-aos-delay="300"
                 data-aos="fade-right"
-                class="text-accent text-lg leading-relaxed max-w-md"
+                class="text-accent  text-lg leading-relaxed max-w-md"
               >
                 កម្ពុជា​ជា​គោលដៅ​ទេសចរណ៍​ដ៏​អស្ចារ្យ​មួយ
                 ដែល​មាន​ទាំង​ទេសភាព​ធម្មជាតិ​ស្រស់​ស្អាត
@@ -340,13 +359,13 @@
                 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-dark-secondary leading-tight animate-slide-in-up"
                 data-aos="fade-up"
               >
-                <span class="block text-teal-800 dark:text-blue-800"
+                <span class="block text-teal-800 dark:text-white"
                   >ស្វែងយល់ពីកម្ពុជា</span
                 >
                 <span class="block">ជាមួយបទពិសោធន៍ថ្មី</span>
               </h2>
               <p
-                class="text-lg md:text-xl text-accent max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
+                class="text-lg md:text-xl dark:text-white text-accent max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
@@ -370,7 +389,7 @@
         <!-- Background circle -->
 
         <!-- Header -->
-        <div class="text-center  relative z-0">
+        <div class="text-center relative z-0">
           <h2
             data-aos="fade-down"
             data-aos-delay="200"
@@ -385,7 +404,7 @@
           <p
             data-aos="fade-up"
             data-aos-delay="400"
-            class="py-4 text-accent max-w-2xl text-[18px] mx-auto"
+            class="py-4 text-accent dark:text-white max-w-2xl text-[18px] mx-auto"
           >
             ខេត្តទេសចរណ៍ដែលសម្បូរដោយធនធានធម្មជាតិដូចជាសមុទ្រ និង ព្រៃភ្នំ
             ដែលទាក់ទាញ ភ្ញៀវទេសចរណ៍គ្រប់វ័យមកទស្សនាកម្សាន្ត ទាំងជាតិ
@@ -396,7 +415,7 @@
         <!-- Cards -->
         <div
           id="place_Suggestion"
-          class="mt-4 grid md:grid-cols-4 gap-8 relative z-0 container mx-auto px-4"
+          class="mt-4 grid md:grid-cols-3 sm:grid-cols-1  lg:grid-cols-4 gap-8 relative z-0 lg:container mx-auto px-4"
         >
           <!-- Province 1 -->
         </div>
@@ -408,16 +427,20 @@
         class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
       >
         <div class="flex justify-center md:justify-start gap-4">
-          <img
-            src="img/footer.PNG"
-            alt="Logo 1"
-            class="w-32 h-32 object-contain"
-          />
-          <img
-            src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
-            alt="Logo 2"
-            class="w-27 h-27 object-contain mt-3"
-          />
+          <a href="./index.html">
+            <img
+              src="img/footer.PNG"
+              alt="Logo 1"
+              class="w-32 h-32 object-contain"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
+              alt="Logo 2"
+              class="w-27 h-27 object-contain mt-3"
+            />
+          </a>
         </div>
 
         <div
@@ -468,17 +491,17 @@
           </h4>
           <a
             href="index.html"
-            class="hover:text-green-600 dark:hover:text-blue-600 transition"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >ទំព័រដើម</a
           >
           <a
             href="/html/about.html"
-            class="hover:text-green-600 dark:hover:text-blue-600 transition"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >អំពីពួកយើង</a
           >
           <a
             href="/html/destination.html"
-            class="hover:text-green-600 dark:hover:text-blue-600 transition"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >គោលដៅ</a
           >
         </div>
@@ -495,44 +518,21 @@
         </div>
       </div>
     </footer>
+    <script src="js/theme.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="/js/province_categories.js"></script>
+    <script src="./js/Hometype.js"></script>
   </body>
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-  <!-- <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script> -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-  <script src="js/script.js"></script>
-  <script src="/js/province_categories.js"></script>
-  <!-- <script type="module" src="js/detailPlace.js"></script> -->
-  <!-- dark mode -->
-  <script src="./js/Hometype.js"></script>
-  <!-- <script>
-    const toggleDark = document.getElementById("toggleDark");
-    const html = document.documentElement;
-
-    toggleDark.addEventListener("click", () => {
-      html.classList.toggle("dark");
-
-      if (html.classList.contains("dark")) {
-        toggleDark.classList.replace("fa-sun", "fa-moon");
-      } else {
-        toggleDark.classList.replace("fa-moon", "fa-sun");
-      }
-    });
-  </script> -->
 </html>

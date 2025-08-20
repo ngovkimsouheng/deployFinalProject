@@ -106,9 +106,8 @@
           <button
             data-aos="fade-up"
             src="./destination.html"
-            class=" text-white mt-12 px-8 py-3 lg:mt-[55px] font-semibold bg-none rounded-md ring-1 ring-white hover:bg-primary hover:text-white shadow-[1px_1px_15px] shadow-gray-300"
-            data-aos="zoom-out"
-            data-aos-delay="600"
+            class="text-white mt-12 px-8 py-3 lg:mt-[55px] font-semibold bg-none rounded-md ring-1 ring-white hover:bg-primary hover:text-white shadow-[1px_1px_15px] shadow-gray-300"
+            data-aos-delay="300"
           >
             ដំណើរកម្សាន្ត
           </button>
@@ -189,7 +188,8 @@
             <!-- Text -->
             <div class="space-y-6">
               <h1
-                data-aos="fade-right" data-aos-delay="400"
+                data-aos="fade-right"
+                data-aos-delay="400"
                 class="text-3xl max-lg:text-center max-sm:mt-4 sm:text-5xl md:text-6xl leading-[80px] font-bold text-teal-800 sm:py-"
               >
                 ចូលរួមក្នុងដំណើរផ្សងព្រេងដ៏អស្ចារ្យ
@@ -256,12 +256,12 @@
       </section>
       <section>
         <!-- autoslide -->
-        <div class="sm:mt-8 max-sm:mt-3">
+        <div class="sm:mt-8  max-sm:mt-3">
           <div
-            class="max-w-7xl mx-auto sm:px-6 lg:px-4 space-y-6 overflow-hidden font-sans"
+            class="max-w-7xl rounded-[10px]  mx-auto sm:px-6 lg:px-4 space-y-6 overflow-hidden font-sans"
           >
             <!-- Top Row -->
-            <div class="relative overflow-hidden group">
+            <div class="relative rounded-[10px] overflow-hidden group">
               <div
                 class="flex w-max animate-scroll-left group-hover:[animation-play-state:paused] gap-4"
               >
@@ -376,12 +376,13 @@
             <!-- Lightbox Modal -->
           </div>
         </div>
-        <div
-          class="container max-sm:pt-4 px-4 mx-auto rounded-[10px] flex flex-col"
-        >
+      </section>
+
+      <section class="lg:container lg:mx-auto px-4">
+        <div class="container max-sm:pt-4 mx-auto rounded-[10px] flex flex-col">
           <h2
             data-aos="fade-up"
-            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-10 max-md:mt-5"
+            class="max-md:text-3xl text-center md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
           >
             <span
               class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
@@ -389,10 +390,10 @@
             >
             តំបន់ទេសចរណ៍តាមខេត្តនៅកម្ពុជា
           </h2>
+
           <p
             data-aos="fade-up"
-            data-aos-delay="400"
-            class="text-[17px] md:pt-6 max-md:py-5 md:text-[20px] text-accent"
+            class="text-[17px] text-center md:py-8 max-md:py-5 md:text-[20px] text-accent"
           >
             កម្ពុជាជាប្រទេសមួយដែលសម្បូរទៅដោយតំបន់ទេសចរណ៍គ្រប់ប្រភេទ។
             មិនថាជាកន្លែងប្រវត្តិសាស្ត្រ ព្រៃភ្នំ ព្រះសមុទ្រ និងកោះ
@@ -403,26 +404,22 @@
             និងវប្បធម៌ដ៏សម្បូរបែបរបស់ប្រទេសកម្ពុជា។
           </p>
         </div>
-      </section>
-      <section class="lg:container lg:mx-auto px-4">
         <!-- Filters Section -->
         <section>
           <div
+            data-aos="fade-up"
             class="flex flex-wrap gap-4 mt-6 py-2 mb-8 w-full sticky top-[12vh] z-10"
           >
             <!-- Search Input -->
             <input
-              data-aos="fade-up"
               type="text"
               id="searchInput"
               placeholder="ស្វែងរកតំបន់ទេសចរណ៍..."
               class="flex-1 min-w-[220px] px-4 py-2 rounded-xl border border-primary/50 bg-white/50 shadow-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
             />
             <!-- Category Select -->
-            <div class="relative min-w-[160px]">
+            <div data-aos="fade-up" class="relative min-w-[160px]">
               <select
-                data-aos="fade-up"
-                data-aos-delay="300"
                 id="categorySelect"
                 class="w-full max-sm:py-2 px-4 py-[14px] focus:bg-white rounded-xl border border-primary/50 bg-white/50 shadow-sm appearance-none pr-10 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200"
               >
@@ -452,15 +449,16 @@
             </div>
           </div>
           <!-- Travel Cards Grid -->
-          <section class="flex flex-col items-center">
+          <section class="flex flex-col justify-center items-center">
             <div
               id="categories"
-              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+              class="grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6"
             ></div>
+            <!-- <div id="cannot-find" class="w-[250px]"></div> -->
             <button
-              data-aos="fade-up"
+              data-aos="zoom-in"
               id="seeMoreBtn"
-              class="group flex mt-8 justify-center relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary px-6 font-medium text-white transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              class="group flex mt-8 justify-center relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary px-6 font-medium text-white transition-all  active:translate-y-[2px] active:shadow-none"
             >
               See more
             </button>
@@ -472,7 +470,8 @@
       <section class="lg:container py-4 px-4 lg:mx-auto">
         <div class="rounded-[10px] flex flex-col">
           <h2
-            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+            data-aos="fade-up"
+            class="max-md:text-3xl text-center md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
           >
             <span
               class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
@@ -480,7 +479,11 @@
             >
             បេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រកម្ពុជា
           </h2>
-          <p class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="text-[17px] text-center md:py-8 max-md:py-5 md:text-[20px] text-accent"
+          >
             កម្ពុជា មានបេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រដ៏សម្បូរបែប
             ចាប់ពីប្រាសាទអង្គរវត្ត និងប្រាសាទបុរាណជាច្រើន ដល់វប្បធម៌ប្រពៃណីដូចជា
             រាំព្រះរាជទ្រព្យ និងសិល្បៈជំនាញបុរាណ។ ទាំងនេះជាមរតកមានតម្លៃ
@@ -497,21 +500,31 @@
             class="lg:flex lg:flex-row-reverse max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
           >
             <div
-              data-aos-delay="300"
-              data-aos="fade-left"
               class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
             >
-              <h3 class="text-secondary text-[28px] font-medium">
+              <h3
+                data-aos="fade-left"
+                data-aos-delay="200"
+                class="text-secondary text-[28px] font-medium"
+              >
                 អង្គរវត្ត - សម្បត្តិបេតិកភណ្ឌពិភពលោក
               </h3>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="300"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ប្រាសាទអង្គរវត្តជារមណីយដ្ឋានប្រវត្តិសាស្ត្រដ៏ធំបំផុតនៅអាស៊ីអាគ្នេយ៍។
                 ប្រាសាទនេះត្រូវបានសាងសង់ក្នុងសតវត្សរ៍ទី១២
                 ដោយព្រះបាទសូរ្យវរ្ម័នទី២ ដើម្បីឧទ្ទិសថ្វាយដល់ព្រះវិស្ណុ។
                 អ្នកនឹងភ្ញាក់ផ្អើលនឹងស្ថាបត្យកម្មដ៏អស្ចារ្យ
                 និងចម្លាក់ដ៏លម្អិតដែលបង្ហាញពីរឿងរាមកេរ្តិ៍ និងទេវកថាហិណ្ឌូ។
               </p>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="400"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ការមើលព្រះអាទិត្យរះឬលិចពីលើប្រាសាទគឺជាបទពិសោធន៍ដ៏ពិសេសមួយ។
                 អ្នកអាចជិះយន្តហោះចម្ងាយខ្លី
                 ឬជិះទូកតាមបឹងទន្លេសាបដើម្បីមើលទេសភាពពីខ្ពស់។
@@ -520,7 +533,6 @@
             </div>
             <div
               data-aos="fade-right"
-              data-aos-delay="300"
               data-aos-delay="300"
               class="lg:w-1/2 max-lg:w-full"
             >
@@ -532,8 +544,6 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-delay="100"
             class="lg:flex lg:flex-row max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
           >
             <div
@@ -541,16 +551,28 @@
               data-aos-delay="300"
               class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
             >
-              <h3 class="text-secondary text-[28px] font-medium">
+              <h3
+                data-aos="fade-left"
+                data-aos-delay="200"
+                class="text-secondary text-[28px] font-medium"
+              >
                 ព្រះបរមរាជវាំង - និមិត្តរូបនៃរាជ្យ
               </h3>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="300"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ព្រះបរមរាជវាំងគឺជាកន្លែងស្នាក់នៅរបស់ព្រះមហាក្សត្រកម្ពុជា
                 និងជាទីតាំងប្រារព្ធពិធីបុណ្យជាតិផ្សេងៗ។
                 វាំងនេះត្រូវបានសាងសង់ឡើងនៅឆ្នាំ១៨៦៦
                 ដែលជាការបង្ហាញពីស្ថាបត្យកម្មប្រពៃណីខ្មែរដ៏ល្អឯក។
               </p>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-left"
+                data-aos-delay="400"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 នៅទីនេះ អ្នកអាចទស្សនាព្រះវិហារព្រះកែវមរកត
                 ដែលមានផ្ទុកព្រះពុទ្ធរូបមាសដ៏មានតម្លៃ។ កុំភ្លេចគយគន់សាលប្រជុំ
                 ព្រះពន្លា និងសួនច្បារដ៏ស្រស់ស្អាតដែលស្ថិតនៅជុំវិញវាំង។
@@ -570,8 +592,6 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-delay="100"
             class="lg:flex lg:flex-row-reverse max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
           >
             <div
@@ -579,17 +599,29 @@
               data-aos="fade-left"
               class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
             >
-              <h3 class="text-secondary text-[28px] font-medium">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="100"
+                class="text-secondary text-[28px] font-medium"
+              >
                 ប្រាសាទបន្ទាយស្រី - ប្រាសាទផ្កាឈូក
               </h3>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ប្រាសាទបន្ទាយស្រី ដែលមានន័យថា "បន្ទាយរបស់ស្រី"
                 គឺជាប្រាសាទបុរាណមួយដែលស្ថិតនៅជិតប្រាសាទអង្គរវត្ត។
                 ប្រាសាទនេះត្រូវបានសាងសង់ពីថ្មភក់ពណ៌ផ្កាឈូក
                 និងមានចម្លាក់ដ៏វិចិត្រល្អឥតខ្ចោះ។ អ្នកជំនាញហៅប្រាសាទនេះថាជា
                 "ត្បូងពេជ្រនៃសិល្បៈខ្មែរ"។
               </p>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="300"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ប្រាសាទនេះមានលក្ខណៈពិសេសត្រង់ចម្លាក់ក្បាច់ផ្កា និងទេពអប្សរ
                 ដែលមានលក្ខណៈល្អិតល្អន់ និងមានសោភ័ណភាពជាងប្រាសាទដទៃទៀត។
                 ការទស្សនានៅទីនេះនឹងផ្ដល់ឱ្យអ្នកនូវការយល់ដឹងពីភាពប៉ិនប្រសប់នៃសិល្បករខ្មែរបុរាណ។
@@ -608,26 +640,34 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-delay="100"
             class="lg:flex lg:flex-row max-lg:flex-col justify-between lg:container lg:mx-auto items-center max-lg:gap-4 lg:gap-6"
           >
             <div
-              data-aos="fade-right"
-              data-aos-delay="300"
               class="lg:w-1/2 max-lg:w-full flex flex-col sm:gap-7 max-sm:gap-5"
             >
-              <h3 class="text-secondary text-[28px] font-medium">
+              <h3
+                data-aos="fade-right"
+                data-aos-delay="200"
+                class="text-secondary text-[28px] font-medium"
+              >
                 ក្រុងព្រះសីហនុ - សមុទ្រខ្មែរដ៏ស្រស់ស្អាត
               </h3>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-right"
+                data-aos-delay="300"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 ក្រុងព្រះសីហនុ ដែលគេស្គាល់ថាជា "កំពង់ផែសន្សើម"
                 គឺជាចំណុចទាក់ទាញទេសចរណ៍សមុទ្រនៅកម្ពុជា។ ឆ្នេរខ្សាច់ស
                 ទឹកខៀវស្រងាត់ និងកោះដ៏ស្រស់ស្អាតដូចជា កោះរ៉ុង កោះរ៉ុងសានូអែល
                 និងកោះទន្សេង ធ្វើឱ្យទីនេះក្លាយជាកន្លែងល្អសម្រាប់កម្សាន្ត
                 និងសម្រាកពីភាពរវល់។
               </p>
-              <p class="text-accent text-base md:text-lg leading-relaxed">
+              <p
+                data-aos="fade-right"
+                data-aos-delay="400"
+                class="text-accent text-base md:text-lg leading-relaxed"
+              >
                 អ្នកអាចជ្រមុជទឹក បរបាញ់កំណាត់ ឬធ្វើដំណើរទៅកាន់កោះដោយទូក។ នៅល្ងាច
                 អ្នកអាចសប្បាយជាមួយអាហារសមុទ្រស្រស់ៗ និងភ្លេងតន្រ្តីនៅតាមឆ្នេរ។
                 កុំភ្លេចទស្សនាផ្សារនាឡិណ្ឌវិថី ដែលជាផ្សារយប់ដ៏អស្ចារ្យ។
@@ -653,69 +693,89 @@
         class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
       >
         <div class="flex justify-center md:justify-start gap-4">
-          <img
-            src="../img/footer.PNG"
-            alt="Logo 1"
-            class="w-32 h-32 object-contain"
-          />
-          <img
-            src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
-            alt="Logo 2"
-            class="w-27 h-27 object-contain mt-3"
-          />
+          <a href="../index.html">
+            <img
+              src="img/footer.PNG"
+              alt="Logo 1"
+              class="w-32 h-32 object-contain"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
+              alt="Logo 2"
+              class="w-27 h-27 object-contain mt-3"
+            />
+          </a>
         </div>
 
         <div
           class="flex flex-col max-lg:mt-3 items-center md:items-start gap-5"
         >
-          <h4 class="text-primary font-semibold text-lg">បណ្តាញសង្គម</h4>
-          <div class="flex gap-4 text-primary">
+          <h4 class="text-primary dark:text-blue-900 font-semibold text-lg">
+            បណ្តាញសង្គម
+          </h4>
+          <div class="flex gap-4 text-primary dark:text-blue-900">
             <!-- Facebook -->
             <a href="">
               <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
               >
-                <i class="fa-brands fa-facebook-f text-3xl text-primary"></i>
+                <i
+                  class="fa-brands fa-facebook-f text-3xl text-primary dark:text-blue-900"
+                ></i>
               </button>
             </a>
 
             <!-- TikTok -->
             <a href="">
               <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
               >
-                <i class="fa-brands fa-tiktok text-3xl text-primary"></i>
+                <i
+                  class="fa-brands fa-tiktok text-3xl text-primary dark:text-blue-900"
+                ></i>
               </button>
             </a>
 
             <!-- YouTube -->
             <a href="">
               <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
               >
-                <i class="fa-brands fa-youtube text-3xl text-primary"></i>
+                <i
+                  class="fa-brands fa-youtube text-3xl text-primary dark:text-blue-900"
+                ></i>
               </button>
             </a>
           </div>
         </div>
 
         <div class="flex flex-col gap-5 items-center md:items-start">
-          <h4 class="text-primary font-semibold text-lg">តំណភ្ជាប់រហ័ស</h4>
-          <a href="index.html" class="hover:text-green-600 transition"
+          <h4 class="text-primary dark:text-blue-900 font-semibold text-lg">
+            តំណភ្ជាប់រហ័ស
+          </h4>
+          <a
+            href="index.html"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >ទំព័រដើម</a
           >
-          <a href="/html/about.html" class="hover:text-green-600 transition"
+          <a
+            href="/html/about.html"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >អំពីពួកយើង</a
           >
           <a
             href="/html/destination.html"
-            class="hover:text-green-600 transition"
+            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
             >គោលដៅ</a
           >
         </div>
 
         <div class="flex flex-col gap-5 items-center md:items-start">
-          <h4 class="text-primary font-semibold text-lg max-sm:text-center">
+          <h4
+            class="text-primary dark:text-blue-900 font-semibold text-lg max-sm:text-center"
+          >
             ឧបត្ថម្ភដោយ
           </h4>
           <p>

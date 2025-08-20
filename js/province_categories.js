@@ -133,7 +133,7 @@ async function PlaceSuggestionsList() {
         (place) => `
         <div data-aos="fade-right" data-aos-delay="200" class="bg-white rounded-xl shadow-lg overflow-hidden">
           <a href="../html/ParamDetail.html?placeUuid=${place.uuid}" >
-          <div class="bg-teal-900 px-6 py-3  flex justify-between items-center">
+          <div class="bg-teal-900 dark:bg-dark-light-primary px-6 py-3  flex justify-between items-center">
             <h3 class="text-white text-[24px] font-bold">${place.name}</h3>
             <span
               class=" text-white text-sm px-3 py-1 rounded-[10px]"
@@ -147,7 +147,7 @@ async function PlaceSuggestionsList() {
               <li>${place.entryFee}</li>
       
             </ul>
-            <a class="text-teal-700 float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
+            <a class="text-teal-700 dark:text-dark-secondary float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
           </div>
           </a>
       </div>
