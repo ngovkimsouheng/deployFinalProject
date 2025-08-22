@@ -18,34 +18,35 @@
 
   <body class="bg-background font-primary">
     <!-- header -->
-    <header class="bg-white w-full shadow sticky top-0 z-10">
+    <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
-        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
+        class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="#" class="">
+        <a href="/index.html" class="Logo">
           <img
-            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
-            src="../img/home/logo.png"
+            class="h-auto max-md:w-[100px] md:w-[140px]"
+            src="../img/logo/logoHeader.png"
             alt="Logo"
           />
         </a>
-
         <button
           id="menu-toggle"
-          class="lg:hidden cursor-pointer text-3xl text-accent focus:outline-none"
+          class="lg:hidden cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
           <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
 
         <div
           id="nav-links"
-          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+          class="hidden bg-white lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
         >
           <ul
-            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
-              <a href="/index.html" class="text-primary transition-colors"
+              <a
+                href="/index.html"
+                class="text-accent dark:text-dark-secondary transition-colors"
                 >ទំព័រដើម</a
               >
             </li>
@@ -55,21 +56,35 @@
               >
             </li>
             <li>
-              <a href="./desti.html" class="text-primary transition-colors"
+              <a href="desti.html" class="text-accent transition-colors"
                 >គោលដៅ</a
               >
             </li>
           </ul>
+
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
+            <!-- <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleTheme()"
+            >
+              Toggle Dark Mode
+            </button> -->
+            <!-- <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleDarkMode()"
+            >
+              Toggle Dark Mode
+            </button> -->
             <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
             >
               ចូលគណនី
             </button>
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
               ចុះឈ្មោះ
             </button>
@@ -84,7 +99,7 @@
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
           <img
-            class="w-full md:h-[90vh] max-md:h-[100vh] object-cover"
+            class="w-full md:h-[100vh] max-md:h-[100vh] object-cover"
             src="/img/heroSection.png"
             alt="Ancient Temple Ruins"
           />
@@ -95,7 +110,7 @@
 
         <!-- Content -->
         <div
-          class="relative px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-center max-md:h-[100vh] md:h-[90vh] z-10"
+          class="relative px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-center max-md:h-[100vh] md:h-[100vh] z-10"
         >
           <div class="text-center">
             <h2
@@ -104,14 +119,15 @@
               data-aos-delay="200"
             >
               <span
-                class="block md:p-[18px] bg-gradient-to-r from-white to-teal-200 text-transparent bg-clip-text"
+                class="block sm:p-[18px] max-sm:p-[20px] bg-gradient-to-r from-white to-teal-200 text-transparent bg-clip-text"
               >
                 អំពីដេីរលេង
               </span>
             </h2>
             <p
-              class=" mt-4 md:max-w-2xl lg:mt-[55px] mx-auto md:text-[26px] max-md:text-[20px] text-shadow-md text-shadow-gray-700 leading-relaxed text-white"
-              data-aos="fade-up" data-aos-delay="200"
+              class="mt-4 md:max-w-2xl lg:mt-[55px] mx-auto md:text-[26px] max-md:text-[20px] text-shadow-md text-shadow-gray-700 leading-relaxed text-white"
+              data-aos="fade-up"
+              data-aos-delay="200"
             >
               គេហទំព័ររបស់យើង ត្រូវបានបង្កើតឡើង
               ដើម្បីលើកស្ទួយនិងផ្សព្វផ្សាយអំពីសម្បត្តិធម្មជាតិ
@@ -133,199 +149,7 @@
       </section>
 
       <!-- new -->
-      <!-- Goals Section -->
-      <section class="container mx-auto">
-        <section class="flex flex-col px-4 justify-center items-center">
-          <h2
-            class="max-md:text-[38px] md:text-[48px] sm:text-[28px] max-sm:text-[22px] text-center text-teal-800 font-bold sm:py-10 max-sm:py-4 max-md:mt-5"
-          >
-            <span id="typing-text"></span><span class="blinking-cursor">|</span>
-          </h2>
-
-          <!-- Cards -->
-          <div
-            class="container flex flex-col justify-center items-center mx-auto"
-          >
-            <!-- Reason -->
-            <!-- Reason -->
-            <div
-              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <img
-                data-aos="fade-right"
-                src="../img/about/reason.gif"
-                alt="Reason"
-                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
-              />
-
-              <!-- Text container with background shapes -->
-              <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
-                data-aos="fade-left"
-              >
-                <!-- Floating shapes (inside text only) -->
-                <div
-                  data-aos="zoom-in"
-                  class="absolute inset-0 pointer-events-none -z-10"
-                >
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="500"
-                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
-                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[40px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
-                  ></div>
-                </div>
-
-                <h3 class="text-secondary text-[28px] font-medium">ហេតុផល</h3>
-                <p class="text-accent text-lg md:text-xl leading-relaxed">
-                  ហេតុផលសំខាន់នៃការបង្កើតគេហទំព័រនេះ
-                  គឺដើម្បីលើកស្ទួយវិស័យទេសចរណ៍ក្នុងប្រទេសកម្ពុជា។
-                  ការធ្វើដំណើរមិនមែនគ្រាន់តែជាការកម្សាន្តទេ
-                  ប៉ុន្តែជាការស្វែងយល់ពីវប្បធម៌ប្រពៃណី
-                  និងជីវិតរស់នៅដ៏ចម្រុះរបស់មនុស្សក្នុងតំបន់។
-                  យើងចង់ជួយអោយអ្នកធ្វើដំណើររកឃើញទីកន្លែងថ្មីៗ
-                  និងទទួលបានបទពិសោធន៍ដ៏អស្ចារ្យ។
-                </p>
-              </div>
-            </div>
-
-            <!-- Vision -->
-            <div
-              class="relative flex lg:flex-row-reverse max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <img
-                data-aos="fade-right"
-                src="../img/about/Shared goals (1).gif"
-                alt="Vision"
-                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
-              />
-              <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
-                data-aos="fade-left"
-              >
-                <!-- Floating shapes (inside text only) -->
-                <div
-                  data-aos="zoom-in"
-                  class="absolute inset-0 pointer-events-none -z-10"
-                >
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="500"
-                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
-                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[40px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
-                  ></div>
-                </div>
-
-                <h3 class="text-secondary text-[28px] font-medium">
-                  ចក្ខុវិស័យ
-                </h3>
-                <p class="text-accent text-base md:text-xl leading-relaxed">
-                  ចក្ខុវិស័យរបស់យើង គឺក្លាយជាវេទិកាទេសចរណ៍ឌីជីថលឈានមុខគេ
-                  ដែលផ្ដល់ព័ត៌មានត្រឹមត្រូវ
-                  និងទាន់សម័យអំពីទីតាំងទេសចរណ៍ទូទាំងប្រទេស។
-                  យើងស្រមៃឃើញអនាគតមួយដែលប្រទេសកម្ពុជា
-                  ក្លាយជាគោលដៅទេសចរណ៍លំដាប់ពិភពលោក។
-                </p>
-              </div>
-            </div>
-
-            <!-- Purpose -->
-            <div
-              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <img
-                data-aos="fade-right"
-                src="../img/about/Website Creator (2).gif"
-                alt="Purpose"
-                class="sm:w-[500px] sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
-              />
-              <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
-                data-aos="fade-left"
-              >
-                <!-- Floating shapes (inside text only) -->
-                <div class="absolute inset-0 pointer-events-none -z-10">
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="500"
-                    class="absolute top-10 left-5 w-24 h-24 bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="400"
-                    class="absolute top-40 left-1/2 w-16 h-16 bg-green-400 rounded-[10px] blur-[30px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="200"
-                    class="absolute bottom-10 right-5 w-20 h-20 bg-yellow-500 rounded-[10px] blur-[2000px]"
-                  ></div>
-                  <div
-                    data-aos="zoom-in"
-                    data-aos-delay="300"
-                    class="absolute top-1/2 right-8 w-12 h-12 bg-orange-300 rounded-[10px] blur-[30px]"
-                  ></div>
-                </div>
-
-                <h3
-                  data-aos="zoom-in"
-                  data-aos-delay="300"
-                  class="text-secondary text-[28px] font-medium"
-                >
-                  គោលបំណង
-                </h3>
-                <p
-                  data-aos="fade-right"
-                  data-aos-delay="300"
-                  class="text-accent text-base md:text-xl leading-relaxed"
-                >
-                  គោលបំណងរបស់គេហទំព័រនេះ
-                  គឺដើម្បីផ្ដល់បទពិសោធន៍ស្វែងយល់អំពីកម្ពុជា
-                  តាមរយៈព័ត៌មានទេសចរណ៍ដែលងាយស្រួលស្វែងរក។
-                  យើងចង់ជួយដល់សហគមន៍ក្នុងតំបន់ ដោយលើកកម្ពស់សេវាកម្មទេសចរណ៍
-                  និងបង្កើនចំណូលសម្រាប់ប្រជាជនក្នុងស្រុក។
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section>
+      <section class="mt-6">
         <section class="relative rounded-[10px] max-sm:pt-6 overflow-hidden">
           <div
             class="absolute top-28 -left-50 w-40 h-40 dark:bg-blue-600 bg-teal-500 blur-[80px] rounded-full opacity-60 mix-blend-multiply animate-float-slow hidden md:block"
@@ -387,6 +211,204 @@
           </div>
         </section>
       </section>
+      <!-- Goals Section -->
+      <section class="container mx-auto">
+        <section class="flex flex-col px-4 justify-center items-center">
+          <h2
+            data-aos="fade in"
+            class="max-md:text-[48px] md:text-[58px] sm:text-4xl max-sm:text-[22px] text-center text-teal-800 font-bold sm:py-4 max-sm:py-4 max-md:mt-5"
+          >
+            <span id="typing-text"></span><span class="blinking-cursor">|</span>
+          </h2>
+
+          <!-- Cards -->
+          <div
+            class="container flex flex-col justify-center items-center mx-auto"
+          >
+            <!-- Reason -->
+            <!-- Reason -->
+            <div
+              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/reason.gif"
+                alt="Reason"
+                class="sm:w-[500px] rounded-[10px] z-0 self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+
+              <!-- Text container with background shapes -->
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 left-5 w-24 h-24 z-5 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 left-1/2 w-16 h-16 z-5 animate-pulse max-lg:hidden bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 right-5 w-20 h-20 z-5 animate-pulse bg-yellow-500 rounded-[10px] blur-[40px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 right-8 w-12 h-12 z-5 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <div class="max-sm:p-4 flex flex-col gap-7">
+                  <h3
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                  >
+                    មូលហេតុដែលយើងបង្កើត
+                    <p class="pt-4 text-teal-800">គេហទំព័រនេះ</p>
+                  </h3>
+                  <p class="text-accent text-lg md:text-xl leading-relaxed">
+                    ហេតុបង្កើតគេហទំព័រនេះ គឺដើម្បីលើកកម្ពស់វិស័យទេសចរណ៍កម្ពុជា។
+                    <br />គេហទំព័រនេះមានគោលបំណងជួយឲ្យអ្នកស្វែងរកកន្លែងថ្មីៗ
+                    និងទទួលបានបទពិសោធន៍ដ៏មានតម្លៃ។
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vision -->
+            <div
+              class="relative flex lg:flex-row-reverse max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/Shared goals (1).gif"
+                alt="Vision"
+                class="sm:w-[500px] self-center rounded-[10px]self-center z-0 sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 z-5 left-5 w-24 h-15 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 z-5 left-1/2 w-16 h-16 max-lg:hidden animate-pulse bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 z-5 right-5 w-20 h-20 animate-pulse bg-yellow-500 rounded-[10px] blur-[40px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 z-5 right-8 w-12 h-12 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <div class="max-sm:p-4 flex flex-col gap-6">
+                  <h3
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                  >
+                    ទស្សនវិស័យសម្រាប់
+                    <p class="pt-4 text-teal-800">អនាគត</p>
+                  </h3>
+                  <p class="text-accent text-base md:text-xl leading-relaxed">
+                    យើងមានគោលបំណងក្លាយជាវេទិកាទេសចរណ៍ឌីជីថលឈានមុខ <br />
+                    ដែលផ្តល់ព័ត៌មានត្រឹមត្រូវ
+                    និងទាន់សម័យអំពីកន្លែងទេសចរណ៍ទូទាំងប្រទេសកម្ពុជា។
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Purpose -->
+            <div
+              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <img
+                data-aos="fade-right"
+                src="../img/about/Website Creator (2).gif"
+                alt="Purpose"
+                class="sm:w-[500px] rounded-[10px] self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+              />
+              <div
+                class="relative lg:w-1/2 flex flex-col gap-7"
+                data-aos="fade-left"
+              >
+                <!-- Floating shapes (inside text only) -->
+                <div class="absolute inset-0 pointer-events-none -z-10">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                    class="absolute top-10 left-5 w-24 h-24 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="400"
+                    class="absolute top-40 left-1/2 w-16 h-16 animate-pulse max-lg:hidden bg-green-400 rounded-[10px] blur-[30px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="200"
+                    class="absolute bottom-10 right-5 w-20 h-20 animate-pulse bg-yellow-500 rounded-[10px] blur-[2000px]"
+                  ></div>
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-delay="300"
+                    class="absolute top-1/2 right-8 w-12 h-12 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
+                  ></div>
+                </div>
+
+                <div class="max-sm:p-4 flex flex-col gap-8">
+                  <h3
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                  >
+                    គោលបំណងចម្បង
+                    <p class="pt-4 text-teal-800">របស់យើង</p>
+                  </h3>
+                  <p
+                    data-aos="fade-right"
+                    data-aos-delay="300"
+                    class="text-accent text-base md:text-xl leading-relaxed"
+                  >
+                    គេហទំព័រនេះត្រូវបានបង្កើតឡើង
+                    ដើម្បីផ្ដល់បទពិសោធន៍ស្វែងយល់អំពីទេសចរណ៍នៅកម្ពុជា
+                    តាមរយៈព័ត៌មានទេសចរណ៍ដែលងាយស្រួលស្វែងរក។
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
       <section>
         <section class="px-6 py-4 overflow-hidden">
           <div class="max-w-5xl mx-auto">
@@ -734,7 +756,7 @@
         <div class="flex justify-center md:justify-start gap-4">
           <a href="../index.html">
             <img
-              src="img/footer.PNG"
+              src="../img/footer.PNG"
               alt="Logo 1"
               class="w-32 h-32 object-contain"
             />

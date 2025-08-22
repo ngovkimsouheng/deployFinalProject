@@ -39,9 +39,9 @@ setInterval(slideImages, 3000); // Slide every 3 seconds
 
 // text typing animation
 const texts = [
-  "១. មូលហេតុដែលយើងបង្កើតគេហទំព័រនេះ",
-  "២. ទស្សនវិស័យសម្រាប់អនាគត",
-  "៣. គោលបំណងចម្បងរបស់យើង",
+  "១. មូលហេតុ",
+  "២. ទស្សនវិស័យ",
+  "៣. គោលបំណង",
 ]; //["OUR REASON", "OUR VISION", "OUR PURPOSE"];
 const typingElement = document.getElementById("typing-text");
 const cursor = document.querySelector(".blinking-cursor");
