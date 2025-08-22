@@ -6,16 +6,20 @@ const categorySelect = document.querySelector("#categorySelect");
 const seeMoreBtn = document.querySelector("#seeMoreBtn");
 
 let allPlaces = [];
+let currentPlaces = []; // 🔥 track filtered or all places
 let displayedCount = 0; // how many cards are currently shown
-const initialCount = 8; // show 2 rows (4 cards per row for lg)
+const initialCount = 8;   // show 2 rows (4 cards per row for lg) on first render
+const loadMoreCount = 100;  // how many more cards load per click
 
+// ================== Fetch Data ==================
 async function fetchCategories() {
   try {
     const res = await fetch(base_url);
     const data = await res.json();
     allPlaces = data;
+    currentPlaces = allPlaces; // default = all data
 
-    renderPlaces(allPlaces, true); // true = initial render
+    renderPlaces(currentPlaces, true); // true = initial render
     populateCategories(allPlaces);
 
     if (categorySelect.value) {
@@ -26,6 +30,7 @@ async function fetchCategories() {
   }
 }
 
+// ================== Populate Category Dropdown ==================
 function populateCategories(places) {
   const uniqueCategories = [...new Set(places.map((p) => p.category.name))];
   const existingValues = new Set(
@@ -42,14 +47,13 @@ function populateCategories(places) {
   });
 }
 
+// ================== Render Places ==================
 function renderPlaces(places, isInitial = false) {
   if (places.length === 0) {
     popularPlacesCategories.innerHTML = `
-      <div class="flex justify-center">
-        <img src="../img/cannotfind.gif" alt="place not found">
-        <p class="text-center ">
-          រកមិនឃើញទេ
-        </p>
+      <div class="flex flex-col items-center justify-center">
+        <img src="../img/cannotfind.gif" alt="place not found" class="w-48 h-48 object-contain">
+        <p class="text-center text-gray-600 mt-2">រកមិនឃើញទេ</p>
       </div>
     `;
     seeMoreBtn.classList.add("hidden");
@@ -62,16 +66,16 @@ function renderPlaces(places, isInitial = false) {
     popularPlacesCategories.innerHTML = "";
   }
 
-  const cardsToShow = places.slice(
-    displayedCount,
-    displayedCount + (isInitial ? initialCount : places.length)
-  );
+  // how many to load
+  const countToLoad = isInitial ? initialCount : loadMoreCount;
+
+  const cardsToShow = places.slice(displayedCount, displayedCount + countToLoad);
 
   popularPlacesCategories.innerHTML += cardsToShow
     .map(
       (data) => `
         <a href="./ParamDetail.html?placeUuid=${data.uuid}" 
-           class="block bg-white rounded-lg shadow  overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+           class="block bg-white rounded-lg shadow overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
           <div class="relative h-64 w-full">
             <img src="${data.imageUrls[1]}" 
                  alt="${data.name}" 
@@ -80,7 +84,6 @@ function renderPlaces(places, isInitial = false) {
           <div class="p-4">
             <div class="flex justify-between items-center">
               <h3 class="text-primary text-[22px] font-primary font-semibold">${data.name}</h3>
-        
             </div>
             <p class="text-gray-600 text-[17px] line-clamp-2 mt-2">${data.description}</p>
           </div>
@@ -99,6 +102,7 @@ function renderPlaces(places, isInitial = false) {
   }
 }
 
+// ================== Filter ==================
 function filterPlaces() {
   const keyword = searchInput.value.toLowerCase();
   const selectedCategory = categorySelect.value;
@@ -124,11 +128,14 @@ function filterPlaces() {
     return matchesSearch && matchesCategory;
   });
 
-  renderPlaces(filtered, true);
+  currentPlaces = filtered; // 🔥 save filtered list
+  renderPlaces(currentPlaces, true); // reset render
 }
 
+// ================== Event Listeners ==================
 searchInput.addEventListener("input", filterPlaces);
 categorySelect.addEventListener("change", filterPlaces);
-seeMoreBtn.addEventListener("click", () => renderPlaces(allPlaces));
+seeMoreBtn.addEventListener("click", () => renderPlaces(currentPlaces));
 
+// ================== Init ==================
 fetchCategories();

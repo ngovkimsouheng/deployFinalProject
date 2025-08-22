@@ -1,829 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Place Management System</title>
-    <link rel="stylesheet" href="../src/output.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Place Creator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body class="bg-background font-primary">
-    <!-- Header -->
-    <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
-      <nav
-        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
-      >
-        <a href="#" class="">
-          <img
-            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
-            src="../img/home/logo.png"
-            alt="Logo"
-          />
-        </a>
-
-        <button
-          id="menu-toggle"
-          class="lg:hidden cursor-pointer text-3xl text-gray-850 focus:outline-none"
-        >
-          <ion-icon name="menu" id="menu-icon"></ion-icon>
-        </button>
-
-        <div
-          id="nav-links"
-          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
-        >
-          <ul
-            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
-          >
-            <li>
-              <a
-                href="#"
-                class="text-secondary dark:text-dark-secondary transition-colors"
-                >ទំព័រដើម</a
-              >
-            </li>
-            <li>
-              <a href="html/about.html" class="text-accent transition-colors"
-                >អំពីពួកយើង</a
-              >
-            </li>
-            <li>
-              <a href="./html/desti.html" class="text-accent transition-colors"
-                >គោលដៅ</a
-              >
-            </li>
-          </ul>
-
-          <div
-            class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
-          >
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleTheme()"
-            >
-              Toggle Dark Mode
-            </button> -->
-            <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleDarkMode()"
-            >
-              Toggle Dark Mode
-            </button>
-            <!-- <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-            >
-              ចូលគណនី
-            </button>
-            <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-            >
-              ចុះឈ្មោះ
-            </button> -->
-          </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                        secondary: {
+                            50: '#fdf4ff',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #fdf4ff 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen font-sans flex items-center justify-center py-10 px-4">
+    <div class="max-w-2xl w-full bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden shadow-xl card-hover">
+        <!-- Header with gradient -->
+        <div class="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-center">
+            <h1 class="text-3xl font-bold text-white flex items-center justify-center gap-3">
+                <i class="fas fa-map-marker-alt"></i> 
+                <span>Create New Place</span>
+            </h1>
+            <p class="text-primary-100 mt-2">Add a beautiful destination to share with others</p>
         </div>
-      </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Form Section -->
-        <div class="lg:col-span-1 bg-white rounded-xl shadow-lg p-6">
-          <h2
-            class="text-xl font-bold text-secondary mb-6 pb-2 border-b-2 border-gray-200"
-          >
-            <i class="fas fa-plus-circle mr-2 text-primary"></i>
-            <span id="formTitle">Add New Place</span>
-          </h2>
-
-          <form id="placeForm">
-            <input type="hidden" id="placeId" />
-
-            <div class="mb-5">
-              <label for="name" class="block text-gray-700 font-medium mb-2"
-                >Place Name *</label
-              >
-              <input
-                type="text"
-                id="name"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="Enter place name"
-              />
-            </div>
-
-            <div class="mb-5">
-              <label for="category" class="block text-gray-700 font-medium mb-2"
-                >Category *</label
-              >
-              <input
-                type="text"
-                id="category"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="e.g., Phnom Penh"
-              />
-            </div>
-
-            <div class="mb-5">
-              <label
-                for="description"
-                class="block text-gray-700 font-medium mb-2"
-                >Description *</label
-              >
-              <textarea
-                id="description"
-                rows="3"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="Enter description"
-              ></textarea>
-            </div>
-
-            <div class="mb-5">
-              <label
-                for="imageUrls"
-                class="block text-gray-700 font-medium mb-2"
-              >
-                Image URLs *
-                <span class="text-gray-500 text-sm">(comma separated)</span>
-              </label>
-              <textarea
-                id="imageUrls"
-                rows="3"
-                required
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="https://example.com/image1.jpg, https://example.com/image2.jpg"
-              ></textarea>
-            </div>
-
-            <div class="flex space-x-3 mt-6">
-              <button
-                type="submit"
-                id="submitBtn"
-                class="flex-1 bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
-              >
-                <i class="fas fa-save mr-2"></i>Save Place
-              </button>
-              <button
-                type="button"
-                id="resetBtn"
-                class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
-              >
-                <i class="fas fa-redo mr-2"></i>Reset
-              </button>
-            </div>
-          </form>
-
-          <div class="mt-8 bg-blue-50 border-l-4 border-primary p-4 rounded">
-            <h3 class="font-bold text-gray-800 mb-2">
-              <i class="fas fa-info-circle mr-2 text-primary"></i>Information
-            </h3>
-            <p class="text-gray-600 text-sm">
-              When you delete a place, it will only be hidden in the UI. The API
-              will retain the data with the "disabled" flag set to true.
-            </p>
-          </div>
-        </div>
-
-        <!-- Places List -->
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-xl shadow-lg p-6">
-            <div
-              class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6"
-            >
-              <h2 class="text-xl font-bold text-secondary mb-4 md:mb-0">
-                <i class="fas fa-map-marked-alt mr-2 text-primary"></i>
-                Manage Places
-              </h2>
-              <div class="flex space-x-2 w-full md:w-auto">
-                <div class="relative flex-1">
-                  <input
+        
+        <form id="placeForm" class="p-8 space-y-6">
+            <!-- Name Field -->
+            <div class="space-y-2">
+                <label for="name" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                    <i class="fas fa-signature text-primary-500"></i>
+                    <span>Place Name *</span>
+                </label>
+                <input
                     type="text"
-                    id="searchInput"
-                    placeholder="Search places..."
-                    class="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  />
-                  <i
-                    class="fas fa-search absolute left-3 top-3 text-gray-400"
-                  ></i>
+                    id="name"
+                    name="name"
+                    value="ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង"
+                    required
+                    class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                />
+            </div>
+
+            <!-- Description Field -->
+            <div class="space-y-2">
+                <label for="description" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                    <i class="fas fa-align-left text-primary-500"></i>
+                    <span>Description *</span>
+                </label>
+                <textarea
+                    id="description"
+                    name="description"
+                    required
+                    class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base resize-y min-h-[120px] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                >ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។</textarea>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Opening Hours -->
+                <div class="space-y-2">
+                    <label for="openHours" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                        <i class="fas fa-clock text-primary-500"></i>
+                        <span>Opening Hours</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="openHours"
+                        name="openHours"
+                        value="Open 24h"
+                        class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                    />
                 </div>
-                <button
-                  id="refreshBtn"
-                  class="bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+
+                <!-- Entry Fee -->
+                <div class="space-y-2">
+                    <label for="entryFee" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                        <i class="fas fa-ticket-alt text-primary-500"></i>
+                        <span>Entry Fee ($)</span>
+                    </label>
+                    <input
+                        type="number"
+                        id="entryFee"
+                        name="entryFee"
+                        value="0.00"
+                        step="0.01"
+                        min="0"
+                        class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                    />
+                </div>
+            </div>
+
+            <!-- Location Field -->
+            <div class="space-y-2">
+                <label for="location" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                    <i class="fas fa-map-marker text-primary-500"></i>
+                    <span>Location (lat,lng)</span>
+                </label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value="10.7131,103.2343"
+                    placeholder="10.7131,103.2343"
+                    class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                />
+            </div>
+
+            <!-- Coordinates -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label for="latitude" class="block text-primary-700 font-semibold text-lg">Latitude</label>
+                    <input
+                        type="text"
+                        id="latitude"
+                        name="latitude"
+                        value="00.00"
+                        class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                    />
+                </div>
+
+                <div class="space-y-2">
+                    <label for="longitude" class="block text-primary-700 font-semibold text-lg">Longitude</label>
+                    <input
+                        type="text"
+                        id="longitude"
+                        name="longitude"
+                        value="00.00"
+                        class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50"
+                    />
+                </div>
+            </div>
+
+            <!-- Category Field -->
+            <div class="space-y-2">
+                <label for="categoryName" class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                    <i class="fas fa-tag text-primary-500"></i>
+                    <span>Category</span>
+                </label>
+                <select
+                    id="categoryName"
+                    name="categoryName"
+                    class="w-full px-4 py-3 border border-primary-100 rounded-xl text-base transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/50 appearance-none"
                 >
-                  <i class="fas fa-sync-alt"></i>
-                </button>
-              </div>
+                    <option value="Phnom Penh">ភ្នំពេញ</option>
+                    <option value="Siem Reap">សៀមរាប</option>
+                    <option value="Kom pot">កំពត</option>
+                    <option value="Kep">កែប</option>
+                    <option value="Battambong">បាត់ដំបង</option>
+                    <option value="Sihanoukville">ព្រះសីហនុ</option>
+                    <option value="Koh kong" selected>កោះកុង</option>
+                </select>
             </div>
 
-            <div id="loadingIndicator" class="text-center py-10">
-              <div
-                class="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-current border-r-transparent loading-spinner"
-                role="status"
-              ></div>
-              <p class="mt-4 text-gray-600">Loading places...</p>
+            <!-- Images Field -->
+            <div class="space-y-2">
+                <label class="block text-primary-700 font-semibold text-lg flex items-center gap-2">
+                    <i class="fas fa-images text-primary-500"></i>
+                    <span>Images</span>
+                </label>
+                <div class="file-upload relative overflow-hidden w-full">
+                    <input
+                        type="file"
+                        id="images"
+                        accept="image/*"
+                        multiple
+                        class="absolute left-[-9999px]"
+                    />
+                    <label
+                        for="images"
+                        class="cursor-pointer block p-8 border-2 border-dashed border-primary-300 rounded-xl text-center bg-primary-50 transition-all duration-300 hover:bg-primary-100 hover:border-primary-500"
+                    >
+                        <div class="text-4xl mb-4 text-primary-500 animate-float">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <span class="text-lg font-medium text-primary-700"
+                            >Click to select images or drag and drop</span
+                        >
+                        <div class="text-sm text-primary-500 mt-2">
+                            Support multiple image files (JPG, PNG, GIF)
+                        </div>
+                    </label>
+                </div>
+
+                <div
+                    id="imagePreview"
+                    class="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+                ></div>
             </div>
 
-            <div id="placesContainer" class="hidden">
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-5"
-                id="placesList"
-              >
-                <!-- Places will be loaded here dynamically -->
-              </div>
+            <!-- Submit Button -->
+            <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-4 px-8 rounded-xl text-lg font-bold transition-all duration-300 hover:from-primary-600 hover:to-secondary-600 hover:shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                id="submitBtn"
+            >
+                <i class="fas fa-plus-circle"></i>
+                <span>Create Place</span>
+            </button>
+        </form>
 
-              <div class="mt-6 flex justify-center">
-                <nav class="inline-flex space-x-1" id="paginationControls">
-                  <!-- Pagination will be added here -->
-                </nav>
-              </div>
-            </div>
-
-            <div id="noResultsMessage" class="hidden text-center py-10">
-              <i class="fas fa-map-marked text-4xl text-gray-300 mb-4"></i>
-              <h3 class="text-xl font-bold text-gray-600">No places found</h3>
-              <p class="text-gray-500 mt-2">
-                Try adjusting your search or add a new place
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white mt-10 py-10">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
-      >
-        <div class="flex justify-center md:justify-start gap-4">
-          <a href="../index.html">
-            <img
-              src="../img/footer.PNG"
-              alt="Logo 1"
-              class="w-32 h-32 object-contain"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
-              alt="Logo 2"
-              class="w-27 h-27 object-contain mt-3"
-            />
-          </a>
-        </div>
-
-        <div
-          class="flex flex-col max-lg:mt-3 items-center md:items-start gap-5"
-        >
-          <h4 class="text-primary dark:text-blue-900 font-semibold text-lg">
-            បណ្តាញសង្គម
-          </h4>
-          <div class="flex gap-4 text-primary dark:text-blue-900">
-            <!-- Facebook -->
-            <a href="">
-              <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
-              >
-                <i
-                  class="fa-brands fa-facebook-f text-3xl text-primary dark:text-blue-900"
-                ></i>
-              </button>
-            </a>
-
-            <!-- TikTok -->
-            <a href="">
-              <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
-              >
-                <i
-                  class="fa-brands fa-tiktok text-3xl text-primary dark:text-blue-900"
-                ></i>
-              </button>
-            </a>
-
-            <!-- YouTube -->
-            <a href="">
-              <button
-                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out active:translate-y-[2px] active:shadow-none"
-              >
-                <i
-                  class="fa-brands fa-youtube text-3xl text-primary dark:text-blue-900"
-                ></i>
-              </button>
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-5 items-center md:items-start">
-          <h4 class="text-primary dark:text-blue-900 font-semibold text-lg">
-            តំណភ្ជាប់រហ័ស
-          </h4>
-          <a
-            href="index.html"
-            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
-            >ទំព័រដើម</a
-          >
-          <a
-            href="/html/about.html"
-            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
-            >អំពីពួកយើង</a
-          >
-          <a
-            href="/html/destination.html"
-            class="hover:text-teal-700 dark:hover:text-blue-600 transition"
-            >គោលដៅ</a
-          >
-        </div>
-
-        <div class="flex flex-col gap-5 items-center md:items-start">
-          <h4
-            class="text-primary dark:text-blue-900 font-semibold text-lg max-sm:text-center"
-          >
-            ឧបត្ថម្ភដោយ
-          </h4>
-          <p>
-            Institute of Science and Technology Advanced Development (ISTAD)
-          </p>
-        </div>
-      </div>
-    </footer>
+        <div id="status" class="mt-6 p-4 rounded-xl font-medium hidden"></div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute -z-10 top-0 left-0 w-72 h-72 bg-primary-500/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute -z-10 bottom-0 right-0 w-96 h-96 bg-secondary-500/10 rounded-full translate-x-1/2 translate-y-1/2"></div>
+    </div>
 
     <script>
-      // API Configuration
-      const API_BASE_URL = "https://tos-der.sokpheng.com/api/v1";
-      const PLACES_ENDPOINT = `${API_BASE_URL}/places`;
+        // Basic functionality for image preview
+        const imageInput = document.getElementById('images');
+        const imagePreview = document.getElementById('imagePreview');
+        let selectedFiles = [];
 
-      // Global state
-      let places = [];
-      let currentPage = 1;
-      const placesPerPage = 6;
-
-      // DOM Elements
-      const placesList = document.getElementById("placesList");
-      const placeForm = document.getElementById("placeForm");
-      const resetBtn = document.getElementById("resetBtn");
-      const refreshBtn = document.getElementById("refreshBtn");
-      const searchInput = document.getElementById("searchInput");
-      const loadingIndicator = document.getElementById("loadingIndicator");
-      const placesContainer = document.getElementById("placesContainer");
-      const noResultsMessage = document.getElementById("noResultsMessage");
-      const formTitle = document.getElementById("formTitle");
-      const submitBtn = document.getElementById("submitBtn");
-
-      // Initialize the app
-      function initApp() {
-        fetchPlaces();
-        setupEventListeners();
-      }
-
-      // Fetch places from API
-      async function fetchPlaces() {
-        try {
-          showLoading();
-          const response = await fetch(PLACES_ENDPOINT);
-          if (!response.ok) {
-            throw new Error(
-              `API request failed with status ${response.status}`
-            );
-          }
-          places = await response.json();
-
-          // Filter out disabled places
-          places = places.filter((place) => !place.disabled);
-
-          renderPlaces();
-          renderPagination();
-        } catch (error) {
-          console.error("Error fetching places:", error);
-          showError("Failed to load places. Please try again later.");
-        } finally {
-          hideLoading();
-        }
-      }
-
-      // Create new place
-      async function createPlace(placeData) {
-        try {
-          const response = await fetch(PLACES_ENDPOINT, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(placeData),
-          });
-
-          if (!response.ok) {
-            throw new Error(`Failed to create place: ${response.status}`);
-          }
-
-          return await response.json();
-        } catch (error) {
-          console.error("Error creating place:", error);
-          throw error;
-        }
-      }
-
-      // Update existing place
-      async function updatePlace(id, placeData) {
-        try {
-          const response = await fetch(`${PLACES_ENDPOINT}/${id}`, {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(placeData),
-          });
-
-          if (!response.ok) {
-            throw new Error(`Failed to update place: ${response.status}`);
-          }
-
-          return await response.json();
-        } catch (error) {
-          console.error("Error updating place:", error);
-          throw error;
-        }
-      }
-
-      // Soft delete place (set disabled: true)
-      async function deletePlace(id) {
-        try {
-          const response = await fetch(`${PLACES_ENDPOINT}/${id}`, {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ disabled: true }),
-          });
-
-          if (!response.ok) {
-            throw new Error(`Failed to delete place: ${response.status}`);
-          }
-
-          return true;
-        } catch (error) {
-          console.error("Error deleting place:", error);
-          throw error;
-        }
-      }
-
-      // Render places to the UI
-      function renderPlaces() {
-        // Apply search filter
-        const searchTerm = searchInput.value.toLowerCase();
-        let filteredPlaces = places;
-
-        if (searchTerm) {
-          filteredPlaces = places.filter(
-            (place) =>
-              place.name.toLowerCase().includes(searchTerm) ||
-              place.description.toLowerCase().includes(searchTerm) ||
-              place.category.name.toLowerCase().includes(searchTerm)
-          );
-        }
-
-        // Check if we have places to show
-        if (filteredPlaces.length === 0) {
-          placesContainer.classList.add("hidden");
-          noResultsMessage.classList.remove("hidden");
-          return;
-        }
-
-        noResultsMessage.classList.add("hidden");
-        placesContainer.classList.remove("hidden");
-
-        // Calculate pagination
-        const startIndex = (currentPage - 1) * placesPerPage;
-        const paginatedPlaces = filteredPlaces.slice(
-          startIndex,
-          startIndex + placesPerPage
-        );
-
-        placesList.innerHTML = "";
-
-        paginatedPlaces.forEach((place) => {
-          const card = document.createElement("div");
-          card.className =
-            "place-card fade-in bg-white rounded-xl shadow-md overflow-hidden border-l-4 border-primary";
-          card.innerHTML = `
-                    <div class="relative">
-                        <div class="h-48 overflow-hidden">
-                            <img src="${place.imageUrls[0]}" alt="${
-            place.name
-          }" class="w-full h-full object-cover">
-                        </div>
-                        <span class="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-2 py-1 rounded">
-                            ${place.category.name}
-                        </span>
-                        <span class="absolute top-3 left-3 bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded">
-                            ID: ${place.id}
-                        </span>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg text-gray-800 mb-2">${
-                          place.name
-                        }</h3>
-                        <p class="text-gray-600 text-sm mb-4 line-clamp-2">${
-                          place.description
-                        }</p>
-                        <div class="flex justify-between items-center">
-                            <div class="text-xs text-gray-500">
-                                <i class="far fa-clock mr-1"></i> ${
-                                  place.openHours
-                                }
-                            </div>
-                            <div class="text-sm font-semibold text-primary">
-                                $${place.entryFee.toFixed(2)}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-4 py-3 bg-gray-50 flex justify-end space-x-2">
-                        <button onclick="editPlace(${
-                          place.id
-                        })" class="text-sm bg-secondary hover:bg-secondary-dark text-white px-3 py-1 rounded-lg transition duration-300">
-                            <i class="fas fa-edit mr-1"></i> Edit
-                        </button>
-                        <button onclick="softDeletePlace(${
-                          place.id
-                        })" class="text-sm bg-danger hover:bg-danger-dark text-white px-3 py-1 rounded-lg transition duration-300">
-                            <i class="fas fa-trash-alt mr-1"></i> Delete
-                        </button>
-                    </div>
-                `;
-          placesList.appendChild(card);
+        imageInput.addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            selectedFiles = files;
+            displayImagePreviews();
         });
-      }
 
-      // Render pagination controls
-      function renderPagination() {
-        const searchTerm = searchInput.value.toLowerCase();
-        let filteredPlaces = places;
+        function displayImagePreviews() {
+            imagePreview.innerHTML = '';
 
-        if (searchTerm) {
-          filteredPlaces = places.filter(
-            (place) =>
-              place.name.toLowerCase().includes(searchTerm) ||
-              place.description.toLowerCase().includes(searchTerm) ||
-              place.category.name.toLowerCase().includes(searchTerm)
-          );
+            selectedFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const previewDiv = document.createElement('div');
+                    previewDiv.className = 'relative rounded-xl overflow-hidden aspect-square shadow-lg';
+                    previewDiv.innerHTML = `
+                        <img src="${e.target.result}" alt="Preview ${index + 1}" class="w-full h-full object-cover">
+                        <button type="button" onclick="removeImage(${index})" class="absolute top-2 right-2 bg-red-500/80 hover:bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold transition-colors">×</button>
+                    `;
+                    imagePreview.appendChild(previewDiv);
+                };
+                reader.readAsDataURL(file);
+            });
         }
 
-        const totalPages = Math.ceil(filteredPlaces.length / placesPerPage);
-        const pagination = document.getElementById("paginationControls");
-
-        if (totalPages <= 1) {
-          pagination.innerHTML = "";
-          return;
+        function removeImage(index) {
+            selectedFiles.splice(index, 1);
+            displayImagePreviews();
         }
 
-        let html = "";
+        // Drag and drop functionality
+        const fileUpload = document.querySelector('.file-upload');
+        const fileLabel = fileUpload.querySelector('label');
 
-        // Previous button
-        html += `<button onclick="changePage(${currentPage - 1})" ${
-          currentPage === 1 ? "disabled" : ""
-        } class="px-3 py-1 rounded-lg ${
-          currentPage === 1
-            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-        }">`;
-        html += '<i class="fas fa-chevron-left"></i>';
-        html += "</button>";
+        fileUpload.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            fileLabel.classList.remove('bg-primary-50');
+            fileLabel.classList.add('bg-primary-100', 'border-primary-500');
+        });
 
-        // Page numbers
-        for (let i = 1; i <= totalPages; i++) {
-          html += `<button onclick="changePage(${i})" class="px-3 py-1 rounded-lg ${
-            currentPage === i
-              ? "bg-primary text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-          }">${i}</button>`;
-        }
+        fileUpload.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            fileLabel.classList.add('bg-primary-50');
+            fileLabel.classList.remove('bg-primary-100', 'border-primary-500');
+        });
 
-        // Next button
-        html += `<button onclick="changePage(${currentPage + 1})" ${
-          currentPage === totalPages ? "disabled" : ""
-        } class="px-3 py-1 rounded-lg ${
-          currentPage === totalPages
-            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-        }">`;
-        html += '<i class="fas fa-chevron-right"></i>';
-        html += "</button>";
+        fileUpload.addEventListener('drop', function(e) {
+            e.preventDefault();
+            fileLabel.classList.add('bg-primary-50');
+            fileLabel.classList.remove('bg-primary-100', 'border-primary-500');
 
-        pagination.innerHTML = html;
-      }
-
-      // Change page
-      function changePage(page) {
-        currentPage = page;
-        renderPlaces();
-        renderPagination();
-      }
-
-      // Edit a place (pre-fill form)
-      function editPlace(id) {
-        const place = places.find((p) => p.id === id);
-        if (!place) return;
-
-        document.getElementById("placeId").value = place.id;
-        document.getElementById("name").value = place.name;
-        document.getElementById("category").value = place.category.name;
-        document.getElementById("description").value = place.description;
-        document.getElementById("imageUrls").value = place.imageUrls.join(", ");
-
-        formTitle.textContent = `Edit Place: ${place.name}`;
-        submitBtn.innerHTML =
-          '<i class="fas fa-sync-alt mr-2"></i>Update Place';
-
-        // Scroll to form
-        document
-          .querySelector(".lg\\:col-span-1")
-          .scrollIntoView({ behavior: "smooth" });
-      }
-
-      // Soft delete a place (set disabled: true)
-      async function softDeletePlace(id) {
-        if (
-          confirm(
-            "Are you sure you want to delete this place? It will be hidden in the UI but retained in the API."
-          )
-        ) {
-          try {
-            showLoading();
-            await deletePlace(id);
-
-            // Remove from local state
-            places = places.filter((p) => p.id !== id);
-
-            renderPlaces();
-            renderPagination();
-
-            showNotification(
-              "Place deleted successfully. It has been hidden from the UI.",
-              "success"
+            const files = Array.from(e.dataTransfer.files).filter((file) =>
+                file.type.startsWith('image/')
             );
-          } catch (error) {
-            console.error("Error deleting place:", error);
-            showNotification(
-              "Failed to delete place. Please try again.",
-              "error"
-            );
-          } finally {
-            hideLoading();
-          }
-        }
-      }
-
-      // Handle form submission
-      async function handleFormSubmit(e) {
-        e.preventDefault();
-
-        const id = document.getElementById("placeId").value;
-        const name = document.getElementById("name").value;
-        const category = document.getElementById("category").value;
-        const description = document.getElementById("description").value;
-        const imageUrls = document
-          .getElementById("imageUrls")
-          .value.split(",")
-          .map((url) => url.trim());
-
-        const placeData = {
-          name,
-          category: { name: category },
-          description,
-          imageUrls,
-          openHours: "Open 24 hours",
-          entryFee: 0.0,
-          latitude: 0.0,
-          longitude: 0.0,
-          location: "0,0",
-          disabled: false,
-        };
-
-        try {
-          showLoading();
-
-          if (id) {
-            // Update existing place
-            const updatedPlace = await updatePlace(id, placeData);
-
-            // Update local state
-            const index = places.findIndex((p) => p.id === parseInt(id));
-            if (index !== -1) {
-              places[index] = updatedPlace;
+            if (files.length > 0) {
+                selectedFiles = files;
+                displayImagePreviews();
             }
-
-            showNotification("Place updated successfully!", "success");
-          } else {
-            // Create new place
-            const newPlace = await createPlace(placeData);
-
-            // Add to local state
-            places.unshift(newPlace);
-
-            showNotification("Place created successfully!", "success");
-          }
-
-          // Reset form and re-render places
-          resetForm();
-          renderPlaces();
-          renderPagination();
-        } catch (error) {
-          console.error("Error saving place:", error);
-          showNotification("Failed to save place. Please try again.", "error");
-        } finally {
-          hideLoading();
-        }
-      }
-
-      // Reset form
-      function resetForm() {
-        placeForm.reset();
-        document.getElementById("placeId").value = "";
-        formTitle.textContent = "Add New Place";
-        submitBtn.innerHTML = '<i class="fas fa-save mr-2"></i>Save Place';
-      }
-
-      // Show notification
-      function showNotification(message, type) {
-        const notification = document.createElement("div");
-        notification.className = `fixed top-4 right-4 z-50 px-6 py-4 rounded-lg shadow-lg text-white font-semibold transform transition-all duration-300 ${
-          type === "success" ? "bg-green-500" : "bg-red-500"
-        }`;
-        notification.innerHTML = `
-                <div class="flex items-center">
-                    <i class="fas ${
-                      type === "success"
-                        ? "fa-check-circle"
-                        : "fa-exclamation-circle"
-                    } mr-2"></i>
-                    ${message}
-                </div>
-            `;
-
-        document.body.appendChild(notification);
-
-        // Auto remove after 3 seconds
-        setTimeout(() => {
-          notification.style.transform = "translateX(100%)";
-          setTimeout(() => {
-            document.body.removeChild(notification);
-          }, 300);
-        }, 3000);
-      }
-
-      // Show loading indicator
-      function showLoading() {
-        placesContainer.classList.add("hidden");
-        noResultsMessage.classList.add("hidden");
-        loadingIndicator.classList.remove("hidden");
-      }
-
-      // Hide loading indicator
-      function hideLoading() {
-        loadingIndicator.classList.add("hidden");
-      }
-
-      // Show error message
-      function showError(message) {
-        placesContainer.classList.add("hidden");
-        loadingIndicator.classList.add("hidden");
-        noResultsMessage.classList.remove("hidden");
-        noResultsMessage.innerHTML = `
-                <i class="fas fa-exclamation-triangle text-4xl text-red-500 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-600">Error Loading Data</h3>
-                <p class="text-gray-500 mt-2">${message}</p>
-                <button onclick="fetchPlaces()" class="mt-4 bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
-                    <i class="fas fa-redo mr-2"></i> Try Again
-                </button>
-            `;
-      }
-
-      // Set up event listeners
-      function setupEventListeners() {
-        placeForm.addEventListener("submit", handleFormSubmit);
-        resetBtn.addEventListener("click", resetForm);
-        refreshBtn.addEventListener("click", fetchPlaces);
-        searchInput.addEventListener("input", () => {
-          currentPage = 1;
-          renderPlaces();
-          renderPagination();
         });
-      }
-
-      // Initialize the app when DOM is loaded
-      document.addEventListener("DOMContentLoaded", initApp);
-
-      // Expose functions to global scope for button onclick handlers
-      window.editPlace = editPlace;
-      window.softDeletePlace = softDeletePlace;
-      window.changePage = changePage;
     </script>
-  </body>
+</body>
 </html>
