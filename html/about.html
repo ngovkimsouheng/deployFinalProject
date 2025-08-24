@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,12 @@
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"
     ></script>
+    <!-- send email -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <!-- send email -->
   </head>
 
   <body class="bg-background font-primary">
@@ -22,7 +28,7 @@
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="/index.html" class="Logo">
+        <a href="../index.html" class="Logo">
           <img
             class="h-auto max-md:w-[100px] md:w-[140px]"
             src="../img/logo/logoHeader.png"
@@ -31,7 +37,7 @@
         </a>
         <button
           id="menu-toggle"
-          class="lg:hidden cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
+          class="lg:hidden text-accent cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
           <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
@@ -46,17 +52,21 @@
             <li>
               <a
                 href="/index.html"
-                class="text-accent dark:text-dark-secondary transition-colors"
+                class="text-accent hover:text-secondary transition-colors"
                 >ទំព័រដើម</a
               >
             </li>
             <li>
-              <a href="#" class="text-secondary transition-colors"
+              <a
+                href="#"
+                class="text-secondary dark:text-dark-secondary transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="desti.html" class="text-accent transition-colors"
+              <a
+                href="desti.html"
+                class="text-accent hover:text-secondary transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -65,23 +75,35 @@
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleTheme()"
-            >
-              Toggle Dark Mode
-            </button> -->
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleDarkMode()"
-            >
-              Toggle Dark Mode
-            </button> -->
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              id="toggleTheme"
+              type="button"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              aria-label="Toggle dark mode"
             >
-              ចូលគណនី
+              <!-- SUN (visible in light, hides in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-100 scale-100 rotate-0 dark:opacity-0 dark:scale-75 dark:rotate-90"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm268 452q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"
+                />
+              </svg>
+
+              <!-- MOON (hidden in light, shows in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-0 scale-75 rotate-90 dark:opacity-100 dark:scale-100 dark:rotate-0"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"
+                />
+              </svg>
             </button>
             <button
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
@@ -93,7 +115,7 @@
       </nav>
     </header>
     <!--  main -->
-    <main>
+    <main class="font-primary dark:text-white dark:bg-dark_background z-0">
       <!-- hero section -->
       <section class="relative overflow-hidden z-0">
         <!-- Background Image -->
@@ -152,7 +174,7 @@
       <section class="mt-6">
         <section class="relative rounded-[10px] max-sm:pt-6 overflow-hidden">
           <div
-            class="absolute top-28 -left-50 w-40 h-40 dark:bg-blue-600 bg-teal-500 blur-[80px] rounded-full opacity-60 mix-blend-multiply animate-float-slow hidden md:block"
+            class="absolute top-28 -left-50 w-40 h-40 dark:bg-white bg-teal-500 blur-[80px] rounded-full opacity-60 mix-blend-multiply animate-float-slow hidden md:block"
             data-aos="zoom-in"
             data-aos-delay="200"
           ></div>
@@ -185,13 +207,13 @@
                   class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-dark-secondary leading-tight animate-slide-in-up"
                   data-aos="fade-up"
                 >
-                  <span class="block text-teal-800 dark:text-blue-800"
+                  <span class="block text-teal-800 dark:text-white"
                     >ស្វែងយល់ពីកម្ពុជា</span
                   >
                   <span class="block">ជាមួយបទពិសោធន៍ថ្មី</span>
                 </h2>
                 <p
-                  class="text-lg md:text-xl text-accent max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
+                  class="text-lg md:text-xl text-accent dark:text-white max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
@@ -213,10 +235,12 @@
       </section>
       <!-- Goals Section -->
       <section class="container mx-auto">
-        <section class="flex flex-col px-4 justify-center items-center">
+        <section
+          class="flex flex-col lg:px-3 max-sm:px-4 justify-center items-center"
+        >
           <h2
             data-aos="fade in"
-            class="max-md:text-[48px] md:text-[58px] sm:text-4xl max-sm:text-[22px] text-center text-teal-800 font-bold sm:py-4 max-sm:py-4 max-md:mt-5"
+            class="max-md:text-[48px] w-full md:text-[58px] sm:text-4xl max-sm:text-[22px] text-center text-teal-800 dark:text-white font-bold sm:py-10 max-sm:py-4"
           >
             <span id="typing-text"></span><span class="blinking-cursor">|</span>
           </h2>
@@ -226,7 +250,6 @@
             class="container flex flex-col justify-center items-center mx-auto"
           >
             <!-- Reason -->
-            <!-- Reason -->
             <div
               class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl"
               data-aos="fade-up"
@@ -234,14 +257,14 @@
             >
               <img
                 data-aos="fade-right"
-                src="../img/about/reason.gif"
+                src="../img/about/Learning (1).gif"
                 alt="Reason"
                 class="sm:w-[500px] rounded-[10px] z-0 self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
               />
 
               <!-- Text container with background shapes -->
               <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
+                class="relative lg:w-1/2 flex flex-col gap-10"
                 data-aos="fade-left"
               >
                 <!-- Floating shapes (inside text only) -->
@@ -252,17 +275,17 @@
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="500"
-                    class="absolute top-10 left-5 w-24 h-24 z-5 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                    class="absolute top-10 left-5 w-24 h-24 z-5 animate-pulse bg-green-600 dark:bg-white rounded-[10px] opacity-80 blur-[60px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="400"
-                    class="absolute top-40 left-1/2 w-16 h-16 z-5 animate-pulse max-lg:hidden bg-green-400 rounded-[10px] blur-[30px]"
+                    class="absolute top-40 left-1/2 w-16 h-16 z-5 animate-pulse max-lg:hidden dark:bg-dark-secondary bg-green-400 rounded-[10px] blur-[30px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="200"
-                    class="absolute bottom-10 right-5 w-20 h-20 z-5 animate-pulse bg-yellow-500 rounded-[10px] blur-[40px]"
+                    class="absolute bottom-10 right-5 w-20 h-20 z-5 animate-pulse bg-yellow-500 dark:bg-dark-light-primary rounded-[10px] blur-[40px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
@@ -271,16 +294,25 @@
                   ></div>
                 </div>
 
-                <div class="max-sm:p-4 flex flex-col gap-7">
+                <div class="max-sm:p-4 flex max-lg:text-center flex-col gap-10">
                   <h3
-                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                    data-aos="fade left"
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold dark:text-dark-secondary"
                   >
                     មូលហេតុដែលយើងបង្កើត
-                    <p class="pt-4 text-teal-800">គេហទំព័រនេះ</p>
+                    <p
+                      data-aos="fade right"
+                      class="sm:pt-4 max-sm-pt-2 text-teal-800 dark:text-white"
+                    >
+                      គេហទំព័រនេះ
+                    </p>
                   </h3>
-                  <p class="text-accent text-lg md:text-xl leading-relaxed">
+                  <p
+                    data-aos="fade right"
+                    class="text-accent text-lg md:text-xl dark:text-white leading-relaxed"
+                  >
                     ហេតុបង្កើតគេហទំព័រនេះ គឺដើម្បីលើកកម្ពស់វិស័យទេសចរណ៍កម្ពុជា។
-                    <br />គេហទំព័រនេះមានគោលបំណងជួយឲ្យអ្នកស្វែងរកកន្លែងថ្មីៗ
+                    គេហទំព័រនេះមានគោលបំណងជួយឲ្យអ្នកស្វែងរកកន្លែងថ្មីៗ
                     និងទទួលបានបទពិសោធន៍ដ៏មានតម្លៃ។
                   </p>
                 </div>
@@ -289,18 +321,20 @@
 
             <!-- Vision -->
             <div
-              class="relative flex lg:flex-row-reverse max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              class="relative flex px-3 lg:flex-row-reverse max-lg:flex-col justify-between lg:items-center rounded-2xl"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <img
                 data-aos="fade-right"
                 src="../img/about/Shared goals (1).gif"
-                alt="Vision"
-                class="sm:w-[500px] self-center rounded-[10px]self-center z-0 sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+                alt="Reason"
+                class="sm:w-[500px] rounded-[10px] z-0 self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
               />
+
+              <!-- Text container with background shapes -->
               <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
+                class="relative lg:w-1/2 flex flex-col gap-10"
                 data-aos="fade-left"
               >
                 <!-- Floating shapes (inside text only) -->
@@ -311,95 +345,111 @@
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="500"
-                    class="absolute top-10 z-5 left-5 w-24 h-15 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                    class="absolute top-10 left-5 w-24 h-24 z-5 animate-pulse bg-green-600 dark:bg-white rounded-[10px] opacity-80 blur-[60px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="400"
-                    class="absolute top-40 z-5 left-1/2 w-16 h-16 max-lg:hidden animate-pulse bg-green-400 rounded-[10px] blur-[30px]"
+                    class="absolute top-40 left-1/2 w-16 h-16 z-5 animate-pulse max-lg:hidden dark:bg-dark-secondary bg-green-400 rounded-[10px] blur-[30px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="200"
-                    class="absolute bottom-10 z-5 right-5 w-20 h-20 animate-pulse bg-yellow-500 rounded-[10px] blur-[40px]"
+                    class="absolute bottom-10 right-5 w-20 h-20 z-5 animate-pulse bg-yellow-500 dark:bg-dark-light-primary rounded-[10px] blur-[40px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="300"
-                    class="absolute top-1/2 z-5 right-8 w-12 h-12 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
+                    class="absolute top-1/2 right-8 w-12 h-12 z-5 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
                   ></div>
                 </div>
-
-                <div class="max-sm:p-4 flex flex-col gap-6">
+                <div class="max-sm:p-4 flex max-lg:text-center flex-col gap-10">
                   <h3
-                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                    data-aos="fade left"
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold dark:text-dark-secondary"
                   >
                     ទស្សនវិស័យសម្រាប់
-                    <p class="pt-4 text-teal-800">អនាគត</p>
+                    <p
+                      data-aos="fade left"
+                      class="sm:pt-4 max-sm-pt-2 text-teal-800 dark:text-white"
+                    >
+                      អនាគត
+                    </p>
                   </h3>
-                  <p class="text-accent text-base md:text-xl leading-relaxed">
-                    យើងមានគោលបំណងក្លាយជាវេទិកាទេសចរណ៍ឌីជីថលឈានមុខ <br />
+                  <p
+                    data-aos="fade right"
+                    class="text-accent dark:text-white text-lg md:text-xl leading-relaxed"
+                  >
+                    យើងមានគោលបំណងក្លាយជាវេទិកាទេសចរណ៍ឌីជីថលឈានមុខ
                     ដែលផ្តល់ព័ត៌មានត្រឹមត្រូវ
                     និងទាន់សម័យអំពីកន្លែងទេសចរណ៍ទូទាំងប្រទេសកម្ពុជា។
                   </p>
                 </div>
               </div>
             </div>
-
             <!-- Purpose -->
             <div
-              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl mt-12"
+              class="relative flex lg:flex-row max-lg:flex-col justify-between lg:items-center rounded-2xl"
               data-aos="fade-up"
               data-aos-delay="100"
             >
               <img
                 data-aos="fade-right"
                 src="../img/about/Website Creator (2).gif"
-                alt="Purpose"
-                class="sm:w-[500px] rounded-[10px] self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
+                alt="Reason"
+                class="sm:w-[500px] rounded-[10px] z-0 self-center sm:h-[500px] sm:rounded-xl max-sm:w-[350px] max-sm:h-[350px]"
               />
+
+              <!-- Text container with background shapes -->
               <div
-                class="relative lg:w-1/2 flex flex-col gap-7"
+                class="relative lg:w-1/2 flex flex-col gap-10"
                 data-aos="fade-left"
               >
                 <!-- Floating shapes (inside text only) -->
-                <div class="absolute inset-0 pointer-events-none -z-10">
+                <div
+                  data-aos="zoom-in"
+                  class="absolute inset-0 pointer-events-none -z-10"
+                >
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="500"
-                    class="absolute top-10 left-5 w-24 h-24 animate-pulse bg-green-600 rounded-[10px] opacity-80 blur-[60px]"
+                    class="absolute top-10 left-5 w-24 h-24 z-5 animate-pulse bg-green-600 dark:bg-white rounded-[10px] opacity-80 blur-[60px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="400"
-                    class="absolute top-40 left-1/2 w-16 h-16 animate-pulse max-lg:hidden bg-green-400 rounded-[10px] blur-[30px]"
+                    class="absolute top-40 left-1/2 w-16 h-16 z-5 animate-pulse max-lg:hidden dark:bg-dark-secondary bg-green-400 rounded-[10px] blur-[30px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="200"
-                    class="absolute bottom-10 right-5 w-20 h-20 animate-pulse bg-yellow-500 rounded-[10px] blur-[2000px]"
+                    class="absolute bottom-10 right-5 w-20 h-20 z-5 animate-pulse bg-yellow-500 dark:bg-dark-light-primary rounded-[10px] blur-[40px]"
                   ></div>
                   <div
                     data-aos="zoom-in"
                     data-aos-delay="300"
-                    class="absolute top-1/2 right-8 w-12 h-12 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
+                    class="absolute top-1/2 right-8 w-12 h-12 z-5 animate-pulse bg-orange-300 rounded-[10px] blur-[30px]"
                   ></div>
                 </div>
 
-                <div class="max-sm:p-4 flex flex-col gap-8">
+                <div class="max-sm:p-4 flex max-lg:text-center flex-col gap-10">
                   <h3
-                    class="text-secondary md:text-5xl max-md:text-4xl font-bold"
+                    data-aos="fade left"
+                    class="text-secondary md:text-5xl max-md:text-4xl font-bold dark:text-dark-secondary"
                   >
                     គោលបំណងចម្បង
-                    <p class="pt-4 text-teal-800">របស់យើង</p>
+                    <p
+                      data-aos="fade right"
+                      class="sm:pt-4 max-sm-pt-2 text-teal-800 dark:text-white"
+                    >
+                      របស់យើង
+                    </p>
                   </h3>
                   <p
-                    data-aos="fade-right"
-                    data-aos-delay="300"
-                    class="text-accent text-base md:text-xl leading-relaxed"
+                    data-aos="fade right"
+                    class="text-accent dark:text-white text-lg md:text-xl leading-relaxed"
                   >
-                    គេហទំព័រនេះត្រូវបានបង្កើតឡើង
-                    ដើម្បីផ្ដល់បទពិសោធន៍ស្វែងយល់អំពីទេសចរណ៍នៅកម្ពុជា
+                    គេហទំព័រនេះត្រូវបានបង្កើតឡើងដើម្បីផ្ដល់បទពិសោធន៍ស្វែងយល់អំពីទេសចរណ៍នៅកម្ពុជា
                     តាមរយៈព័ត៌មានទេសចរណ៍ដែលងាយស្រួលស្វែងរក។
                   </p>
                 </div>
@@ -413,7 +463,7 @@
         <section class="px-6 py-4 overflow-hidden">
           <div class="max-w-5xl mx-auto">
             <h2
-              class="text-3xl md:text-4xl font-bold text-center p-4 text-teal-800 dark:text-dark-primary"
+              class="text-3xl md:text-4xl font-bold text-center p-4 text-teal-800 dark:text-dark-secondary"
               data-aos="fade-down"
               data-aos-delay="200"
             >
@@ -424,9 +474,7 @@
               data-aos="zoom-in-up"
               data-aos-delay="300"
             >
-              <div
-                class="p-6 text-center transition-transform hover:-translate-y-2 duration-500"
-              >
+              <div class="p-6 text-center transition-transform duration-500">
                 <img
                   src="/img/CHAN CHHAYA.jpeg"
                   alt="ចាន់ ឆៃយ៉ា"
@@ -446,9 +494,7 @@
                   <a href=""><i class="fa-brands fa-telegram"></i></a>
                 </div>
               </div>
-              <div
-                class="p-6 text-center transition-transform hover:-translate-y-2 duration-500"
-              >
+              <div class="p-6 text-center transition-transform duration-500">
                 <img
                   src="/img/EUNG LYZHIA.jpeg"
                   alt="អុឹង លីហ៊្សា"
@@ -471,8 +517,7 @@
             </div>
           </div>
         </section>
-
-        <section class="container mx-auto p-6 overflow-hidden">
+        <section class="container mx-auto p-4 overflow-hidden">
           <div class="w-full mx-auto z-1">
             <h2
               class="text-3xl md:text-4xl font-bold text-center text-teal-800 dark:text-dark-primary mb-12"
@@ -488,10 +533,10 @@
               <div
                 data-aos="fade-up"
                 data-aos-delay="200"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform hover:-translate-y-2 duration-500"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform duration-500"
               >
                 <img
-                  src="/img/EAT SOMBAT.jpg"
+                  src="../img/photo/sombath.jpg"
                   alt="អៀត សម្បត្តិ"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
@@ -505,19 +550,27 @@
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://web.facebook.com/sombath.khmer.52"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="https://github.com/Sombath11" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="https://t.me/+855972808465" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-delay="300"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition transition-transform hover:-translate-y-2 duration-500"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition transition-transform duration-500"
               >
                 <img
-                  src="/img/NGOV KIMSOUHENG.jpg"
+                  src="../img/photo/souheng.JPG"
                   alt="ង៉ូវ គឹមស៊ូហេង"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
@@ -531,19 +584,27 @@
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/178ZKfWKoi/?mibextid=wwXIfr"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-delay="400"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform hover:-translate-y-2 duration-500"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center transition-transform duration-500"
               >
                 <img
-                  src="/img/PHOEURN SOLYTA.jpg"
+                  src="../img/photo/solyta.jpg"
                   alt="ភឿន សូលីតា"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
@@ -557,19 +618,27 @@
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/1BEcWAXRUA/?mibextid=wwXIfr"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href=" https://github.com/Phoeurnsolyta" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href=" https://t.me/Whalients" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform"
               >
                 <img
-                  src="/img/THOEUN SOPHEAK.jpg"
+                  src="../img/photo/sopheak.jpg"
                   alt="ធឿន សុភ័ក្តិ"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
@@ -583,19 +652,27 @@
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/1FKLrGV81y/"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="https://github.com/sopheak88" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="https://t.me/pknika12" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-delay="200"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform"
               >
                 <img
-                  src="/img/YOUT KONGHOUR.jpg"
+                  src="../img/photo/konghour.jpg"
                   alt="យ៉ត គង្គហួរ"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
@@ -609,87 +686,88 @@
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/1G1Wkpm4fo/?mibextid=wwXIfr"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="https://github.com/KONGHOUR" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="https://t.me/konghou168" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="300"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
-              >
-                <img
-                  src="/img/CHHI ROTHA.jpg"
-                  alt="អៀត សម្បត្តិ"
-                  class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
-                />
-                <div>
-                  <h3
-                    class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
-                  >
-                    អៀត សម្បត្តិ
-                  </h3>
-                  <p class="text-md text-secondary">សមាជិក</p>
-                  <div
-                    class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
-                  >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
-                  </div>
-                </div>
-              </div>
+
               <div
                 data-aos="fade-up"
                 data-aos-delay="400"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform"
               >
                 <img
-                  src="/img/SAVUTH DAVIN.jpg"
-                  alt="អៀត សម្បត្តិ"
+                  src="../img/photo/davin.jpg"
+                  alt="សាវុទ្ធ​ ដាវីន"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
                 <div>
                   <h3
                     class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
                   >
-                    អៀត សម្បត្តិ
+                    សាវុទ្ធ​ ដាវីន
                   </h3>
                   <p class="text-md text-secondary">សមាជិក</p>
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/171Rp7tg2r/?mibextid=wwXIfr"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a
+                      href="https://github.com/savuthdavin/tana"
+                      target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href="https://t.me/savuthdavin" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-delay="500"
-                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform hover:-translate-y-2"
+                class="flex gap-3 flex-col items-center justify-center rounded-2xl text-center duration-300 transition-transform"
               >
                 <img
-                  src="/img/KEO CHING CHOU.png"
-                  alt="អៀត សម្បត្តិ"
+                  src="../img/photo/chingchou.JPG"
+                  alt="កែវ​​ ជីងជូ"
                   class="max-sm:w-30 max-sm:h-30 sm:w-45 sm:h-45 mx-auto rounded-full object-cover"
                 />
                 <div>
                   <h3
                     class="text-lg rounded-[100px] py-[1px] px-2 font-semibold text-primary dark:text-dark-primary"
                   >
-                    អៀត សម្បត្តិ
+                    កែវ​​ ជីងជូ
                   </h3>
                   <p class="text-md text-secondary">សមាជិក</p>
                   <div
                     class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                   >
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-github"></i></a>
-                    <a href=""><i class="fa-brands fa-telegram"></i></a>
+                    <a
+                      href="https://www.facebook.com/share/1Ao9idNyon/?mibextid=wwXIfr"
+                      target="_blank"
+                      ><i class="fa-brands fa-facebook"></i
+                    ></a>
+                    <a href="https://github.com/Bang-Ze" target="_blank"
+                      ><i class="fa-brands fa-github"></i
+                    ></a>
+                    <a href=" https://t.me/XBangZeX" target="_blank"
+                      ><i class="fa-brands fa-telegram"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -714,44 +792,48 @@
             ប្រសិនជាមានចម្ងល់ ឬសំណួរទៅកាន់យើង សូមសរសេរមកខាងក្រោម
             និងបំពេញអុីម៉ែល។
           </p>
-          <textarea
-            placeholder="សរសេរចម្ងល់របស់អ្នក..."
-            class="w-full p-4 border rounded-lg mb-6 font-light resize-none"
-            rows="5"
-          ></textarea>
 
-          <form>
-            <label
-              for="search"
-              class="text-md font-medium text-gray-900 sr-only dark:text-white"
-              >Search</label
-            >
+          <form id="myForm" method="post">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="សរសេរចម្ងល់របស់អ្នក..."
+              class="w-full p-4 border rounded-lg mb-6 font-light resize-none"
+              rows="5"
+              required
+            ></textarea>
+
             <div class="relative">
-              <div
-                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
-              ></div>
               <input
-                type="search"
-                id="search"
+                type="email"
+                id="email"
+                name="email"
+                oninput="validateEmail()"
                 class="block w-full p-4 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary"
-                placeholder="Email "
+                placeholder="Email"
                 required
               />
               <button
-                type="submit"
-                class="text-white absolute end-2.5 bottom-2.5 bg-primary hover:bg-green-800 focus:ring-1 focus:ring-green-800 font-medium rounded-lg text-md px-6 py-2"
+                type="button"
+                id="submitBtn"
+                value="Send Email"
+                onclick="sendEmail()"
+                class="text-white absolute cursor-pointer end-2.5 bottom-2.5 bg-primary hover:bg-green-800 focus:ring-1 focus:ring-green-800 font-medium rounded-lg text-md px-6 py-2"
               >
-                Send
+                បញ្ជូន
               </button>
             </div>
+            <p id="emailError" class="text-red-500 text-sm mt-2 hidden">
+              Please enter a valid email address
+            </p>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="bg-white mt-10 py-10">
+    <footer class="bg-white pt-8">
       <div
-        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
+        class="container bg-white mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-left text-sm sm:text-base"
       >
         <div class="flex justify-center md:justify-start gap-4">
           <a href="../index.html">
@@ -860,4 +942,6 @@
     AOS.init({ duration: 500, once: true });
   </script>
   <script src="../js/script.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/sendMail.js"></script>
 </html>

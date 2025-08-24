@@ -21,44 +21,45 @@
 
   <body class="bg-background font-primary">
     <!-- Header -->
-    <header class="bg-white w-full shadow sticky top-0 z-10">
+    <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
-        class="lg:container mx-auto flex items-center justify-between px-4 py-3"
+        class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="#">
+        <a href="../index.html" class="Logo">
           <img
-            class="lg:h-auto lg:w-[60px] max-lg:h-15 max-lg:w-auto"
-            src="../img/home/logo.png"
+            class="h-auto max-md:w-[100px] md:w-[140px]"
+            src="../img/logo/logoHeader.png"
             alt="Logo"
           />
         </a>
-
         <button
           id="menu-toggle"
-          class="lg:hidden cursor-pointer text-3xl text-gray-850 focus:outline-none"
+          class="lg:hidden cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
           <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
 
         <div
           id="nav-links"
-          class="hidden max-lg:mt-[20px] lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full bg-white lg:static lg:w-auto p-4 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+          class="hidden z-10 bg-white lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
         >
           <ul
-            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-end font-medium"
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
-              <a href="../index.html" class="text-accent transition-colors"
+              <a
+                href="../index.html"
+                class="text-accent dark:text-dark-secondary transition-colors"
                 >ទំព័រដើម</a
               >
             </li>
             <li>
-              <a href="./about.html" class="text-accent transition-colors"
+              <a href="html/about.html" class="text-accent transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="./desti.html" class="text-secondary transition-colors"
+              <a href="./html/desti.html" class="text-accent transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -67,7 +68,20 @@
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
+            <!-- <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleTheme()"
+            >
+              Toggle Dark Mode
+            </button> -->
+            <!-- <button
+              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              onclick="toggleDarkMode()"
+            >
+              Toggle Dark Mode
+            </button> -->
             <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
             >
               ចូលគណនី
@@ -83,8 +97,10 @@
     </header>
 
     <!-- Main -->
-    <main class="container mx-auto font-primary">
-      <div class="w-full px-4 flex flex-row items-center justify-between py-10">
+    <main class="lg:container lg:mx-auto font-primary">
+      <section
+        class="w-full px-4 flex flex-row items-center justify-between py-10"
+      >
         <div>
           <a href="./desti.html">
             <i
@@ -101,10 +117,10 @@
         >
           មតិយោបល់ <i class="fa-regular fa-message"></i>
         </button>
-      </div>
+      </section>
 
       <!-- Modal -->
-      <div
+      <section
         id="static-modal"
         data-modal-backdrop="static"
         tabindex="-1"
@@ -116,25 +132,21 @@
             <div id="formReview"></div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section id="detailPlaces" class="py-1 px-4"></section>
-      <section
-        id="location"
-        class="px-4 font-primary grid grid-cols-1 items-center md:grid-cols-2 gap-6 justify-start my-8 space-y-4"
-      ></section>
+      <section id="location" class="px-4"></section>
 
-      <!-- Comments -->
-      <section class="px-4">
+      <section class="lg:container pt-6 px-4">
         <div id="comments-section" class="max-w-full mx-auto">
           <h2 class="text-xl sm:text-2xl font-bold text-center text-primary">
             មតិទាំងអស់
           </h2>
-          <div class="container py-6 mx-auto   font-sans">
-            <div class="relative rounded-[10px]  overflow-hidden group">
+          <div class="lg:container py-6 mx-auto font-sans">
+            <div class="relative rounded-[10px] overflow-hidden group">
               <div
                 id="review-list"
-                class="flex w-full rounded-[10px]  animate-scroll-left group-hover:[animation-play-state:paused] gap-4"
+                class="flex w-full justify-center animate-scroll-left rounded-[10px] group-hover:[animation-play-state:paused] gap-4"
               ></div>
             </div>
           </div>

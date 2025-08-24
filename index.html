@@ -13,6 +13,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./src/output.css" />
     <script
       src="https://kit.fontawesome.com/5ce14b4205.js"
@@ -35,7 +39,7 @@
         </a>
         <button
           id="menu-toggle"
-          class="lg:hidden cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
+          class="lg:hidden text-accent cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
           <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
@@ -60,7 +64,7 @@
               >
             </li>
             <li>
-              <a href="./html/desti.html" class="text-accent transition-colors"
+              <a href="html/desti.html" class="text-accent transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -69,29 +73,99 @@
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleTheme()"
-            >
-              Toggle Dark Mode
-            </button> -->
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleDarkMode()"
-            >
-              Toggle Dark Mode
-            </button> -->
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              id="toggleTheme"
+              type="button"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              aria-label="Toggle dark mode"
             >
-              ចូលគណនី
+              <!-- SUN (visible in light, hides in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-100 scale-100 rotate-0 dark:opacity-0 dark:scale-75 dark:rotate-90"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm268 452q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"
+                />
+              </svg>
+
+              <!-- MOON (hidden in light, shows in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-0 scale-75 rotate-90 dark:opacity-100 dark:scale-100 dark:rotate-0"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"
+                />
+              </svg>
+            </button>
+
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-950 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              <a href="/html/loginnnn.html">ចុះឈ្មោះ</a>
             </button>
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              id="dropdownDelayButton"
+              data-dropdown-toggle="dropdownDelay"
+              data-dropdown-delay="500"
+              data-dropdown-trigger="hover"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              type="button"
             >
-              ចុះឈ្មោះ
+              Dropdown hover
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
             </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownDelay"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDelayButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Post</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Update</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="html/delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Delete</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -186,20 +260,22 @@
         <!-- grid -->
         <div
           id="province_categories"
-          class="grid md:grid-cols-[1fr_1fr_1fr] lg:h-[85vh] md:h-[80vh] grid-rows-[1fr_1fr] md:gap-4 max-md:gap-2 max-sm:gap-1"
+          class="grid md:grid-cols-[1fr_1fr_1fr] max-lg:h-[50vh] lg:h-[85vh] md:h-[80vh] max-md:h-[60vh] max-sm:h-[40vh] grid-rows-[1fr_1fr] md:gap-4 max-md:gap-2 max-sm:gap-1"
         ></div>
       </section>
       <!-- section2 -->
       <section
-        class="relative bg-white dark:bg-gray-100 overflow-hidden sm:py-10 sm:my-10"
+        class="relative bg-white dark:bg-accent/40 overflow-hidden sm:py-10 sm:my-10"
       >
         <div class="lg:container px-4 py-4 lg:mx-auto relative">
           <!-- Background Text -->
-          <div class="absolute inset-0 flex p-4 opacity-10 pointer-events-none">
+          <div
+            class="absolute inset-0 flex p-4 max-lg:opacity-5 lg:opacity-100 pointer-events-none"
+          >
             <span
               data-aos="fade-up"
               data-aos-delay="200"
-              class="sm:text-8xl max-sm:text-6xl font-bold text-green-300 dark:text-blue-300 whitespace-nowrap"
+              class="sm:text-8xl max-sm:text-6xl font-bold text-teal-800 dark:text-white whitespace-nowrap"
             >
               ទេសចរណ៍កម្ពុជា
             </span>
@@ -246,7 +322,7 @@
               <p
                 data-aos-delay="300"
                 data-aos="fade-right"
-                class="text-accent text-lg leading-relaxed max-w-md"
+                class="text-accent dark:text-white text-lg leading-relaxed max-w-md"
               >
                 កម្ពុជា​ជា​គោលដៅ​ទេសចរណ៍​ដ៏​អស្ចារ្យ​មួយ
                 ដែល​មាន​ទាំង​ទេសភាព​ធម្មជាតិ​ស្រស់​ស្អាត
@@ -312,13 +388,13 @@
         class="relative rounded-[10px] sm:py-5 max-sm:pt-6 overflow-hidden"
       >
         <div
-          class="absolute top-28 -left-50 w-40 h-40 dark:bg-blue-600 bg-teal-500 blur-[80px] rounded-full opacity-60 mix-blend-multiply animate-float-slow hidden md:block"
+          class="absolute top-28 -left-40 w-40 h-40 dark:bg-dark-secondary bg-teal-500 blur-[80px] rounded-full opacity-80 mix-blend-multiply animate-float-slow hidden md:block"
           data-aos="zoom-in"
           data-aos-delay="200"
         ></div>
 
         <div
-          class="absolute bottom-30 -right-10 w-32 h-22 dark:bg-red-400 bg-orange-400/50 blur-[90px] rounded-full opacity-60 mix-blend-multiply animate-float-fast hidden md:block"
+          class="absolute bottom-35 right-10 w-32 h-22 dark:bg-white bg-secondary blur-[80px] rounded-full opacity-80 mix-blend-multiply animate-float-fast hidden md:block"
           data-aos="zoom-in"
           data-aos-delay="400"
         ></div>
@@ -359,12 +435,12 @@
                 សូមមកស្វែងរកបទពិសោធន៍ដែលមិនអាចបំភ្លេចបាន
                 ទាំងតំបន់បេតិកភណ្ឌពិភពលោក និងសម្រស់ធម្មជាតិដ៏ប្លែក។
               </p>
-              <a data-aos="zoom-in" href="./html/desti.html">
-                <button
-                  class="group flex cursor-pointer justify-center py-6 mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-teal-800 dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-                >
-                  ចាប់ផ្តើមដំណើររបស់អ្នក
-                </button>
+              <a
+                class="group w-fit flex cursor-pointer justify-center py-6 mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-teal-800 dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+                data-aos="zoom-in"
+                href="./html/desti.html"
+              >
+                ចាប់ផ្តើមដំណើររបស់អ្នក
               </a>
             </div>
           </div>
@@ -517,6 +593,7 @@
     <script>
       AOS.init({ duration: 1000, once: true });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <script src="js/script.js"></script>
     <script src="/js/province_categories.js"></script>
     <script src="./js/Hometype.js"></script>

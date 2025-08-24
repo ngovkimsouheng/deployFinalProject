@@ -11,7 +11,7 @@
     /* --font-Secondary: "Kantumruy Pro", sans-serif; */
     --color-dark_background: #000235;
     --color-dark-primary: #3E3E78;
-    --color-dark-secondary: #AAD9D9;
+    --color-dark-secondary: #FDCF18;
     --color-dark-light-primary: #5858A7;
 
 }
@@ -67,7 +67,7 @@
 }
 
 .animate-scroll-left {
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 30s linear infinite;
 }
 
 .animate-scroll-left:hover {

@@ -1,5 +1,7 @@
 "use strict";
 
+"use strict";
+
 const texts2 = ["ភាពរីករាយនៃការធ្វើដំណើរទៅកាន់កម្ពុជា"];
 
 const typingElement2 = document.getElementById("travel-typing");
@@ -31,38 +33,3 @@ function typeEffect2() {
 }
 
 document.addEventListener("DOMContentLoaded", typeEffect2);
-// // Get elements
-// const toggleDark = document.getElementById("toggleDark");
-// const html = document.documentElement; // or document.body
-
-// // Load saved theme from localStorage
-// if (localStorage.theme === "dark") {
-//   html.classList.add("dark");
-// } else if (localStorage.theme === "light") {
-//   html.classList.remove("dark");
-// }
-
-// // Toggle on click
-// toggleDark.addEventListener("click", () => {
-//   html.classList.toggle("dark");
-
-//   // Save to localStorage
-//   if (html.classList.contains("dark")) {
-//     localStorage.theme = "dark";
-//   } else {
-//     localStorage.theme = "light";
-//   }
-// });
-
-const toggleDark = document.getElementById("toggleDark");
-const html = document.documentElement;
-
-toggleDark.addEventListener("click", () => {
-  html.classList.toggle("dark");
-
-  if (html.classList.contains("dark")) {
-    toggleDark.classList.replace("fa-sun", "fa-moon");
-  } else {
-    toggleDark.classList.replace("fa-moon", "fa-sun");
-  }
-});

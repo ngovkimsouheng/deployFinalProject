@@ -131,16 +131,16 @@ async function PlaceSuggestionsList() {
     PlaceSuggestions.innerHTML = filteredPlaces
       .map(
         (place) => `
-        <div data-aos="fade-right" data-aos-delay="200" class="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div data-aos="fade-right" data-aos-delay="200" class="bg-white  dark:bg-accent/50 rounded-xl shadow-lg overflow-hidden">
           <a href="../html/ParamDetail.html?placeUuid=${place.uuid}" >
-          <div class="bg-teal-900 dark:bg-dark-light-primary px-6 py-3  flex justify-between items-center">
+          <div class="bg-teal-900 dark:bg-dark-primary px-6 py-3  flex justify-between items-center">
             <h3 class="text-white text-[24px] font-bold">${place.name}</h3>
             <span
               class=" text-white text-sm px-3 py-1 rounded-[10px]"
               ></span
             >
           </div>
-          <div  class="p-4 text-accent text-[18px]">
+          <div  class="p-4 text-accent dark:text-white text-[18px]">
             <p class="line-clamp-3">${place.description}...</p>
             <ul class="list-disc pt-6 pl-6 space-y-1">
               <li>${place.openHours}</li>

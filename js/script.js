@@ -38,11 +38,7 @@ function slideImages() {
 setInterval(slideImages, 3000); // Slide every 3 seconds
 
 // text typing animation
-const texts = [
-  "១. មូលហេតុ",
-  "២. ទស្សនវិស័យ",
-  "៣. គោលបំណង",
-]; //["OUR REASON", "OUR VISION", "OUR PURPOSE"];
+const texts = ["១. មូលហេតុ", "២. ទស្សនវិស័យ", "៣. គោលបំណង"]; //["OUR REASON", "OUR VISION", "OUR PURPOSE"];
 const typingElement = document.getElementById("typing-text");
 const cursor = document.querySelector(".blinking-cursor");
 let textIndex = 0;
@@ -56,7 +52,7 @@ function typeEffect() {
     typingElement.textContent = currentText.slice(0, charIndex++);
     if (charIndex > currentText.length) {
       typing = false;
-      setTimeout(typeEffect, 1500);
+      setTimeout(typeEffect, 1200);
       return;
     }
   } else {
@@ -81,4 +77,3 @@ function filterByProvince(province) {
     }
   });
 }
-
