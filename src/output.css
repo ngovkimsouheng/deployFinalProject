@@ -14,7 +14,6 @@
     --color-red-300: #FCA5A5;
     --color-red-400: #F87171;
     --color-red-500: #EF4444;
-    --color-red-600: #DC2626;
     --color-red-700: #B91C1C;
     --color-red-800: #991B1B;
     --color-red-900: #7F1D1D;
@@ -1543,9 +1542,6 @@
   }
   .text-red-500 {
     color: var(--color-red-500);
-  }
-  .text-red-600 {
-    color: var(--color-red-600);
   }
   .text-red-800 {
     color: var(--color-red-800);
