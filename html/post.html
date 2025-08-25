@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>បង្កើតទីកន្លែង</title>
     <link rel="stylesheet" href="../src/output.css" />
-    <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../img/logo/logoFooter.png"
+      type="image/x-icon"
+    />
 
     <script
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"
     ></script>
     <style>
-      
-
       .contain {
         max-width: 800px;
         margin: 0 auto;
@@ -80,7 +82,7 @@
         width: 100%;
       }
 
-      .file-upload input[type='file'] {
+      .file-upload input[type="file"] {
         position: absolute;
         left: -9999px;
       }
@@ -102,7 +104,7 @@
       }
 
       .file-upload label:before {
-        content: '📁';
+        content: "📁";
         font-size: 2em;
         display: block;
         margin-bottom: 10px;
@@ -336,7 +338,6 @@
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
-              data-dropdown-trigger="hover"
               class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
@@ -593,30 +594,30 @@
     </footer>
 
     <script>
-      const API_BASE = 'https://tos-der.sokpheng.com/api/v1';
+      const API_BASE = "https://tos-der.sokpheng.com/api/v1";
       let selectedFiles = [];
 
-      const imageInput = document.getElementById('images');
-      const imagePreview = document.getElementById('imagePreview');
-      const form = document.getElementById('placeForm');
-      const statusDiv = document.getElementById('status');
-      const submitBtn = document.getElementById('submitBtn');
+      const imageInput = document.getElementById("images");
+      const imagePreview = document.getElementById("imagePreview");
+      const form = document.getElementById("placeForm");
+      const statusDiv = document.getElementById("status");
+      const submitBtn = document.getElementById("submitBtn");
 
       // Handle file selection
-      imageInput.addEventListener('change', function (e) {
+      imageInput.addEventListener("change", function (e) {
         const files = Array.from(e.target.files);
         selectedFiles = files;
         displayImagePreviews();
       });
 
       function displayImagePreviews() {
-        imagePreview.innerHTML = '';
+        imagePreview.innerHTML = "";
 
         selectedFiles.forEach((file, index) => {
           const reader = new FileReader();
           reader.onload = function (e) {
-            const previewDiv = document.createElement('div');
-            previewDiv.className = 'preview-image';
+            const previewDiv = document.createElement("div");
+            previewDiv.className = "preview-image";
             previewDiv.innerHTML = `
                         <img src="${e.target.result}" alt="Preview ${
               index + 1
@@ -637,7 +638,7 @@
       function showStatus(message, type) {
         statusDiv.innerHTML = message;
         statusDiv.className = `status ${type}`;
-        statusDiv.style.display = 'block';
+        statusDiv.style.display = "block";
       }
 
       async function uploadImages() {
@@ -647,12 +648,12 @@
 
         const formData = new FormData();
         selectedFiles.forEach((file) => {
-          formData.append('files', file);
+          formData.append("files", file);
         });
 
         try {
           const response = await fetch(`${API_BASE}/upload/multiple`, {
-            method: 'POST',
+            method: "POST",
             body: formData,
           });
 
@@ -663,7 +664,7 @@
           }
 
           const result = await response.json();
-          console.log('Upload response:', result);
+          console.log("Upload response:", result);
 
           // Handle different possible response structures
           // Expected format: URLs like "https://tos-der.sokpheng.com/images/43149900-9b2c-4987-ab31-19724acaae43.png"
@@ -681,19 +682,19 @@
             // If response has images array
             return result.images.map((img) => img.url || img.path || img);
           } else {
-            console.warn('Unexpected upload response structure:', result);
+            console.warn("Unexpected upload response structure:", result);
             // Try to extract any URLs from the response
             const possibleUrls = Object.values(result)
               .flat()
               .filter(
                 (val) =>
-                  typeof val === 'string' &&
-                  val.includes('tos-der.sokpheng.com/images/')
+                  typeof val === "string" &&
+                  val.includes("tos-der.sokpheng.com/images/")
               );
             return possibleUrls.length > 0 ? possibleUrls : [];
           }
         } catch (error) {
-          console.error('Image upload error:', error);
+          console.error("Image upload error:", error);
           throw new Error(`Image upload failed: ${error.message}`);
         }
       }
@@ -701,9 +702,9 @@
       async function createPlace(placeData) {
         try {
           const response = await fetch(`${API_BASE}/places`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
             body: JSON.stringify(placeData),
           });
@@ -716,21 +717,21 @@
           }
 
           const result = await response.json();
-          console.log('Place creation response:', result);
+          console.log("Place creation response:", result);
           return result;
         } catch (error) {
-          console.error('Place creation error:', error);
+          console.error("Place creation error:", error);
           throw error;
         }
       }
 
-      form.addEventListener('submit', async function (e) {
+      form.addEventListener("submit", async function (e) {
         e.preventDefault();
 
         submitBtn.disabled = true;
         showStatus(
           '<div class="loading-spinner"></div>Processing...',
-          'loading'
+          "loading"
         );
 
         try {
@@ -739,35 +740,35 @@
           if (selectedFiles.length > 0) {
             showStatus(
               '<div class="loading-spinner"></div>Uploading images...',
-              'loading'
+              "loading"
             );
             imageUrls = await uploadImages();
-            console.log('Uploaded image URLs:', imageUrls);
+            console.log("Uploaded image URLs:", imageUrls);
           }
 
           const names = imageUrls.map((developer) => developer.uri);
 
-          console.log('Uploaded image:', names);
+          console.log("Uploaded image:", names);
           // Step 2: Prepare place data
           const formData = new FormData(form);
           const placeData = {
-            name: formData.get('name'),
-            description: formData.get('description'),
-            openHours: formData.get('openHours'),
-            entryFee: parseFloat(formData.get('entryFee')) || 0.0,
+            name: formData.get("name"),
+            description: formData.get("description"),
+            openHours: formData.get("openHours"),
+            entryFee: parseFloat(formData.get("entryFee")) || 0.0,
             imageUrls: names,
-            location: formData.get('location'),
-            latitude: formData.get('latitude'),
-            longitude: formData.get('longitude'),
-            categoryName: formData.get('categoryName'),
+            location: formData.get("location"),
+            latitude: formData.get("latitude"),
+            longitude: formData.get("longitude"),
+            categoryName: formData.get("categoryName"),
           };
 
-          console.log('Sending place data:', placeData);
+          console.log("Sending place data:", placeData);
 
           // Step 3: Create place
           showStatus(
             '<div class="loading-spinner"></div>Creating place...',
-            'loading'
+            "loading"
           );
           const result = await createPlace(placeData);
 
@@ -775,54 +776,54 @@
             `✅ Place created successfully! ${
               imageUrls.length > 0
                 ? `Uploaded ${imageUrls.length} image(s).`
-                : 'No images uploaded.'
+                : "No images uploaded."
             }`,
-            'success'
+            "success"
           );
 
           // Reset form
           form.reset();
           selectedFiles = [];
-          imagePreview.innerHTML = '';
+          imagePreview.innerHTML = "";
 
           // Restore default values
-          document.getElementById('name').value =
-            'ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង';
-          document.getElementById('description').value =
-            'ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។';
-          document.getElementById('openHours').value = 'Open 24h';
-          document.getElementById('entryFee').value = '0.00';
-          document.getElementById('location').value = '10.7131,103.2343';
-          document.getElementById('latitude').value = '00.00';
-          document.getElementById('longitude').value = '00.00';
-          document.getElementById('categoryName').value = 'Phnom';
+          document.getElementById("name").value =
+            "ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង";
+          document.getElementById("description").value =
+            "ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។";
+          document.getElementById("openHours").value = "Open 24h";
+          document.getElementById("entryFee").value = "0.00";
+          document.getElementById("location").value = "10.7131,103.2343";
+          document.getElementById("latitude").value = "00.00";
+          document.getElementById("longitude").value = "00.00";
+          document.getElementById("categoryName").value = "Phnom";
         } catch (error) {
-          console.error('Operation failed:', error);
-          showStatus(`❌ Error: ${error.message}`, 'error');
+          console.error("Operation failed:", error);
+          showStatus(`❌ Error: ${error.message}`, "error");
         } finally {
           submitBtn.disabled = false;
         }
       });
 
       // Drag and drop functionality
-      const fileUpload = document.querySelector('.file-upload');
+      const fileUpload = document.querySelector(".file-upload");
 
-      fileUpload.addEventListener('dragover', function (e) {
+      fileUpload.addEventListener("dragover", function (e) {
         e.preventDefault();
-        fileUpload.style.background = 'rgba(102, 126, 234, 0.2)';
+        fileUpload.style.background = "rgba(102, 126, 234, 0.2)";
       });
 
-      fileUpload.addEventListener('dragleave', function (e) {
+      fileUpload.addEventListener("dragleave", function (e) {
         e.preventDefault();
-        fileUpload.style.background = 'rgba(102, 126, 234, 0.05)';
+        fileUpload.style.background = "rgba(102, 126, 234, 0.05)";
       });
 
-      fileUpload.addEventListener('drop', function (e) {
+      fileUpload.addEventListener("drop", function (e) {
         e.preventDefault();
-        fileUpload.style.background = 'rgba(102, 126, 234, 0.05)';
+        fileUpload.style.background = "rgba(102, 126, 234, 0.05)";
 
         const files = Array.from(e.dataTransfer.files).filter((file) =>
-          file.type.startsWith('image/')
+          file.type.startsWith("image/")
         );
         if (files.length > 0) {
           selectedFiles = files;
