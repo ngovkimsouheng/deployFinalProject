@@ -147,7 +147,7 @@ async function PlaceSuggestionsList() {
               <li>${place.entryFee}</li>
       
             </ul>
-            <a class="text-teal-700 dark:text-dark-secondary float-end pb-6 " href="../html/ParamDetail.html?uuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
+            <a class="text-teal-700 dark:text-dark-secondary float-end pb-6 " href="../html/ParamDetail.html?placeUuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
           </div>
           </a>
       </div>
