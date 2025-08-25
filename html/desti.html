@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
     <!-- style -->
     <link rel="stylesheet" href="../src/output.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!-- animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
@@ -19,15 +20,15 @@
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"
     ></script>
-  </head>
+  </head> 
 
-  <body class="bg-background font-primary">
+  <body class="bg-background dark:bg-dark_background font-primary">
     <!-- header -->
     <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="/index.html" class="Logo">
+        <a href="../index.html" class="Logo">
           <img
             class="h-auto max-md:w-[100px] md:w-[140px]"
             src="../img/logo/logoHeader.png"
@@ -36,61 +37,138 @@
         </a>
         <button
           id="menu-toggle"
-          class="lg:hidden cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
+          class="lg:hidden text-accent cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
           <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
 
         <div
           id="nav-links"
-          class="hidden bg-white lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+          class="hidden lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 transition-all duration-300 ease-in-out"
         >
           <ul
             class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
               <a
-                href="/index.html"
-                class="text-accent dark:text-dark-secondary transition-colors"
+                href="../index.html"
+                class="text-accent hover:text-secondary transition-colors"
                 >ទំព័រដើម</a
               >
             </li>
             <li>
-              <a href="about.html" class="text-accent transition-colors"
+              <a
+                href="./about.html"
+                class="text-accent hover:text-secondary transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="#" class="text-secondary transition-colors">គោលដៅ</a>
+              <a
+                href="./desti.html"
+                class="text-secondary dark:text-dark-secondary transition-colors"
+                >គោលដៅ</a
+              >
             </li>
           </ul>
 
           <div
             class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
           >
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleTheme()"
-            >
-              Toggle Dark Mode
-            </button> -->
-            <!-- <button
-              class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-dark-light-primary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
-              onclick="toggleDarkMode()"
-            >
-              Toggle Dark Mode
-            </button> -->
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-transparent text-shadow-secondary px-6 font-medium transition-all active:translate-y-[2px] active:shadow-none"
+              id="toggleTheme"
+              type="button"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              aria-label="Toggle dark mode"
             >
-              ចូលគណនី
+              <!-- SUN (visible in light, hides in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-100 scale-100 rotate-0 dark:opacity-0 dark:scale-75 dark:rotate-90"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm268 452q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"
+                />
+              </svg>
+
+              <!-- MOON (hidden in light, shows in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-0 scale-75 rotate-90 dark:opacity-100 dark:scale-100 dark:rotate-0"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"
+                />
+              </svg>
             </button>
             <button
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
               ចុះឈ្មោះ
             </button>
+            
+            <button
+              id="dropdownDelayButton"
+              data-dropdown-toggle="dropdownDelay"
+              data-dropdown-delay="500"
+              data-dropdown-trigger="hover"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900 "
+              type="button"
+            >
+              ផ្សេងៗ
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownDelay"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
+            >
+              <ul
+                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownDelayButton"
+              >
+                <li>
+                  <a
+                    href="./post.html"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >បន្ថែមទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./update.html"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >លុបទីកន្លែង</a
+                  >
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </nav>
@@ -158,7 +236,7 @@
         </div>
       </section>
 
-      <section class="relative overflow-hidden sm:mt-8 sm:pb-4 z-0">
+      <section class="relative overflow-hidden sm:mt-8 sm:pb-4 z-0 ">
         <div class="lg:container px-4 sm:py-4 max-sm:py-3 lg:mx-auto relative">
           <!-- Background Decorative Text -->
           <div class="absolute inset-0 flex p-4 opacity-8 pointer-events-none">
@@ -204,14 +282,14 @@
               <h1
                 data-aos="fade-right"
                 data-aos-delay="400"
-                class="text-3xl max-lg:text-center max-sm:mt-4 sm:text-5xl md:text-6xl leading-[80px] font-bold text-teal-800 sm:py-"
+                class="text-3xl max-lg:text-center max-sm:mt-4 sm:text-5xl md:text-6xl leading-[80px] font-bold dark:text-white text-teal-800 sm:py-"
               >
                 ចូលរួមក្នុងដំណើរផ្សងព្រេងដ៏អស្ចារ្យ
               </h1>
               <p
                 data-aos="fade-up"
                 data-aos-delay="200"
-                class="font-semibold text-lg max-lg:text-center sm:text-xl max-sm:font-medium md:text-4xl text-secondary"
+                class="font-semibold text-lg max-lg:text-center sm:text-xl max-sm:font-medium md:text-4xl dark:text-dark-secondary text-secondary"
               >
                 ភាពស្រស់ស្អាត និងវប្បធម៌ដ៏សម្បូរបែប
               </p>
@@ -268,6 +346,7 @@
           </div>
         </div>
       </section>
+
       <section>
         <!-- autoslide -->
         <div class="sm:mt-8 max-sm:mt-3">
@@ -396,10 +475,10 @@
         <div class="container max-sm:pt-4 mx-auto rounded-[10px] flex flex-col">
           <h2
             data-aos="fade-up"
-            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary dark:text-dark-secondary font-bold md:mt-8 max-md:mt-5"
           >
             <span
-              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
+              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary dark:text-dark-secondary"
               >១</span
             >
             តំបន់ទេសចរណ៍តាមខេត្តនៅកម្ពុជា
@@ -407,7 +486,7 @@
 
           <p
             data-aos="fade-up"
-            class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent"
+            class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent dark:text-white"
           >
             កម្ពុជាជាប្រទេសមួយដែលសម្បូរទៅដោយតំបន់ទេសចរណ៍គ្រប់ប្រភេទ។
             មិនថាជាកន្លែងប្រវត្តិសាស្ត្រ ព្រៃភ្នំ ព្រះសមុទ្រ និងកោះ
@@ -466,13 +545,13 @@
           <section class="flex flex-col justify-center items-center">
             <div
               id="categories"
-              class="grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6"
+              class="grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6 "
             ></div>
             <!-- <div id="cannot-find" class="w-[250px]"></div> -->
             <button
               data-aos="zoom-in"
               id="seeMoreBtn"
-              class="group flex mt-8 justify-center relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary px-6 font-medium text-white transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              class="group flex mt-8 justify-center relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary dark:bg-dark-secondary px-6 font-medium text-white transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
             >
               See more
             </button>
@@ -485,10 +564,10 @@
         <div class="rounded-[10px] flex flex-col">
           <h2
             data-aos="fade-up"
-            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary font-bold md:mt-8 max-md:mt-5"
+            class="max-md:text-3xl md:text-4xl sm:text-2xl max-sm:text-[22px] text-secondary dark:text-dark-secondary font-bold md:mt-8 max-md:mt-5"
           >
             <span
-              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary"
+              class="text-2xl md:text-3xl font-extrabold px-[10px] py-[2px] rounded-[10px] bg-white text-secondary dark:text-dark-secondary"
               >២</span
             >
             បេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រកម្ពុជា
@@ -496,7 +575,7 @@
           <p
             data-aos="fade-up"
             data-aos-delay="300"
-            class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent"
+            class="text-[17px] md:py-8 max-md:py-5 md:text-[20px] text-accent dark:text-white"
           >
             កម្ពុជា មានបេតិកភណ្ឌវប្បធម៌ និងប្រវត្តិសាស្ត្រដ៏សម្បូរបែប
             ចាប់ពីប្រាសាទអង្គរវត្ត និងប្រាសាទបុរាណជាច្រើន ដល់វប្បធម៌ប្រពៃណីដូចជា
@@ -519,14 +598,14 @@
               <h3
                 data-aos="fade-left"
                 data-aos-delay="200"
-                class="text-secondary text-[28px] font-medium"
+                class="text-secondary text-[28px] font-medium dark:text-dark-secondary"
               >
                 អង្គរវត្ត - សម្បត្តិបេតិកភណ្ឌពិភពលោក
               </h3>
               <p
                 data-aos="fade-left"
                 data-aos-delay="300"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ប្រាសាទអង្គរវត្តជារមណីយដ្ឋានប្រវត្តិសាស្ត្រដ៏ធំបំផុតនៅអាស៊ីអាគ្នេយ៍។
                 ប្រាសាទនេះត្រូវបានសាងសង់ក្នុងសតវត្សរ៍ទី១២
@@ -537,7 +616,7 @@
               <p
                 data-aos="fade-left"
                 data-aos-delay="400"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ការមើលព្រះអាទិត្យរះឬលិចពីលើប្រាសាទគឺជាបទពិសោធន៍ដ៏ពិសេសមួយ។
                 អ្នកអាចជិះយន្តហោះចម្ងាយខ្លី
@@ -568,14 +647,14 @@
               <h3
                 data-aos="fade-left"
                 data-aos-delay="200"
-                class="text-secondary text-[28px] font-medium"
+                class="text-secondary text-[28px] font-medium dark:text-dark-secondary"
               >
                 ព្រះបរមរាជវាំង - និមិត្តរូបនៃរាជ្យ
               </h3>
               <p
                 data-aos="fade-left"
                 data-aos-delay="300"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ព្រះបរមរាជវាំងគឺជាកន្លែងស្នាក់នៅរបស់ព្រះមហាក្សត្រកម្ពុជា
                 និងជាទីតាំងប្រារព្ធពិធីបុណ្យជាតិផ្សេងៗ។
@@ -585,7 +664,7 @@
               <p
                 data-aos="fade-left"
                 data-aos-delay="400"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 នៅទីនេះ អ្នកអាចទស្សនាព្រះវិហារព្រះកែវមរកត
                 ដែលមានផ្ទុកព្រះពុទ្ធរូបមាសដ៏មានតម្លៃ។ កុំភ្លេចគយគន់សាលប្រជុំ
@@ -616,14 +695,14 @@
               <h3
                 data-aos="fade-up"
                 data-aos-delay="100"
-                class="text-secondary text-[28px] font-medium"
+                class="text-secondary text-[28px] font-medium dark:text-dark-secondary"
               >
                 ប្រាសាទបន្ទាយស្រី - ប្រាសាទផ្កាឈូក
               </h3>
               <p
                 data-aos="fade-up"
                 data-aos-delay="200"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ប្រាសាទបន្ទាយស្រី ដែលមានន័យថា "បន្ទាយរបស់ស្រី"
                 គឺជាប្រាសាទបុរាណមួយដែលស្ថិតនៅជិតប្រាសាទអង្គរវត្ត។
@@ -634,7 +713,7 @@
               <p
                 data-aos="fade-up"
                 data-aos-delay="300"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ប្រាសាទនេះមានលក្ខណៈពិសេសត្រង់ចម្លាក់ក្បាច់ផ្កា និងទេពអប្សរ
                 ដែលមានលក្ខណៈល្អិតល្អន់ និងមានសោភ័ណភាពជាងប្រាសាទដទៃទៀត។
@@ -662,14 +741,14 @@
               <h3
                 data-aos="fade-right"
                 data-aos-delay="200"
-                class="text-secondary text-[28px] font-medium"
+                class="text-secondary text-[28px] font-medium dark:text-dark-secondary"
               >
                 ក្រុងព្រះសីហនុ - សមុទ្រខ្មែរដ៏ស្រស់ស្អាត
               </h3>
               <p
                 data-aos="fade-right"
                 data-aos-delay="300"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 ក្រុងព្រះសីហនុ ដែលគេស្គាល់ថាជា "កំពង់ផែសន្សើម"
                 គឺជាចំណុចទាក់ទាញទេសចរណ៍សមុទ្រនៅកម្ពុជា។ ឆ្នេរខ្សាច់ស
@@ -680,7 +759,7 @@
               <p
                 data-aos="fade-right"
                 data-aos-delay="400"
-                class="text-accent text-base md:text-lg leading-relaxed"
+                class="text-accent text-base md:text-lg leading-relaxed dark:text-white"
               >
                 អ្នកអាចជ្រមុជទឹក បរបាញ់កំណាត់ ឬធ្វើដំណើរទៅកាន់កោះដោយទូក។ នៅល្ងាច
                 អ្នកអាចសប្បាយជាមួយអាហារសមុទ្រស្រស់ៗ និងភ្លេងតន្រ្តីនៅតាមឆ្នេរ។
@@ -701,7 +780,9 @@
           </div>
         </section>
       </section>
+
     </main>
+
     <footer class="bg-white mt-10 py-10">
       <div
         class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
@@ -778,6 +859,7 @@
         </div>
       </div>
     </footer>
+
   </body>
 
   <script
@@ -796,4 +878,7 @@
   <script src="../js/script.js"></script>
   <script type="module" src="../js/detailPlace.js"></script>
   <script src="../js/infinitslide.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
 </html>

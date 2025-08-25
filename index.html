@@ -25,7 +25,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
-  <body class="bg-background dark:text-white font-primary">
+  <body class="bg-background dark:bg-dark_background dark:text-white font-primary">
     <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
@@ -59,12 +59,12 @@
               >
             </li>
             <li>
-              <a href="html/about.html" class="text-accent transition-colors"
+              <a href="html/about.html" class="text-accent hover:text-secondary transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="html/desti.html" class="text-accent transition-colors"
+              <a href="html/desti.html" class="text-accent hover:text-secondary transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -109,15 +109,16 @@
             >
               <a href="/html/loginnnn.html">ចុះឈ្មោះ</a>
             </button>
+
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
               data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900 "
               type="button"
             >
-              Dropdown hover
+              ផ្សេងៗ
               <svg
                 class="w-2.5 h-2.5 ms-3"
                 aria-hidden="true"
@@ -137,7 +138,7 @@
             <!-- Dropdown menu -->
             <div
               id="dropdownDelay"
-              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
             >
               <ul
                 class="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -145,27 +146,28 @@
               >
                 <li>
                   <a
-                    href="#"
+                    href="./html/post.html"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Post</a
+                    >បន្ថែមទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="./html/update.html"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Update</a
+                    >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="html/delete.html"
+                    href="./html/delete.html"
                     class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Delete</a
+                    >លុបទីកន្លែង</a
                   >
                 </li>
               </ul>
             </div>
+
           </div>
         </div>
       </nav>

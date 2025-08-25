@@ -58,7 +58,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">ភ្នំពេញ</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold  max-sm:text-xl">ភ្នំពេញ</h3>
         </div>
       </a>
 
@@ -73,7 +73,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">កំពត</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl">កំពត</h3>
         </div>
       </a>
 
@@ -88,7 +88,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">កែប</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl">កែប</h3>
         </div>
       </a>
     `;

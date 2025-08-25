@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Place Creator with Image Upload</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 2.5em;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #555;
+        font-size: 16px;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #e1e5e9;
+        border-radius: 12px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        transform: translateY(-2px);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .file-upload input[type="file"] {
+        position: absolute;
+        left: -9999px;
+      }
+
+      .file-upload label {
+        cursor: pointer;
+        display: block;
+        padding: 20px;
+        border: 3px dashed #667eea;
+        border-radius: 12px;
+        text-align: center;
+        background: rgba(102, 126, 234, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .file-upload:hover label {
+        background: rgba(102, 126, 234, 0.1);
+        border-color: #764ba2;
+      }
+
+      .file-upload label:before {
+        content: "📁";
+        font-size: 2em;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .selected-files {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(102, 126, 234, 0.1);
+        border-radius: 8px;
+      }
+
+      .file-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+      }
+
+      .file-item:last-child {
+        border-bottom: none;
+      }
+
+      .btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+        margin-top: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .status {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        font-weight: 500;
+      }
+
+      .status.success {
+        background: rgba(34, 197, 94, 0.1);
+        color: #16a34a;
+        border: 1px solid rgba(34, 197, 94, 0.3);
+      }
+
+      .status.error {
+        background: rgba(239, 68, 68, 0.1);
+        color: #dc2626;
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+
+      .status.loading {
+        background: rgba(59, 130, 246, 0.1);
+        color: #2563eb;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+      }
+
+      .loading-spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #2563eb;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-right: 10px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .coord-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+
+      .preview-images {
+        margin-top: 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+      }
+
+      .preview-image {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 1;
+      }
+
+      .preview-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .remove-image {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: rgba(239, 68, 68, 0.8);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏞️ Place Creator</h1>
+
+      <form id="placeForm">
+        <div class="form-group">
+          <label for="name">Place Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description *</label>
+          <textarea id="description" name="description" required>
+           ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។</textarea
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="openHours">Opening Hours</label>
+          <input type="text" id="openHours" name="openHours" value="Open 24h" />
+        </div>
+
+        <div class="form-group">
+          <label for="entryFee">Entry Fee ($)</label>
+          <input
+            type="number"
+            id="entryFee"
+            name="entryFee"
+            value="0.00"
+            step="0.01"
+            min="0"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location (lat,lng)</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value="10.7131,103.2343"
+            placeholder="10.7131,103.2343"
+          />
+        </div>
+
+        <div class="coord-group">
+          <div class="form-group">
+            <label for="latitude">Latitude</label>
+            <input type="text" id="latitude" name="latitude" value="00.00" />
+          </div>
+
+          <div class="form-group">
+            <label for="longitude">Longitude</label>
+            <input type="text" id="longitude" name="longitude" value="00.00" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="categoryName">Category</label>
+          <select id="categoryName" name="categoryName">
+                <option value="Phnom Penh">ភ្នំពេញ</option>
+                <option value="Siem Reap">សៀមរាប</option>
+                <option value="Kom pot">កំពត</option>
+                <option value="Kep">កែប</option>
+                <option value="Battambong">បាត់ដំបង</option>
+                <option value="Sihanoukville">ព្រះសីហនុ</option>
+                <option value="Koh kong">កោះកុង</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Images</label>
+          <div class="file-upload">
+            <input type="file" id="images" accept="image/*" multiple />
+            <label for="images">
+              <span>Click to select images or drag and drop</span>
+              <small style="display: block; margin-top: 5px; color: #666"
+                >Support multiple image files (JPG, PNG, GIF)</small
+              >
+            </label>
+          </div>
+
+          <div id="imagePreview" class="preview-images"></div>
+        </div>
+
+        <button type="submit" class="btn" id="submitBtn">
+          🚀 Create Place
+        </button>
+      </form>
+
+      <div id="status" class="status" style="display: none"></div>
+    </div>
+
+    <script>
+      const API_BASE = "https://tos-der.sokpheng.com/api/v1";
+      let selectedFiles = [];
+
+      const imageInput = document.getElementById("images");
+      const imagePreview = document.getElementById("imagePreview");
+      const form = document.getElementById("placeForm");
+      const statusDiv = document.getElementById("status");
+      const submitBtn = document.getElementById("submitBtn");
+
+      // Handle file selection
+      imageInput.addEventListener("change", function (e) {
+        const files = Array.from(e.target.files);
+        selectedFiles = files;
+        displayImagePreviews();
+      });
+
+      function displayImagePreviews() {
+        imagePreview.innerHTML = "";
+
+        selectedFiles.forEach((file, index) => {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const previewDiv = document.createElement("div");
+            previewDiv.className = "preview-image";
+            previewDiv.innerHTML = `
+                        <img src="${e.target.result}" alt="Preview ${
+              index + 1
+            }">
+                        <button type="button" class="remove-image" onclick="removeImage(${index})">×</button>
+                    `;
+            imagePreview.appendChild(previewDiv);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      function removeImage(index) {
+        selectedFiles.splice(index, 1);
+        displayImagePreviews();
+      }
+
+      function showStatus(message, type) {
+        statusDiv.innerHTML = message;
+        statusDiv.className = `status ${type}`;
+        statusDiv.style.display = "block";
+      }
+
+      async function uploadImages() {
+        if (selectedFiles.length === 0) {
+          return [];
+        }
+
+        const formData = new FormData();
+        selectedFiles.forEach((file) => {
+          formData.append("files", file);
+        });
+
+        try {
+          const response = await fetch(`${API_BASE}/upload/multiple`, {
+            method: "POST",
+            body: formData,
+          });
+
+          if (!response.ok) {
+            throw new Error(
+              `Upload failed: ${response.status} ${response.statusText}`
+            );
+          }
+
+          const result = await response.json();
+          console.log("Upload response:", result);
+
+          // Handle different possible response structures
+          // Expected format: URLs like "https://tos-der.sokpheng.com/images/43149900-9b2c-4987-ab31-19724acaae43.png"
+          if (result.urls && Array.isArray(result.urls)) {
+            return result.urls;
+          } else if (result.data && Array.isArray(result.data.urls)) {
+            return result.data.urls;
+          } else if (Array.isArray(result)) {
+            // If response is directly an array of URLs
+            return result;
+          } else if (result.files && Array.isArray(result.files)) {
+            // If response has files array, extract URLs
+            return result.files.map((f) => f.url || f.path || f.filename);
+          } else if (result.images && Array.isArray(result.images)) {
+            // If response has images array
+            return result.images.map((img) => img.url || img.path || img);
+          } else {
+            console.warn("Unexpected upload response structure:", result);
+            // Try to extract any URLs from the response
+            const possibleUrls = Object.values(result)
+              .flat()
+              .filter(
+                (val) =>
+                  typeof val === "string" &&
+                  val.includes("tos-der.sokpheng.com/images/")
+              );
+            return possibleUrls.length > 0 ? possibleUrls : [];
+          }
+        } catch (error) {
+          console.error("Image upload error:", error);
+          throw new Error(`Image upload failed: ${error.message}`);
+        }
+      }
+
+      async function createPlace(placeData) {
+        try {
+          const response = await fetch(`${API_BASE}/places`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(placeData),
+          });
+
+          if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(
+              `Place creation failed: ${response.status} ${response.statusText} - ${errorText}`
+            );
+          }
+
+          const result = await response.json();
+          console.log("Place creation response:", result);
+          return result;
+        } catch (error) {
+          console.error("Place creation error:", error);
+          throw error;
+        }
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        showStatus(
+          '<div class="loading-spinner"></div>Processing...',
+          "loading"
+        );
+
+        try {
+          // Step 1: Upload images if any
+          let imageUrls = [];
+          if (selectedFiles.length > 0) {
+            showStatus(
+              '<div class="loading-spinner"></div>Uploading images...',
+              "loading"
+            );
+            imageUrls = await uploadImages();
+            console.log("Uploaded image URLs:", imageUrls);
+          }
+
+          const names = imageUrls.map((developer) => developer.uri);
+
+          console.log("Uploaded image:", names);
+          // Step 2: Prepare place data
+          const formData = new FormData(form);
+          const placeData = {
+            name: formData.get("name"),
+            description: formData.get("description"),
+            openHours: formData.get("openHours"),
+            entryFee: parseFloat(formData.get("entryFee")) || 0.0,
+            imageUrls: names,
+            location: formData.get("location"),
+            latitude: formData.get("latitude"),
+            longitude: formData.get("longitude"),
+            categoryName: formData.get("categoryName"),
+          };
+
+          console.log("Sending place data:", placeData);
+
+          // Step 3: Create place
+          showStatus(
+            '<div class="loading-spinner"></div>Creating place...',
+            "loading"
+          );
+          const result = await createPlace(placeData);
+
+          showStatus(
+            `✅ Place created successfully! ${
+              imageUrls.length > 0
+                ? `Uploaded ${imageUrls.length} image(s).`
+                : "No images uploaded."
+            }`,
+            "success"
+          );
+
+          // Reset form
+          form.reset();
+          selectedFiles = [];
+          imagePreview.innerHTML = "";
+
+          // Restore default values
+          document.getElementById("name").value =
+            "ជីផាត់-ទេសចរណ៍ធម្មជាតិ- កោះកុង";
+          document.getElementById("description").value =
+            "ជាកោដើរលេងក្នុងព្រៃ ជិះទូកកាយ៉ាក់ ជិះកង់ឡើងភ្នំ និង មើលសត្វព្រៃ។";
+          document.getElementById("openHours").value = "Open 24h";
+          document.getElementById("entryFee").value = "0.00";
+          document.getElementById("location").value = "10.7131,103.2343";
+          document.getElementById("latitude").value = "00.00";
+          document.getElementById("longitude").value = "00.00";
+          document.getElementById("categoryName").value = "Phnom";
+        } catch (error) {
+          console.error("Operation failed:", error);
+          showStatus(`❌ Error: ${error.message}`, "error");
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+
+      // Drag and drop functionality
+      const fileUpload = document.querySelector(".file-upload");
+
+      fileUpload.addEventListener("dragover", function (e) {
+        e.preventDefault();
+        fileUpload.style.background = "rgba(102, 126, 234, 0.2)";
+      });
+
+      fileUpload.addEventListener("dragleave", function (e) {
+        e.preventDefault();
+        fileUpload.style.background = "rgba(102, 126, 234, 0.05)";
+      });
+
+      fileUpload.addEventListener("drop", function (e) {
+        e.preventDefault();
+        fileUpload.style.background = "rgba(102, 126, 234, 0.05)";
+
+        const files = Array.from(e.dataTransfer.files).filter((file) =>
+          file.type.startsWith("image/")
+        );
+        if (files.length > 0) {
+          selectedFiles = files;
+          displayImagePreviews();
+        }
+      });
+    </script>
+  </body>
+</html>

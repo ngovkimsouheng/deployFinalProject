@@ -75,17 +75,17 @@ function renderPlaces(places, isInitial = false) {
     .map(
       (data) => `
         <a href="./ParamDetail.html?placeUuid=${data.uuid}" 
-           class="block bg-white rounded-lg shadow overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+           class="block bg-white dark:bg-accent/50 rounded-lg shadow overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
           <div class="relative h-64 w-full">
             <img src="${data.imageUrls[1]}" 
                  alt="${data.name}" 
                  class="absolute inset-0 w-full h-full object-cover" />
           </div>
-          <div class="p-4">
+          <div class="p-4 ">
             <div class="flex justify-between items-center">
-              <h3 class="text-primary text-[22px] font-primary font-semibold">${data.name}</h3>
+              <h3 class="text-primary dark:text-dark-secondary text-[22px] font-primary font-semibold">${data.name}</h3>
             </div>
-            <p class="text-gray-600 text-[17px] line-clamp-2 mt-2">${data.description}</p>
+            <p class="text-gray-600 dark:text-white text-[17px] line-clamp-2 mt-2">${data.description}</p>
           </div>
         </a>
       `
