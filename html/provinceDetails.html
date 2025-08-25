@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Province Places</title>
+    <title>ព័ត៌មានអំពីខេត្ត</title>
+    <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/output.css" />
   </head>
   <body class="bg-background dark:bg-dark_background font-primary">
@@ -91,15 +92,15 @@
             <button
               class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
-              ចុះឈ្មោះ
+              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
             </button>
-            
+
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
               data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900 "
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
               ផ្សេងៗ
@@ -151,7 +152,6 @@
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
       </nav>
@@ -184,17 +184,18 @@
                   data-aos="fade-right"
                   data-aos-delay="500"
                 /> -->
-                <iframe
+                <video
                   class="w-full h-full object-cover"
                   width="1236"
                   height="695"
-                  src="https://www.youtube.com/embed/3P6OUtnEwaY"
-                  title="Top 10 Best Beaches in Cambodia - Travel Video 2023"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                >
+                  <source src="../video/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 
@@ -205,21 +206,22 @@
                 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary dark:text-dark-secondary leading-tight animate-slide-in-up"
                 data-aos="fade-up"
               >
-                <span class="block text-teal-800 dark:text-blue-800"
-                  >ស្វែងយល់ពីកម្ពុជា</span
+                <span class="block text-teal-800 dark:text-white"
+                  >ស្វែងយល់ពីទីកន្លែង</span
                 >
-                <span class="block">ជាមួយបទពិសោធន៍ថ្មី</span>
+                <span class="block">ក្នុងខេត្តជាមួយបទពិសោធន៍ថ្មី</span>
               </h2>
               <p
-                class="text-lg md:text-xl text-accent max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
+                class="text-lg md:text-xl text-accent dark:text-white max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                យើងខ្ញុំជឿជាក់ថា ការធ្វើដំណើរគឺជាការរៀនសូត្រ។
-                សូមមកស្វែងរកបទពិសោធន៍ដែលមិនអាចបំភ្លេចបាន
-                ទាំងតំបន់បេតិកភណ្ឌពិភពលោក និងសម្រស់ធម្មជាតិដ៏ប្លែក។
+                យើងជឿថា ការធ្វើដំណើរមិនមែនត្រឹមតែការទស្សនាទេ
+                ប៉ុន្តែជាការរៀនសូត្រថ្មីៗ។
+                ចូរមកបង្កើតអនុស្សាវរីយ៍មិនអស់កាលជាមួយស្ថានទីប្រវត្តិសាស្រ្ត
+                និងទេសភាពធម្មជាតិស្រស់ស្អាត។
               </p>
-              <a data-aos="zoom-in" href="./html/desti.html">
+              <a data-aos="zoom-in" href="../html/desti.html">
                 <button
                   class="group flex cursor-pointer justify-center py-6 mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-teal-800 dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
                 >
@@ -234,9 +236,9 @@
       <section class="xl:container mx-auto">
         <h1 id="pageTitle" class="text-2xl mt-4 text-center font-bold"></h1>
         <h3
-          class="text-teal-800 text-3xl sm:text-4xl lg:text-4xl font-extrabold flex flex-col p-4"
+          class="text-teal-800 dark:text-dark-secondary text-3xl sm:text-4xl lg:text-4xl font-extrabold flex flex-col p-4"
         >
-          តំបន់ទេសចរណ៍តាមខេត្ត
+          តំបន់ទេសចរណ៍ក្នុងខេត្ត
         </h3>
         <div
           id="renderDetailPlace"
@@ -244,6 +246,7 @@
         ></div>
       </section>
     </main>
+
     <footer class="bg-white mt-10 py-10">
       <div
         class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
@@ -340,6 +343,7 @@
         </div>
       </div>
     </footer>
+
     <script
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ចូលគណនី</title>
+    <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -16,122 +17,129 @@
     <link rel="stylesheet" href="../src/login.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="form-box login">
-        <form id="loginForm">
-          <div id="loginSuccess" class="success-message"></div>
-          <h1>ចូលគណនី</h1>
-          <div class="input-box">
-            <input
-              type="text"
-              id="loginUsername"
-              placeholder="Username"
-              required
-            />
-            <i class="fa-solid fa-user"></i>
-            <div class="error-message" id="loginUsernameError"></div>
+    
+    <main>
+      <section>
+        <div class="container">
+          <div class="form-box login">
+            <form id="loginForm">
+              <div id="loginSuccess" class="success-message"></div>
+              <h1>ចូលគណនី</h1>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="loginUsername"
+                  placeholder="Username"
+                  required
+                />
+                <i class="fa-solid fa-user"></i>
+                <div class="error-message" id="loginUsernameError"></div>
+              </div>
+              <div class="input-box">
+                <input
+                  type="password"
+                  id="loginPassword"
+                  placeholder="Password"
+                  required
+                />
+                <i class="fa-solid fa-lock"></i>
+              </div>
+              <div class="text-red-600" id="loginPasswordError"></div>
+              <button type="submit" class="btn" id="loginBtn">ចូលគណនី</button>
+            </form>
           </div>
-          <div class="input-box">
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Password"
-              required
-            />
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <div class="text-red-600" id="loginPasswordError"></div>
-          <button type="submit" class="btn" id="loginBtn">ចូលគណនី</button>
-        </form>
-      </div>
 
-      <div class="form-box register">
-        <form id="registerForm">
-          <div id="registerSuccess" class="success-message"></div>
-          <h1>បង្កើតគណនី</h1>
-          <div class="input-box">
-            <input
-              type="text"
-              id="registerUsername"
-              placeholder="Username"
-              required
-            />
-            <i class="fa-solid fa-user"></i>
-            <div class="error-message" id="registerUsernameError"></div>
+          <div class="form-box register">
+            <form id="registerForm">
+              <div id="registerSuccess" class="success-message"></div>
+              <h1>បង្កើតគណនី</h1>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="registerUsername"
+                  placeholder="Username"
+                  required
+                />
+                <i class="fa-solid fa-user"></i>
+                <div class="error-message" id="registerUsernameError"></div>
+              </div>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="registerFirstname"
+                  placeholder="Firstname"
+                  required
+                />
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="input-box">
+                <input
+                  type="text"
+                  id="registerLastname"
+                  placeholder="Lastname"
+                  required
+                />
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="input-box">
+                <input
+                  type="email"
+                  id="registerEmail"
+                  placeholder="Email"
+                  required
+                />
+                <i class="fa-solid fa-envelope"></i>
+                <div class="error-message" id="registerEmailError"></div>
+              </div>
+              <div class="input-box">
+                <input
+                  type="password"
+                  id="registerPassword"
+                  placeholder="Password"
+                  required
+                />
+                <i class="fa-solid fa-lock"></i>
+                <div class="error-message" id="registerPasswordError"></div>
+              </div>
+              <button type="submit" class="btn" id="registerBtn">
+                Register
+              </button>
+            </form>
           </div>
-          <div class="input-box">
-            <input
-              type="text"
-              id="registerFirstname"
-              placeholder="Firstname"
-              required
-            />
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <div class="input-box">
-            <input
-              type="text"
-              id="registerLastname"
-              placeholder="Lastname"
-              required
-            />
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <div class="input-box">
-            <input
-              type="email"
-              id="registerEmail"
-              placeholder="Email"
-              required
-            />
-            <i class="fa-solid fa-envelope"></i>
-            <div class="error-message" id="registerEmailError"></div>
-          </div>
-          <div class="input-box">
-            <input
-              type="password"
-              id="registerPassword"
-              placeholder="Password"
-              required
-            />
-            <i class="fa-solid fa-lock"></i>
-            <div class="error-message" id="registerPasswordError"></div>
-          </div>
-          <button type="submit" class="btn" id="registerBtn">Register</button>
-        </form>
-      </div>
 
-      <div class="toggle-box">
-        <div class="toggle-panel toggle-left">
-          <h1>Hello, Welcome</h1>
-          <p>Don't have an account?</p>
-          <button class="btn register-btn">Register</button>
+          <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+              <h1>Hello, Welcome</h1>
+              <p>Don't have an account?</p>
+              <button class="btn register-btn">Register</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+              <h1>Welcome back</h1>
+              <p>Already have an account?</p>
+              <button class="btn login-btn">Login</button>
+            </div>
+          </div>
         </div>
-        <div class="toggle-panel toggle-right">
-          <h1>Welcome back</h1>
-          <p>Already have an account?</p>
-          <button class="btn login-btn">Login</button>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
     <script>
       // API URLs
-      const LOGIN_API = "https://tos-der.sokpheng.com/api/v1/auth/login";
-      const REGISTER_API = "https://tos-der.sokpheng.com/api/v1/auth/register"; // Fixed double slash
+      const LOGIN_API = 'https://tos-der.sokpheng.com/api/v1/auth/login';
+      const REGISTER_API = 'https://tos-der.sokpheng.com/api/v1/auth/register'; // Fixed double slash
 
       // ================ Form switching =======================
-      const container = document.querySelector(".container");
-      const registerBtn = document.querySelector(".register-btn");
-      const loginBtn = document.querySelector(".login-btn");
+      const container = document.querySelector('.container');
+      const registerBtn = document.querySelector('.register-btn');
+      const loginBtn = document.querySelector('.login-btn');
 
-      registerBtn.addEventListener("click", () => {
-        container.classList.add("active");
+      registerBtn.addEventListener('click', () => {
+        container.classList.add('active');
         clearMessages();
       });
 
-      loginBtn.addEventListener("click", () => {
-        container.classList.remove("active");
+      loginBtn.addEventListener('click', () => {
+        container.classList.remove('active');
         clearMessages();
       });
 
@@ -141,13 +149,13 @@
         const isValid = validationFn(value);
 
         if (!isValid) {
-          field.classList.add("error");
+          field.classList.add('error');
           errorElement.textContent = errorMessage;
-          errorElement.classList.add("show");
+          errorElement.classList.add('show');
         } else {
-          field.classList.remove("error");
-          errorElement.textContent = "";
-          errorElement.classList.remove("show");
+          field.classList.remove('error');
+          errorElement.textContent = '';
+          errorElement.classList.remove('show');
         }
 
         return isValid;
@@ -167,29 +175,29 @@
       }
 
       function clearMessages() {
-        document.querySelectorAll(".error-message").forEach((msg) => {
-          msg.classList.remove("show");
-          msg.textContent = "";
+        document.querySelectorAll('.error-message').forEach((msg) => {
+          msg.classList.remove('show');
+          msg.textContent = '';
         });
-        document.querySelectorAll(".success-message").forEach((msg) => {
-          msg.classList.remove("show");
-          msg.textContent = "";
+        document.querySelectorAll('.success-message').forEach((msg) => {
+          msg.classList.remove('show');
+          msg.textContent = '';
         });
-        document.querySelectorAll("input").forEach((input) => {
-          input.classList.remove("error");
+        document.querySelectorAll('input').forEach((input) => {
+          input.classList.remove('error');
         });
       }
 
       function showSuccess(elementId, message) {
         const successElement = document.getElementById(elementId);
         successElement.textContent = message;
-        successElement.classList.add("show");
+        successElement.classList.add('show');
       }
 
       function showError(elementId, message) {
         const errorElement = document.getElementById(elementId);
         errorElement.textContent = message;
-        errorElement.classList.add("show");
+        errorElement.classList.add('show');
       }
 
       function setLoading(buttonId, isLoading) {
@@ -199,7 +207,7 @@
           button.innerHTML = '<span class="loading"></span>Processing...';
         } else {
           button.disabled = false;
-          button.innerHTML = buttonId === "loginBtn" ? "Login" : "Register";
+          button.innerHTML = buttonId === 'loginBtn' ? 'Login' : 'Register';
         }
       }
 
@@ -224,12 +232,12 @@
       // ================ API Functions =======================
       async function loginUser(username, password) {
         try {
-          console.log("Attempting login with:", { username, password: "***" });
+          console.log('Attempting login with:', { username, password: '***' });
 
           const response = await fetch(LOGIN_API, {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               username: username,
@@ -237,20 +245,20 @@
             }),
           });
 
-          console.log("Login response status:", response.status);
+          console.log('Login response status:', response.status);
           const data = await response.json();
-          console.log("Login response data:", data);
+          console.log('Login response data:', data);
 
           if (response.ok) {
             return { success: true, data: data };
           } else {
-            return { success: false, message: data.message || "Login failed" };
+            return { success: false, message: data.message || 'Login failed' };
           }
         } catch (error) {
-          console.error("Login error:", error);
+          console.error('Login error:', error);
           return {
             success: false,
-            message: "លេខសម្ងាត់ឬឈ្មោះមិនត្រឹមត្រូវ",
+            message: 'លេខសម្ងាត់ឬឈ្មោះមិនត្រឹមត្រូវ',
           };
         }
       }
@@ -263,18 +271,18 @@
         password
       ) {
         try {
-          console.log("Attempting registration with:", {
+          console.log('Attempting registration with:', {
             username,
             firstname,
             lastname,
             email,
-            password: "***",
+            password: '***',
           });
 
           const response = await fetch(REGISTER_API, {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               username: username,
@@ -285,37 +293,37 @@
             }),
           });
 
-          console.log("Registration response status:", response.status);
+          console.log('Registration response status:', response.status);
           const data = await response.json();
-          console.log("Registration response data:", data);
+          console.log('Registration response data:', data);
 
           if (response.ok) {
             return { success: true, data: data };
           } else {
             return {
               success: false,
-              message: data.message || "Registration failed",
+              message: data.message || 'Registration failed',
             };
           }
         } catch (error) {
-          console.error("Registration error:", error);
+          console.error('Registration error:', error);
           return {
             success: false,
-            message: "Network error. Please try again.",
+            message: 'Network error. Please try again.',
           };
         }
       }
 
       // ================ Login form handling =======================
       document
-        .getElementById("loginForm")
-        .addEventListener("submit", async function (e) {
+        .getElementById('loginForm')
+        .addEventListener('submit', async function (e) {
           e.preventDefault();
 
-          const username = document.getElementById("loginUsername");
-          const password = document.getElementById("loginPassword");
-          const usernameError = document.getElementById("loginUsernameError");
-          const passwordError = document.getElementById("loginPasswordError");
+          const username = document.getElementById('loginUsername');
+          const password = document.getElementById('loginPassword');
+          const usernameError = document.getElementById('loginUsernameError');
+          const passwordError = document.getElementById('loginPasswordError');
 
           // Clear previous messages
           clearMessages();
@@ -328,7 +336,7 @@
               username,
               usernameError,
               isValidUsername,
-              "Username must be at least 3 characters long"
+              'Username must be at least 3 characters long'
             )
           ) {
             isValid = false;
@@ -346,51 +354,51 @@
           }
 
           if (isValid) {
-            setLoading("loginBtn", true);
+            setLoading('loginBtn', true);
 
             const result = await loginUser(
               username.value.trim(),
               password.value
             );
 
-            setLoading("loginBtn", false);
+            setLoading('loginBtn', false);
 
             if (result.success) {
               // Save user data
               saveUserData(result.data);
 
-              showSuccess("loginSuccess", "Login successful! Redirecting...");
+              showSuccess('loginSuccess', 'Login successful! Redirecting...');
 
               setTimeout(() => {
                 // In a real environment, you would redirect to the index page
                 alert(
-                  "Login successful! You would be redirected to the index page."
+                  'Login successful! You would be redirected to the index page.'
                 );
-                window.location.href = "../index.html";
+                window.location.href = '../index.html';
               }, 1500);
             } else {
-              showError("loginUsernameError", result.message);
+              showError('loginUsernameError', result.message);
             }
           }
         });
 
       // ================ Register form handling =======================
       document
-        .getElementById("registerForm")
-        .addEventListener("submit", async function (e) {
+        .getElementById('registerForm')
+        .addEventListener('submit', async function (e) {
           e.preventDefault();
 
-          const username = document.getElementById("registerUsername");
-          const firstname = document.getElementById("registerFirstname");
-          const lastname = document.getElementById("registerLastname");
-          const email = document.getElementById("registerEmail");
-          const password = document.getElementById("registerPassword");
+          const username = document.getElementById('registerUsername');
+          const firstname = document.getElementById('registerFirstname');
+          const lastname = document.getElementById('registerLastname');
+          const email = document.getElementById('registerEmail');
+          const password = document.getElementById('registerPassword');
           const usernameError = document.getElementById(
-            "registerUsernameError"
+            'registerUsernameError'
           );
-          const emailError = document.getElementById("registerEmailError");
+          const emailError = document.getElementById('registerEmailError');
           const passwordError = document.getElementById(
-            "registerPasswordError"
+            'registerPasswordError'
           );
 
           // Clear previous messages
@@ -404,7 +412,7 @@
               username,
               usernameError,
               isValidUsername,
-              "Username must be at least 3 characters long"
+              'Username must be at least 3 characters long'
             )
           ) {
             isValid = false;
@@ -416,7 +424,7 @@
               email,
               emailError,
               isValidEmail,
-              "Please enter a valid email address"
+              'Please enter a valid email address'
             )
           ) {
             isValid = false;
@@ -428,14 +436,14 @@
               password,
               passwordError,
               isValidPassword,
-              "Password must be at least 6 characters long"
+              'Password must be at least 6 characters long'
             )
           ) {
             isValid = false;
           }
 
           if (isValid) {
-            setLoading("registerBtn", true);
+            setLoading('registerBtn', true);
 
             const result = await registerUser(
               username.value.trim(),
@@ -445,93 +453,93 @@
               password.value
             );
 
-            setLoading("registerBtn", false);
+            setLoading('registerBtn', false);
 
             if (result.success) {
               showSuccess(
-                "registerSuccess",
-                "Registration successful! Please login."
+                'registerSuccess',
+                'Registration successful! Please login.'
               );
 
               // Clear form
-              username.value = "";
-              firstname.value = "";
-              lastname.value = "";
-              email.value = "";
-              password.value = "";
+              username.value = '';
+              firstname.value = '';
+              lastname.value = '';
+              email.value = '';
+              password.value = '';
 
               // Switch to login form after 2 seconds
               setTimeout(() => {
-                container.classList.remove("active");
+                container.classList.remove('active');
               }, 2000);
             } else {
-              showError("registerUsernameError", result.message);
+              showError('registerUsernameError', result.message);
             }
           }
         });
 
       // ================ Real-time validation =======================
       document
-        .getElementById("loginUsername")
-        .addEventListener("blur", function () {
-          const usernameError = document.getElementById("loginUsernameError");
+        .getElementById('loginUsername')
+        .addEventListener('blur', function () {
+          const usernameError = document.getElementById('loginUsernameError');
           validateField(
             this,
             usernameError,
             isValidUsername,
-            "Username must be at least 3 characters long"
+            'Username must be at least 3 characters long'
           );
         });
 
       document
-        .getElementById("loginPassword")
-        .addEventListener("blur", function () {
-          const passwordError = document.getElementById("loginPasswordError");
+        .getElementById('loginPassword')
+        .addEventListener('blur', function () {
+          const passwordError = document.getElementById('loginPasswordError');
           validateField(
             this,
             passwordError,
             isValidPassword,
-            "Password must be at least 6 characters long"
+            'Password must be at least 6 characters long'
           );
         });
 
       document
-        .getElementById("registerUsername")
-        .addEventListener("blur", function () {
+        .getElementById('registerUsername')
+        .addEventListener('blur', function () {
           const usernameError = document.getElementById(
-            "registerUsernameError"
+            'registerUsernameError'
           );
           validateField(
             this,
             usernameError,
             isValidUsername,
-            "Username must be at least 3 characters long"
+            'Username must be at least 3 characters long'
           );
         });
 
       document
-        .getElementById("registerEmail")
-        .addEventListener("blur", function () {
-          const emailError = document.getElementById("registerEmailError");
+        .getElementById('registerEmail')
+        .addEventListener('blur', function () {
+          const emailError = document.getElementById('registerEmailError');
           validateField(
             this,
             emailError,
             isValidEmail,
-            "Please enter a valid email address"
+            'Please enter a valid email address'
           );
         });
 
       document
-        .getElementById("registerPassword")
-        .addEventListener("blur", function () {
+        .getElementById('registerPassword')
+        .addEventListener('blur', function () {
           const passwordError = document.getElementById(
-            "registerPasswordError"
+            'registerPasswordError'
           );
           validateField(
             this,
             passwordError,
             isValidPassword,
-            "Password must be at least 6 characters long"
+            'Password must be at least 6 characters long'
           );
         });
 

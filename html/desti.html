@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
+    <title>គោលដៅ</title>
     <!-- icon -->
-    <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
     <!-- style -->
     <link rel="stylesheet" href="../src/output.css" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    /> -->
     <!-- animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
@@ -20,7 +23,8 @@
       src="https://kit.fontawesome.com/5ce14b4205.js"
       crossorigin="anonymous"
     ></script>
-  </head> 
+
+  </head>
 
   <body class="bg-background dark:bg-dark_background font-primary">
     <!-- header -->
@@ -78,7 +82,7 @@
             <button
               id="toggleTheme"
               type="button"
-              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 shadow-sm outline-none ring-0 transition-colors duration-500"
               aria-label="Toggle dark mode"
             >
               <!-- SUN (visible in light, hides in dark) -->
@@ -106,17 +110,17 @@
               </svg>
             </button>
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
-              ចុះឈ្មោះ
+              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
             </button>
-            
+
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
               data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900 "
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
               ផ្សេងៗ
@@ -142,33 +146,32 @@
               class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
             >
               <ul
-                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                class="py-2 rounded-lg text-sm text-white bg-primary dark:bg-blue-950"
                 aria-labelledby="dropdownDelayButton"
               >
                 <li>
                   <a
                     href="./post.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >បន្ថែមទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
                     href="./update.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
                     href="./delete.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >លុបទីកន្លែង</a
                   >
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
       </nav>
@@ -236,7 +239,7 @@
         </div>
       </section>
 
-      <section class="relative overflow-hidden sm:mt-8 sm:pb-4 z-0 ">
+      <section class="relative overflow-hidden sm:mt-8 sm:pb-4 z-0">
         <div class="lg:container px-4 sm:py-4 max-sm:py-3 lg:mx-auto relative">
           <!-- Background Decorative Text -->
           <div class="absolute inset-0 flex p-4 opacity-8 pointer-events-none">
@@ -501,7 +504,7 @@
         <section>
           <div
             data-aos="fade-up"
-            class="flex flex-wrap z-  gap-4 mt-6 py-2 mb-8 w-full sticky top-[12vh] z-1"
+            class="flex flex-wrap z- gap-4 mt-6 py-2 mb-8 w-full sticky top-[12vh] z-1"
           >
             <!-- Search Input -->
             <input
@@ -545,7 +548,7 @@
           <section class="flex flex-col justify-center items-center">
             <div
               id="categories"
-              class="grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6 "
+              class="grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6"
             ></div>
             <!-- <div id="cannot-find" class="w-[250px]"></div> -->
             <button
@@ -780,7 +783,7 @@
           </div>
         </section>
       </section>
-
+      
     </main>
 
     <footer class="bg-white mt-10 py-10">
@@ -859,7 +862,6 @@
         </div>
       </div>
     </footer>
-
   </body>
 
   <script
@@ -875,10 +877,9 @@
     AOS.init({ duration: 1000, once: true });
   </script>
   <script src="../js/filter.js"></script>
-  <script src="../js/script.js"></script>
   <script type="module" src="../js/detailPlace.js"></script>
   <script src="../js/infinitslide.js"></script>
+  <script src="../js/script.js"></script>
   <script src="../js/theme.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-
 </html>

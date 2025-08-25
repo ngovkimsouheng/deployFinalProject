@@ -3,260 +3,505 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Update Place</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+     <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
     <link rel="stylesheet" href="../src/output.css" />
-    <link
-      rel="shortcut icon"
-      href="../img/logo_derleng.png"
-      type="image/x-icon"
-    />
+    <script
+      src="https://kit.fontawesome.com/5ce14b4205.js"
+      crossorigin="anonymous"
+    ></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: "#0A4536",
-              secondary: "#FF914D",
-              danger: "#DC2626",
+              primary: '#0A4536',
+              secondary: '#FF914D',
+              danger: '#DC2626',
             },
           },
         },
       };
     </script>
   </head>
-  <body class="min-h-screen bg-gradient-to-br p-5 font-sans">
-    <div
-      class="max-w-4xl font-primary mx-auto bg-white/95 rounded-2xl p-10 shadow-xl backdrop-blur-sm"
-    >
-      <h1
-        class="text-center text-primary text-4xl font-extrabold mb-8 bg-clip-text bg-gradient-to-r from-primary to-green-500"
+  <body class="bg-background dark:bg-dark_background font-primary">
+    <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
+      <nav
+        class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        កែប្រែទីកន្លែង
-      </h1>
-
-      <!-- Search and Select Place -->
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">
-          ស្វែងរកកន្លែងដើម្បីកែប្រែ
-        </h2>
-
-        <!-- Search Input -->
-        <div class="flex flex-col mb-4">
-          <label for="searchInput" class="font-semibold text-gray-700 mb-2"
-            >ស្វែងរកទីកន្លែង</label
-          >
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="វាយឈ្មោះកន្លែងដើម្បីស្វែងរក..."
-            class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+        <a href="../index.html" class="Logo">
+          <img
+            class="h-auto max-md:w-[100px] md:w-[140px]"
+            src="../img/logo/logoHeader.png"
+            alt="Logo"
           />
-        </div>
-
-        <!-- Places List -->
-        <div id="placesList" class="space-y-2 max-h-64 overflow-y-auto hidden">
-          <!-- Places will be loaded here -->
-        </div>
-
-        <!-- Load All Places Button -->
+        </a>
         <button
-          id="loadPlacesBtn"
-          class="w-full bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary/90 transition-all"
+          id="menu-toggle"
+          class="lg:hidden text-accent cursor-pointer self-center text-3xl text-gray-850 focus:outline-none"
         >
-          📋 បង្ហាញកន្លែងទាំងអស់
+          <ion-icon name="menu" id="menu-icon"></ion-icon>
         </button>
+
+        <div
+          id="nav-links"
+          class="hidden lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 transition-all duration-300 ease-in-out"
+        >
+          <ul
+            class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
+          >
+            <li>
+              <a
+                href="../index.html"
+                class="text-accent hover:text-secondary transition-colors"
+                >ទំព័រដើម</a
+              >
+            </li>
+            <li>
+              <a
+                href="./about.html"
+                class="text-accent hover:text-secondary transition-colors"
+                >អំពីពួកយើង</a
+              >
+            </li>
+            <li>
+              <a
+                href="./desti.html"
+                class="text-secondary dark:text-dark-secondary transition-colors"
+                >គោលដៅ</a
+              >
+            </li>
+          </ul>
+
+          <div
+            class="flex font-primary flex-col lg:flex-row gap-4 mt-6 lg:mt-0"
+          >
+            <button
+              id="toggleTheme"
+              type="button"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 shadow-sm outline-none ring-0 transition-colors duration-500"
+              aria-label="Toggle dark mode"
+            >
+              <!-- SUN (visible in light, hides in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-100 scale-100 rotate-0 dark:opacity-0 dark:scale-75 dark:rotate-90"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm268 452q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"
+                />
+              </svg>
+
+              <!-- MOON (hidden in light, shows in dark) -->
+              <svg
+                class="absolute h-7 w-7 text-white transition-all duration-300 ease-out opacity-0 scale-75 rotate-90 dark:opacity-100 dark:scale-100 dark:rotate-0"
+                viewBox="0 -960 960 960"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M484-80q-84 0-157.5-32t-128-86.5Q144-253 112-326.5T80-484q0-146 93-257.5T410-880q-18 99 11 193.5T521-521q71 71 165.5 100T880-410q-26 144-138 237T484-80Z"
+                />
+              </svg>
+            </button>
+            <button
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+            >
+              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
+            </button>
+
+            <button
+              id="dropdownDelayButton"
+              data-dropdown-toggle="dropdownDelay"
+              data-dropdown-delay="500"
+              data-dropdown-trigger="hover"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
+              type="button"
+            >
+              ផ្សេងៗ
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownDelay"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
+            >
+              <ul
+                class="py-2 rounded-lg text-sm text-white bg-primary dark:bg-blue-950"
+                aria-labelledby="dropdownDelayButton"
+              >
+                <li>
+                  <a
+                    href="./post.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >បន្ថែមទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./update.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >លុបទីកន្លែង</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="min-h-screen bg-gradient-to-br p-5 font-sans">
+        <div
+          class="max-w-4xl font-primary mx-auto bg-white/95 rounded-2xl p-10 shadow-xl backdrop-blur-sm"
+        >
+          <h1
+            class="text-center text-primary text-4xl font-extrabold mb-8 bg-clip-text bg-gradient-to-r from-primary to-green-500"
+          >
+            កែប្រែទីកន្លែង
+          </h1>
+
+          <!-- Search and Select Place -->
+          <div class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">
+              ស្វែងរកកន្លែងដើម្បីកែប្រែ
+            </h2>
+
+            <!-- Search Input -->
+            <div class="flex flex-col mb-4">
+              <label for="searchInput" class="font-semibold text-gray-700 mb-2"
+                >ស្វែងរកទីកន្លែង</label
+              >
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="វាយឈ្មោះកន្លែងដើម្បីស្វែងរក..."
+                class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+              />
+            </div>
+
+            <!-- Places List -->
+            <div
+              id="placesList"
+              class="space-y-2 max-h-64 overflow-y-auto hidden"
+            >
+              <!-- Places will be loaded here -->
+            </div>
+
+            <!-- Load All Places Button -->
+            <button
+              id="loadPlacesBtn"
+              class="w-full bg-primary text-white font-semibold py-3 rounded-xl hover:bg-primary/90 transition-all"
+            >
+              📋 បង្ហាញកន្លែងទាំងអស់
+            </button>
+          </div>
+
+          <!-- Update Form -->
+          <form id="updateForm" class="hidden space-y-6">
+            <input type="hidden" id="placeUuid" name="placeUuid" />
+
+            <div class="bg-green-50 p-4 rounded-xl mb-6">
+              <h3 class="text-lg font-semibold text-green-800 mb-2">
+                កែប្រែព័ត៌មានទីកន្លែង
+              </h3>
+              <p class="text-green-700 text-sm">
+                បំពេញតែផ្នែកដែលអ្នកចង់កែប្រែប៉ុណ្ណោះ។
+                ផ្នែកដទៃនឹងរក្សាទុកតម្លៃដើម។
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Place Name -->
+              <div class="flex flex-col">
+                <label for="placeName" class="font-semibold text-gray-700 mb-2"
+                  >ឈ្មោះទីកន្លែង *</label
+                >
+                <input
+                  type="text"
+                  id="placeName"
+                  name="placeName"
+                  required
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                  placeholder="បញ្ចូលឈ្មោះទីកន្លែង"
+                />
+              </div>
+
+              <!-- Category -->
+              <div class="flex flex-col">
+                <label for="categoryId" class="font-semibold text-gray-700 mb-2"
+                  >ប្រភេទ *</label
+                >
+                <select
+                  id="categoryId"
+                  name="categoryId"
+                  required
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                >
+                  <option value="">ជ្រើសរើសប្រភេទ</option>
+                </select>
+              </div>
+
+              <!-- Entry Fee -->
+              <div class="flex flex-col">
+                <label for="entryFee" class="font-semibold text-gray-700 mb-2"
+                  >តម្លៃសំបុត្រចូល (USD)</label
+                >
+                <input
+                  type="number"
+                  id="entryFee"
+                  name="entryFee"
+                  min="0"
+                  step="0.01"
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                  placeholder="0.00"
+                />
+              </div>
+
+              <!-- Location -->
+              <div class="flex flex-col">
+                <label for="location" class="font-semibold text-gray-700 mb-2"
+                  >ទីតាំង</label
+                >
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                  placeholder="ខេត្ត, ស្រុក, ឃុំ"
+                />
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="flex flex-col">
+              <label for="description" class="font-semibold text-gray-700 mb-2"
+                >ពិពណ៌នា</label
+              >
+              <textarea
+                id="description"
+                name="description"
+                placeholder="ពិពណ៌នាលម្អិតអំពីទីកន្លែងនេះ..."
+                class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md resize-vertical min-h-[120px]"
+              ></textarea>
+            </div>
+
+            <!-- Open Hours -->
+            <div class="flex flex-col">
+              <label for="openHours" class="font-semibold text-gray-700 mb-2"
+                >ម៉ោងបើក</label
+              >
+              <input
+                type="text"
+                id="openHours"
+                name="openHours"
+                class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                placeholder="ឧ. 8:00 AM - 5:00 PM"
+              />
+            </div>
+
+            <!-- Coordinates -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex flex-col">
+                <label for="latitude" class="font-semibold text-gray-700 mb-2"
+                  >Latitude</label
+                >
+                <input
+                  type="number"
+                  id="latitude"
+                  name="latitude"
+                  step="any"
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                  placeholder="11.5564"
+                />
+              </div>
+
+              <div class="flex flex-col">
+                <label for="longitude" class="font-semibold text-gray-700 mb-2"
+                  >Longitude</label
+                >
+                <input
+                  type="number"
+                  id="longitude"
+                  name="longitude"
+                  step="any"
+                  class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
+                  placeholder="104.9282"
+                />
+              </div>
+            </div>
+
+            <!-- Current Images Display -->
+            <div id="currentImages" class="hidden">
+              <h3 class="font-semibold text-gray-700 mb-3">
+                រូបភាពបច្ចុប្បន្ន
+              </h3>
+              <div
+                id="imagesList"
+                class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4"
+              >
+                <!-- Current images will be displayed here -->
+              </div>
+            </div>
+
+            <!-- New Images Upload -->
+            <div class="flex flex-col">
+              <label for="images" class="font-semibold text-gray-700 mb-2"
+                >រូបភាពថ្មី (ជ្រើសរើសច្រើនរូបបាន)</label
+              >
+              <input
+                type="file"
+                id="images"
+                name="images"
+                multiple
+                accept="image/*"
+                class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90"
+              />
+              <p class="text-sm text-gray-500 mt-2">
+                ជ្រើសរើសរូបភាពថ្មីដើម្បីជំនួសរូបភាពចាស់។
+                អាចជ្រើសរើសច្រើនរូបភាពក្នុងពេលតែមួយ។
+              </p>
+            </div>
+
+            <!-- Image Preview -->
+            <div id="imagePreview" class="hidden">
+              <h3 class="font-semibold text-gray-700 mb-3">
+                មើលរូបភាពថ្មីជាមុន
+              </h3>
+              <div
+                id="previewList"
+                class="grid grid-cols-2 md:grid-cols-4 gap-4"
+              >
+                <!-- New image previews will be displayed here -->
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col md:flex-row gap-4 pt-6">
+              <button
+                type="button"
+                id="cancelBtn"
+                class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-4 rounded-xl transition-all"
+              >
+                បោះបង់
+              </button>
+              <button
+                type="submit"
+                id="updateBtn"
+                class="flex-1 bg-[#0a4536] text-white font-semibold py-4 rounded-xl hover:shadow-lg transition-all"
+              >
+                រក្សាទុកការកែប្រែ
+              </button>
+            </div>
+          </form>
+
+          <!-- Status -->
+          <div id="status" class="mt-5 p-4 rounded-lg hidden"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white mt-10 py-10">
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-left text-sm sm:text-base"
+      >
+        <div class="flex justify-center md:justify-start gap-4">
+          <img
+            src="../img/footer.PNG"
+            alt="Logo 1"
+            class="w-32 h-32 object-contain"
+          />
+          <img
+            src="https://www.cstad.edu.kh/icon.png?ff407d7ec1c2072a"
+            alt="Logo 2"
+            class="w-27 h-27 object-contain mt-3"
+          />
+        </div>
+
+        <div
+          class="flex flex-col max-lg:mt-3 items-center md:items-start gap-5"
+        >
+          <h4 class="text-primary font-semibold text-lg">បណ្តាញសង្គម</h4>
+          <div class="flex gap-4 text-primary">
+            <!-- Facebook -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-facebook-f text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- TikTok -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-tiktok text-3xl text-primary"></i>
+              </button>
+            </a>
+
+            <!-- YouTube -->
+            <a href="">
+              <button
+                class="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-neutral-200 bg-white transition-all duration-300 ease-in-out [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
+              >
+                <i class="fa-brands fa-youtube text-3xl text-primary"></i>
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg">តំណភ្ជាប់រហ័ស</h4>
+          <a href="index.html" class="hover:text-green-600 transition"
+            >ទំព័រដើម</a
+          >
+          <a href="/html/about.html" class="hover:text-green-600 transition"
+            >អំពីពួកយើង</a
+          >
+          <a
+            href="/html/destination.html"
+            class="hover:text-green-600 transition"
+            >គោលដៅ</a
+          >
+        </div>
+
+        <div class="flex flex-col gap-5 items-center md:items-start">
+          <h4 class="text-primary font-semibold text-lg max-sm:text-center">
+            ឧបត្ថម្ភដោយ
+          </h4>
+          <p>
+            Institute of Science and Technology Advanced Development (ISTAD)
+          </p>
+        </div>
       </div>
-
-      <!-- Update Form -->
-      <form id="updateForm" class="hidden space-y-6">
-        <input type="hidden" id="placeUuid" name="placeUuid" />
-        
-        <div class="bg-green-50 p-4 rounded-xl mb-6">
-          <h3 class="text-lg font-semibold text-green-800 mb-2">
-            កែប្រែព័ត៌មានទីកន្លែង
-          </h3>
-          <p class="text-green-700 text-sm">
-            បំពេញតែផ្នែកដែលអ្នកចង់កែប្រែប៉ុណ្ណោះ។ ផ្នែកដទៃនឹងរក្សាទុកតម្លៃដើម។
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Place Name -->
-          <div class="flex flex-col">
-            <label for="placeName" class="font-semibold text-gray-700 mb-2"
-              >ឈ្មោះទីកន្លែង *</label
-            >
-            <input
-              type="text"
-              id="placeName"
-              name="placeName"
-              required
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-              placeholder="បញ្ចូលឈ្មោះទីកន្លែង"
-            />
-          </div>
-
-          <!-- Category -->
-          <div class="flex flex-col">
-            <label for="categoryId" class="font-semibold text-gray-700 mb-2"
-              >ប្រភេទ *</label
-            >
-            <select
-              id="categoryId"
-              name="categoryId"
-              required
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-            >
-              <option value="">ជ្រើសរើសប្រភេទ</option>
-            </select>
-          </div>
-
-          <!-- Entry Fee -->
-          <div class="flex flex-col">
-            <label for="entryFee" class="font-semibold text-gray-700 mb-2"
-              >តម្លៃសំបុត្រចូល (USD)</label
-            >
-            <input
-              type="number"
-              id="entryFee"
-              name="entryFee"
-              min="0"
-              step="0.01"
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-              placeholder="0.00"
-            />
-          </div>
-
-          <!-- Location -->
-          <div class="flex flex-col">
-            <label for="location" class="font-semibold text-gray-700 mb-2"
-              >ទីតាំង</label
-            >
-            <input
-              type="text"
-              id="location"
-              name="location"
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-              placeholder="ខេត្ត, ស្រុក, ឃុំ"
-            />
-          </div>
-        </div>
-
-        <!-- Description -->
-        <div class="flex flex-col">
-          <label for="description" class="font-semibold text-gray-700 mb-2"
-            >ពិពណ៌នា</label
-          >
-          <textarea
-            id="description"
-            name="description"
-            placeholder="ពិពណ៌នាលម្អិតអំពីទីកន្លែងនេះ..."
-            class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md resize-vertical min-h-[120px]"
-          ></textarea>
-        </div>
-
-        <!-- Open Hours -->
-        <div class="flex flex-col">
-          <label for="openHours" class="font-semibold text-gray-700 mb-2"
-            >ម៉ោងបើក</label
-          >
-          <input
-            type="text"
-            id="openHours"
-            name="openHours"
-            class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-            placeholder="ឧ. 8:00 AM - 5:00 PM"
-          />
-        </div>
-
-        <!-- Coordinates -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex flex-col">
-            <label for="latitude" class="font-semibold text-gray-700 mb-2"
-              >Latitude</label
-            >
-            <input
-              type="number"
-              id="latitude"
-              name="latitude"
-              step="any"
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-              placeholder="11.5564"
-            />
-          </div>
-
-          <div class="flex flex-col">
-            <label for="longitude" class="font-semibold text-gray-700 mb-2"
-              >Longitude</label
-            >
-            <input
-              type="number"
-              id="longitude"
-              name="longitude"
-              step="any"
-              class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition"
-              placeholder="104.9282"
-            />
-          </div>
-        </div>
-
-        <!-- Current Images Display -->
-        <div id="currentImages" class="hidden">
-          <h3 class="font-semibold text-gray-700 mb-3">រូបភាពបច្ចុប្បន្ន</h3>
-          <div id="imagesList" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-            <!-- Current images will be displayed here -->
-          </div>
-        </div>
-
-        <!-- New Images Upload -->
-        <div class="flex flex-col">
-          <label for="images" class="font-semibold text-gray-700 mb-2"
-            >រូបភាពថ្មី (ជ្រើសរើសច្រើនរូបបាន)</label
-          >
-          <input
-            type="file"
-            id="images"
-            name="images"
-            multiple
-            accept="image/*"
-            class="w-full p-4 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary focus:shadow-md transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-white hover:file:bg-primary/90"
-          />
-          <p class="text-sm text-gray-500 mt-2">
-            ជ្រើសរើសរូបភាពថ្មីដើម្បីជំនួសរូបភាពចាស់។ អាចជ្រើសរើសច្រើនរូបភាពក្នុងពេលតែមួយ។
-          </p>
-        </div>
-
-        <!-- Image Preview -->
-        <div id="imagePreview" class="hidden">
-          <h3 class="font-semibold text-gray-700 mb-3">មើលរូបភាពថ្មីជាមុន</h3>
-          <div id="previewList" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- New image previews will be displayed here -->
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-col md:flex-row gap-4 pt-6">
-          <button
-            type="button"
-            id="cancelBtn"
-            class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-4 rounded-xl transition-all"
-          >
-            បោះបង់
-          </button>
-          <button
-            type="submit"
-            id="updateBtn"
-            class="flex-1 bg-[#0a4536] text-white font-semibold py-4 rounded-xl hover:shadow-lg transition-all"
-          >
-            រក្សាទុកការកែប្រែ
-          </button>
-        </div>
-      </form>
-
-      <!-- Status -->
-      <div id="status" class="mt-5 p-4 rounded-lg hidden"></div>
-    </div>
+    </footer>
 
     <style>
       .place-item {
@@ -318,49 +563,49 @@
     </style>
 
     <script>
-      const API_BASE = "https://tos-der.sokpheng.com/api/v1";
+      const API_BASE = 'https://tos-der.sokpheng.com/api/v1';
       let allPlaces = [];
       let selectedPlace = null;
       let categories = [];
 
-      const searchInput = document.getElementById("searchInput");
-      const placesList = document.getElementById("placesList");
-      const loadPlacesBtn = document.getElementById("loadPlacesBtn");
-      const updateForm = document.getElementById("updateForm");
-      const statusDiv = document.getElementById("status");
-      const cancelBtn = document.getElementById("cancelBtn");
-      const imagesInput = document.getElementById("images");
-      const imagePreview = document.getElementById("imagePreview");
-      const previewList = document.getElementById("previewList");
+      const searchInput = document.getElementById('searchInput');
+      const placesList = document.getElementById('placesList');
+      const loadPlacesBtn = document.getElementById('loadPlacesBtn');
+      const updateForm = document.getElementById('updateForm');
+      const statusDiv = document.getElementById('status');
+      const cancelBtn = document.getElementById('cancelBtn');
+      const imagesInput = document.getElementById('images');
+      const imagePreview = document.getElementById('imagePreview');
+      const previewList = document.getElementById('previewList');
 
       let selectedImages = [];
 
       // Load categories and places on page load
-      window.addEventListener("load", async function () {
+      window.addEventListener('load', async function () {
         await loadCategories();
         await loadPlaces();
       });
 
       // Image upload functionality
-      imagesInput.addEventListener("change", function(e) {
+      imagesInput.addEventListener('change', function (e) {
         selectedImages = Array.from(e.target.files);
         displayImagePreviews();
       });
 
       function displayImagePreviews() {
         if (selectedImages.length === 0) {
-          imagePreview.classList.add("hidden");
+          imagePreview.classList.add('hidden');
           return;
         }
 
-        imagePreview.classList.remove("hidden");
-        previewList.innerHTML = "";
+        imagePreview.classList.remove('hidden');
+        previewList.innerHTML = '';
 
         selectedImages.forEach((file, index) => {
           const reader = new FileReader();
-          reader.onload = function(e) {
-            const imageDiv = document.createElement("div");
-            imageDiv.className = "image-preview";
+          reader.onload = function (e) {
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'image-preview';
             imageDiv.innerHTML = `
               <img src="${e.target.result}" alt="Preview ${index + 1}" />
               <button type="button" class="remove-image-btn" onclick="removeImage(${index})">×</button>
@@ -374,10 +619,10 @@
       function removeImage(index) {
         selectedImages.splice(index, 1);
         displayImagePreviews();
-        
+
         // Update the file input
         const dt = new DataTransfer();
-        selectedImages.forEach(file => dt.items.add(file));
+        selectedImages.forEach((file) => dt.items.add(file));
         imagesInput.files = dt.files;
       }
 
@@ -388,25 +633,25 @@
       async function loadCategories() {
         try {
           const response = await fetch(`${API_BASE}/categories`);
-          if (!response.ok) throw new Error("Failed to load categories");
-          
+          if (!response.ok) throw new Error('Failed to load categories');
+
           const result = await response.json();
           categories = result.data || result.categories || result || [];
-          
-          const categorySelect = document.getElementById("categoryId");
+
+          const categorySelect = document.getElementById('categoryId');
           categorySelect.innerHTML = '<option value="">ជ្រើសរើសប្រភេទ</option>';
-          
-          categories.forEach(category => {
+
+          categories.forEach((category) => {
             categorySelect.innerHTML += `<option value="${category.id}">${category.name}</option>`;
           });
         } catch (error) {
-          console.error("Error loading categories:", error);
-          showStatus("❌ Failed to load categories", "error");
+          console.error('Error loading categories:', error);
+          showStatus('❌ Failed to load categories', 'error');
         }
       }
 
       // Load all places
-      loadPlacesBtn.addEventListener("click", async function () {
+      loadPlacesBtn.addEventListener('click', async function () {
         await loadPlaces();
       });
 
@@ -418,33 +663,35 @@
         try {
           const response = await fetch(`${API_BASE}/places`);
           if (!response.ok) {
-            throw new Error(`Failed to load places: ${response.status} ${response.statusText}`);
+            throw new Error(
+              `Failed to load places: ${response.status} ${response.statusText}`
+            );
           }
 
           const result = await response.json();
           allPlaces = result.data || result.places || result || [];
 
           displayPlaces(allPlaces);
-          placesList.classList.remove("hidden");
-          loadPlacesBtn.innerHTML = "🔄 ផ្ទុកកន្លែងឡើងវិញ";
+          placesList.classList.remove('hidden');
+          loadPlacesBtn.innerHTML = '🔄 ផ្ទុកកន្លែងឡើងវិញ';
 
-          showStatus(`✅ Loaded ${allPlaces.length} places`, "success");
+          showStatus(`✅ Loaded ${allPlaces.length} places`, 'success');
         } catch (error) {
-          console.error("Error loading places:", error);
-          showStatus(`❌ Error loading places: ${error.message}`, "error");
+          console.error('Error loading places:', error);
+          showStatus(`❌ Error loading places: ${error.message}`, 'error');
         } finally {
           loadPlacesBtn.disabled = false;
         }
       }
 
       // Search functionality
-      searchInput.addEventListener("input", function (e) {
+      searchInput.addEventListener('input', function (e) {
         const query = e.target.value.toLowerCase();
         filterPlaces(query);
       });
 
       function displayPlaces(places) {
-        placesList.innerHTML = "";
+        placesList.innerHTML = '';
 
         if (places.length === 0) {
           placesList.innerHTML =
@@ -453,88 +700,102 @@
         }
 
         places.forEach((place) => {
-          const placeElement = document.createElement("div");
+          const placeElement = document.createElement('div');
           placeElement.className =
-            "place-item p-4 border-2 border-gray-200 rounded-xl cursor-pointer";
+            'place-item p-4 border-2 border-gray-200 rounded-xl cursor-pointer';
           placeElement.innerHTML = `
             <div class="flex justify-between items-start">
               <div class="flex-1">
-                <h3 class="font-semibold text-gray-800">${place.name || "Unnamed Place"}</h3>
-                <p class="text-sm text-gray-600 mt-1">${(place.description || "").substring(0, 100)}${(place.description || "").length > 100 ? "..." : ""}</p>
+                <h3 class="font-semibold text-gray-800">${
+                  place.name || 'Unnamed Place'
+                }</h3>
+                <p class="text-sm text-gray-600 mt-1">${(
+                  place.description || ''
+                ).substring(0, 100)}${
+            (place.description || '').length > 100 ? '...' : ''
+          }</p>
                 <div class="flex items-center space-x-4 mt-2">
-                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">${place.categoryName || "No Category"}</span>
-                  <span class="text-xs text-gray-500">ID: ${place.id || "N/A"}</span>
+                  <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">${
+                    place.categoryName || 'No Category'
+                  }</span>
+                  <span class="text-xs text-gray-500">ID: ${
+                    place.id || 'N/A'
+                  }</span>
                 </div>
               </div>
               <div class="text-right">
-                <span class="text-sm text-gray-500">$${place.entryFee || 0}</span>
+                <span class="text-sm text-gray-500">$${
+                  place.entryFee || 0
+                }</span>
               </div>
             </div>
           `;
 
-          placeElement.addEventListener("click", () => selectPlace(place, placeElement));
+          placeElement.addEventListener('click', () =>
+            selectPlace(place, placeElement)
+          );
           placesList.appendChild(placeElement);
         });
       }
 
       function selectPlace(place, element) {
         // Remove previous selection
-        document.querySelectorAll(".place-item").forEach((item) => {
-          item.classList.remove("selected");
+        document.querySelectorAll('.place-item').forEach((item) => {
+          item.classList.remove('selected');
         });
 
         // Select new place
-        element.classList.add("selected");
+        element.classList.add('selected');
         selectedPlace = place;
 
         // Populate form with place data
         populateForm(place);
 
         // Show update form
-        updateForm.classList.remove("hidden");
+        updateForm.classList.remove('hidden');
 
-        showStatus(`Selected: ${place.name}`, "info");
+        showStatus(`Selected: ${place.name}`, 'info');
       }
 
       function populateForm(place) {
         // Fill form fields with current place data
-        document.getElementById("placeUuid").value = place.uuid || "";
-        document.getElementById("placeName").value = place.name || "";
-        document.getElementById("categoryId").value = place.categoryId || "";
-        document.getElementById("entryFee").value = place.entryFee || "";
-        document.getElementById("location").value = place.location || "";
-        document.getElementById("description").value = place.description || "";
-        document.getElementById("openHours").value = place.openHours || "";
-        document.getElementById("latitude").value = place.latitude || "";
-        document.getElementById("longitude").value = place.longitude || "";
+        document.getElementById('placeUuid').value = place.uuid || '';
+        document.getElementById('placeName').value = place.name || '';
+        document.getElementById('categoryId').value = place.categoryId || '';
+        document.getElementById('entryFee').value = place.entryFee || '';
+        document.getElementById('location').value = place.location || '';
+        document.getElementById('description').value = place.description || '';
+        document.getElementById('openHours').value = place.openHours || '';
+        document.getElementById('latitude').value = place.latitude || '';
+        document.getElementById('longitude').value = place.longitude || '';
 
         // Display current images if any
         displayCurrentImages(place.imageUrls || []);
 
         // Reset image selection
         selectedImages = [];
-        imagesInput.value = "";
-        imagePreview.classList.add("hidden");
+        imagesInput.value = '';
+        imagePreview.classList.add('hidden');
       }
 
       function displayCurrentImages(imageUrls) {
-        const currentImagesDiv = document.getElementById("currentImages");
-        const imagesListDiv = document.getElementById("imagesList");
+        const currentImagesDiv = document.getElementById('currentImages');
+        const imagesListDiv = document.getElementById('imagesList');
 
         if (imageUrls.length > 0) {
-          currentImagesDiv.classList.remove("hidden");
-          imagesListDiv.innerHTML = "";
+          currentImagesDiv.classList.remove('hidden');
+          imagesListDiv.innerHTML = '';
 
           imageUrls.forEach((imageUrl, index) => {
-            const imageDiv = document.createElement("div");
-            imageDiv.className = "image-preview";
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'image-preview';
             imageDiv.innerHTML = `
               <img src="${imageUrl}" alt="Place image ${index + 1}" />
             `;
             imagesListDiv.appendChild(imageDiv);
           });
         } else {
-          currentImagesDiv.classList.add("hidden");
+          currentImagesDiv.classList.add('hidden');
         }
       }
 
@@ -544,37 +805,41 @@
           return;
         }
 
-        const filtered = allPlaces.filter((place) =>
-          (place.name || "").toLowerCase().includes(query) ||
-          (place.description || "").toLowerCase().includes(query) ||
-          (place.categoryName || "").toLowerCase().includes(query)
+        const filtered = allPlaces.filter(
+          (place) =>
+            (place.name || '').toLowerCase().includes(query) ||
+            (place.description || '').toLowerCase().includes(query) ||
+            (place.categoryName || '').toLowerCase().includes(query)
         );
 
         displayPlaces(filtered);
       }
 
       // Cancel button
-      cancelBtn.addEventListener("click", function () {
-        updateForm.classList.add("hidden");
+      cancelBtn.addEventListener('click', function () {
+        updateForm.classList.add('hidden');
         selectedPlace = null;
-        document.querySelectorAll(".place-item").forEach((item) => {
-          item.classList.remove("selected");
+        document.querySelectorAll('.place-item').forEach((item) => {
+          item.classList.remove('selected');
         });
-        showStatus("", "");
+        showStatus('', '');
       });
 
       // Update form submission
-      updateForm.addEventListener("submit", async function (e) {
+      updateForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         if (!selectedPlace) {
-          showStatus("❌ Please select a place to update", "error");
+          showStatus('❌ Please select a place to update', 'error');
           return;
         }
 
-        const updateBtn = document.getElementById("updateBtn");
+        const updateBtn = document.getElementById('updateBtn');
         updateBtn.disabled = true;
-        showStatus('<div class="loading-spinner"></div>Updating place...', "loading");
+        showStatus(
+          '<div class="loading-spinner"></div>Updating place...',
+          'loading'
+        );
 
         try {
           // Always use JSON approach since your API expects raw JSON with PATCH
@@ -582,7 +847,7 @@
 
           if (!response.ok) {
             let errorMessage = `Update failed: ${response.status} ${response.statusText}`;
-            
+
             try {
               const errorData = await response.json();
               if (errorData.message) {
@@ -593,37 +858,45 @@
             } catch (e) {
               // Use default error message
             }
-            
+
             throw new Error(errorMessage);
           }
 
           const result = await response.json();
-          console.log("Update result:", result);
+          console.log('Update result:', result);
 
           // Handle image upload separately if images are selected
           if (selectedImages.length > 0) {
             try {
               await uploadImages();
-              showStatus(`✅ Place "${selectedPlace.name}" and images updated successfully!`, "success");
+              showStatus(
+                `✅ Place "${selectedPlace.name}" and images updated successfully!`,
+                'success'
+              );
             } catch (imageError) {
-              console.error("Image upload failed:", imageError);
-              showStatus(`✅ Place updated successfully, but image upload failed: ${imageError.message}`, "warning");
+              console.error('Image upload failed:', imageError);
+              showStatus(
+                `✅ Place updated successfully, but image upload failed: ${imageError.message}`,
+                'warning'
+              );
             }
           } else {
-            showStatus(`✅ Place "${selectedPlace.name}" updated successfully!`, "success");
+            showStatus(
+              `✅ Place "${selectedPlace.name}" updated successfully!`,
+              'success'
+            );
           }
 
           // Reset form and reload places
-          updateForm.classList.add("hidden");
+          updateForm.classList.add('hidden');
           selectedPlace = null;
           selectedImages = [];
-          imagesInput.value = "";
-          imagePreview.classList.add("hidden");
+          imagesInput.value = '';
+          imagePreview.classList.add('hidden');
           await loadPlaces();
-
         } catch (error) {
-          console.error("Update error:", error);
-          showStatus(`❌ ${error.message}`, "error");
+          console.error('Update error:', error);
+          showStatus(`❌ ${error.message}`, 'error');
         } finally {
           updateBtn.disabled = false;
         }
@@ -632,28 +905,32 @@
       // Update with JSON (matching your API structure)
       async function updateWithJSON() {
         const updateData = {};
-        
+
         // Map form fields to API fields
         const fieldMapping = {
-          'placeName': 'name',
-          'categoryId': 'categoryId',
-          'entryFee': 'entryFee',
-          'location': 'location',
-          'description': 'description',
-          'openHours': 'openHours',
-          'latitude': 'latitude',
-          'longitude': 'longitude'
+          placeName: 'name',
+          categoryId: 'categoryId',
+          entryFee: 'entryFee',
+          location: 'location',
+          description: 'description',
+          openHours: 'openHours',
+          latitude: 'latitude',
+          longitude: 'longitude',
         };
-        
-        Object.keys(fieldMapping).forEach(formField => {
+
+        Object.keys(fieldMapping).forEach((formField) => {
           const element = document.getElementById(formField);
           const value = element.value;
           const apiField = fieldMapping[formField];
-          
-          if (value && value.trim() !== "") {
-            if (formField === "entryFee" || formField === "latitude" || formField === "longitude") {
+
+          if (value && value.trim() !== '') {
+            if (
+              formField === 'entryFee' ||
+              formField === 'latitude' ||
+              formField === 'longitude'
+            ) {
               updateData[apiField] = parseFloat(value);
-            } else if (formField === "categoryId") {
+            } else if (formField === 'categoryId') {
               updateData[apiField] = parseInt(value);
             } else {
               updateData[apiField] = value;
@@ -661,16 +938,19 @@
           }
         });
 
-        console.log("Updating place with JSON:", updateData);
+        console.log('Updating place with JSON:', updateData);
 
         // Use PATCH method with JSON content type (as shown in your API docs)
-        const response = await fetch(`${API_BASE}/places/${selectedPlace.uuid}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(updateData),
-        });
+        const response = await fetch(
+          `${API_BASE}/places/${selectedPlace.uuid}`,
+          {
+            method: 'PATCH',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updateData),
+          }
+        );
 
         return response;
       }
@@ -679,11 +959,11 @@
       async function uploadImages() {
         if (selectedImages.length === 0) return;
 
-        console.log("Uploading images separately...");
+        console.log('Uploading images separately...');
 
         const imageFormData = new FormData();
-        selectedImages.forEach(file => {
-          imageFormData.append("images", file);
+        selectedImages.forEach((file) => {
+          imageFormData.append('images', file);
         });
 
         // Try different image upload endpoints
@@ -692,7 +972,7 @@
           `${API_BASE}/places/${selectedPlace.uuid}/upload-images`,
           `${API_BASE}/upload/places/${selectedPlace.uuid}`,
           `${API_BASE}/places/images/${selectedPlace.uuid}`,
-          `${API_BASE}/upload-files/places/${selectedPlace.uuid}`
+          `${API_BASE}/upload-files/places/${selectedPlace.uuid}`,
         ];
 
         let lastError;
@@ -700,12 +980,12 @@
           try {
             console.log(`Trying image upload to: ${endpoint}`);
             const imageResponse = await fetch(endpoint, {
-              method: "POST",
+              method: 'POST',
               body: imageFormData,
             });
-            
+
             if (imageResponse.ok) {
-              console.log("Image upload successful");
+              console.log('Image upload successful');
               return;
             } else {
               lastError = `${imageResponse.status} ${imageResponse.statusText}`;
@@ -716,7 +996,7 @@
           }
         }
 
-        throw new Error(lastError || "All image upload endpoints failed");
+        throw new Error(lastError || 'All image upload endpoints failed');
       }
 
       function showStatus(message, type) {
@@ -724,32 +1004,71 @@
         statusDiv.className = `mt-5 p-4 rounded-lg`;
 
         switch (type) {
-          case "success":
-            statusDiv.classList.add("bg-green-100", "text-green-800", "border", "border-green-300");
+          case 'success':
+            statusDiv.classList.add(
+              'bg-green-100',
+              'text-green-800',
+              'border',
+              'border-green-300'
+            );
             break;
-          case "error":
-            statusDiv.classList.add("bg-red-100", "text-red-800", "border", "border-red-300");
+          case 'error':
+            statusDiv.classList.add(
+              'bg-red-100',
+              'text-red-800',
+              'border',
+              'border-red-300'
+            );
             break;
-          case "loading":
-            statusDiv.classList.add("bg-blue-100", "text-blue-800", "border", "border-blue-300");
+          case 'loading':
+            statusDiv.classList.add(
+              'bg-blue-100',
+              'text-blue-800',
+              'border',
+              'border-blue-300'
+            );
             break;
-          case "warning":
-            statusDiv.classList.add("bg-yellow-100", "text-yellow-800", "border", "border-yellow-300");
+          case 'warning':
+            statusDiv.classList.add(
+              'bg-yellow-100',
+              'text-yellow-800',
+              'border',
+              'border-yellow-300'
+            );
             break;
-          case "info":
-            statusDiv.classList.add("bg-gray-100", "text-gray-800", "border", "border-gray-300");
+          case 'info':
+            statusDiv.classList.add(
+              'bg-gray-100',
+              'text-gray-800',
+              'border',
+              'border-gray-300'
+            );
             break;
         }
 
-        statusDiv.style.display = message ? "block" : "none";
+        statusDiv.style.display = message ? 'block' : 'none';
 
         // Auto-hide success messages after 5 seconds
-        if (type === "success") {
+        if (type === 'success') {
           setTimeout(() => {
-            statusDiv.style.display = "none";
+            statusDiv.style.display = 'none';
           }, 5000);
         }
       }
     </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </body>
 </html>

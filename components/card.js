@@ -12,7 +12,7 @@ export const placeDetail = (place) => {
       class="absolute inset-0 w-full h-full object-cover"
     />
   </div>
-  <div class="p-4">
+  <div class="p-4 ">
     <div class="flex justify-between items-center">
       <h3 class="text-primary text-[22px] font-primary font-semibold">
         ${place.name}
