@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
+    <title>ទំព័រដើម</title>
+    <link rel="shortcut icon" href="./img/logo/logoFooter.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
@@ -12,7 +13,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
       rel="stylesheet"
@@ -25,7 +25,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
 
-  <body class="bg-background dark:text-white font-primary">
+  <body
+    class="bg-background dark:bg-dark_background dark:text-white font-primary"
+  >
     <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
@@ -59,12 +61,16 @@
               >
             </li>
             <li>
-              <a href="html/about.html" class="text-accent transition-colors"
+              <a
+                href="html/about.html"
+                class="text-accent hover:text-secondary transition-colors"
                 >អំពីពួកយើង</a
               >
             </li>
             <li>
-              <a href="html/desti.html" class="text-accent transition-colors"
+              <a
+                href="html/desti.html"
+                class="text-accent hover:text-secondary transition-colors"
                 >គោលដៅ</a
               >
             </li>
@@ -76,7 +82,7 @@
             <button
               id="toggleTheme"
               type="button"
-              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 shadow-sm outline-none ring-0 transition-colors duration-500"
               aria-label="Toggle dark mode"
             >
               <!-- SUN (visible in light, hides in dark) -->
@@ -108,17 +114,18 @@
               class="cursor-pointer group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 cursor-pointer bg-primary dark:bg-blue-950 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
               href="html/loginnnn.html"
             >
-              <button>ចុះឈ្មោះ</button>
-            </a>
+              <a href="/html/loginnnn.html">ចុះឈ្មោះ</a>
+            </button>
+
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
               data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
-              Dropdown hover
+              ផ្សេងៗ
               <svg
                 class="w-2.5 h-2.5 ms-3"
                 aria-hidden="true"
@@ -138,31 +145,31 @@
             <!-- Dropdown menu -->
             <div
               id="dropdownDelay"
-              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
             >
               <ul
-                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                class="py-2 rounded-lg text-sm text-white bg-primary dark:bg-blue-950"
                 aria-labelledby="dropdownDelayButton"
               >
                 <li>
                   <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Post</a
+                    href="./html/post.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >បន្ថែមទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="#"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Update</a
+                    href="./html/update.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="html/delete.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >Delete</a
+                    href="./html/delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >លុបទីកន្លែង</a
                   >
                 </li>
               </ul>
@@ -425,18 +432,17 @@
                 data-aos="fade-up"
               >
                 <span class="block text-teal-800 dark:text-white"
-                  >ស្វែងយល់ពីកម្ពុជា</span
-                >
-                <span class="block">ជាមួយបទពិសោធន៍ថ្មី</span>
+                  >ស្វែងយល់ពីមនុស្ស
+                </span>
+                <span class="block">វប្បធម៌ និងធម្មជាតិក្នុងកម្ពុជា</span>
               </h2>
               <p
                 class="text-lg md:text-xl dark:text-white text-accent max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                យើងខ្ញុំជឿជាក់ថា ការធ្វើដំណើរគឺជាការរៀនសូត្រ។
-                សូមមកស្វែងរកបទពិសោធន៍ដែលមិនអាចបំភ្លេចបាន
-                ទាំងតំបន់បេតិកភណ្ឌពិភពលោក និងសម្រស់ធម្មជាតិដ៏ប្លែក។
+                ដំណើរគឺជាការរៀនសូត្រដ៏ពិសេស។ សូមមកស្វែងយល់ពីសិល្បៈ វប្បធម៌
+                និងសម្រស់ធម្មជាតិ ដែលនឹងបន្សល់អនុស្សាវរីយ៍មិនអស់កាល។
               </p>
               <a
                 class="group w-fit flex cursor-pointer justify-center py-6 mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-teal-800 dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"

@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-const provinces = document.getElementById("province_categories");
-const base_url = "https://tos-der.sokpheng.com/api/v1/categories";
+const provinces = document.getElementById('province_categories');
+const base_url = 'https://tos-der.sokpheng.com/api/v1/categories';
 
-const targetCategoryNames = ["Siem reap", "Phnom Penh", "Kom pot", "Kep"];
+const targetCategoryNames = ['Siem reap', 'Phnom Penh', 'Kom pot', 'Kep'];
 
 // section2
 async function fetchProvinceCategories() {
@@ -14,7 +14,7 @@ async function fetchProvinceCategories() {
     console.log(data);
 
     if (!Array.isArray(data)) {
-      console.error("Unexpected data format:", data);
+      console.error('Unexpected data format:', data);
       return;
     }
 
@@ -58,7 +58,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">ភ្នំពេញ</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold  max-sm:text-xl">ភ្នំពេញ</h3>
         </div>
       </a>
 
@@ -73,7 +73,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">កំពត</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl">កំពត</h3>
         </div>
       </a>
 
@@ -88,7 +88,7 @@ async function fetchProvinceCategories() {
           class="h-full w-full object-cover group-hover:scale-110 duration-500 transition-transform"
         />
         <div class="absolute bottom-0 p-2 text-white">
-          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl max-sm:text-xl">កែប</h3>
+          <h3 class="text-3xl text-shadow-xl text-shadow-accent sm:p-3 max-sm:p-1 font-bold max-sm:text-xl">កែប</h3>
         </div>
       </a>
     `;
@@ -100,13 +100,13 @@ async function fetchProvinceCategories() {
 fetchProvinceCategories();
 
 // section4
-const base_url1 = "https://tos-der.sokpheng.com/api/v1/places";
-const PlaceSuggestions = document.getElementById("place_Suggestion");
+const base_url1 = 'https://tos-der.sokpheng.com/api/v1/places';
+const PlaceSuggestions = document.getElementById('place_Suggestion');
 const targetPlaceInProvinceName = [
-  "ប្រាសាទអង្គរវត្ត",
-  "ឆ្នេរកែប",
-  "ដូងទេរ",
-  "ប្រាសាទភ្នំបាណន់",
+  'ប្រាសាទអង្គរវត្ត',
+  'ឆ្នេរកែប',
+  'ដូងទេរ',
+  'ប្រាសាទភ្នំបាណន់',
 ];
 
 async function PlaceSuggestionsList() {
@@ -115,7 +115,7 @@ async function PlaceSuggestionsList() {
     const data = await res.json();
 
     if (!Array.isArray(data)) {
-      console.error("Unexpected data format:", data);
+      console.error('Unexpected data format:', data);
       return;
     }
 
@@ -126,12 +126,12 @@ async function PlaceSuggestionsList() {
       )
     );
 
-    console.log("Filtered places:", filteredPlaces);
+    console.log('Filtered places:', filteredPlaces);
 
     PlaceSuggestions.innerHTML = filteredPlaces
       .map(
         (place) => `
-        <div data-aos="fade-right" data-aos-delay="200" class="bg-white  dark:bg-accent/50 rounded-xl shadow-lg overflow-hidden">
+        <div data-aos="fade-right" data-aos-delay="200" class="bg-white dark:bg-accent/50 rounded-xl shadow-lg overflow-hidden">
           <a href="../html/ParamDetail.html?placeUuid=${place.uuid}" >
           <div class="bg-teal-900 dark:bg-dark-primary px-6 py-3  flex justify-between items-center">
             <h3 class="text-white text-[24px] font-bold">${place.name}</h3>
@@ -153,7 +153,7 @@ async function PlaceSuggestionsList() {
       </div>
       `
       )
-      .join("");
+      .join('');
   } catch (e) {
     console.error(e);
   }

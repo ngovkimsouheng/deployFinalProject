@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home page</title>
+    <title>អំពីពួកយើង</title>
     <!-- icon -->
-    <link rel="shortcut icon" href="./img/home/icon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo/logoFooter.png" type="image/x-icon">
     <!-- style -->
     <link rel="stylesheet" href="../src/output.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    /> -->
     <!-- animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script
@@ -22,7 +26,7 @@
     <!-- send email -->
   </head>
 
-  <body class="bg-background font-primary">
+  <body class="bg-background dark:bg-dark_background font-primary">
     <!-- header -->
     <header class="bg-white dark:text-white w-full shadow sticky top-0 z-10">
       <nav
@@ -44,14 +48,14 @@
 
         <div
           id="nav-links"
-          class="hidden bg-white lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
+          class="hidden lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 transition-all duration-300 ease-in-out"
         >
           <ul
             class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
               <a
-                href="/index.html"
+                href="../index.html"
                 class="text-accent hover:text-secondary transition-colors"
                 >ទំព័រដើម</a
               >
@@ -78,7 +82,7 @@
             <button
               id="toggleTheme"
               type="button"
-              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 shadow-sm outline-none ring-0 transition-colors duration-500"
               aria-label="Toggle dark mode"
             >
               <!-- SUN (visible in light, hides in dark) -->
@@ -106,10 +110,68 @@
               </svg>
             </button>
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
             >
-              ចុះឈ្មោះ
+              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
             </button>
+
+            <button
+              id="dropdownDelayButton"
+              data-dropdown-toggle="dropdownDelay"
+              data-dropdown-delay="500"
+              data-dropdown-trigger="hover"
+              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
+              type="button"
+            >
+              ផ្សេងៗ
+              <svg
+                class="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <!-- Dropdown menu -->
+            <div
+              id="dropdownDelay"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
+            >
+              <ul
+                class="py-2 rounded-lg text-sm text-white bg-primary dark:bg-blue-950"
+                aria-labelledby="dropdownDelayButton"
+              >
+                <li>
+                  <a
+                    href="./html/post.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >បន្ថែមទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./html/update.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./html/delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >លុបទីកន្លែង</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -210,20 +272,20 @@
                   <span class="block text-teal-800 dark:text-white"
                     >ស្វែងយល់ពីកម្ពុជា</span
                   >
-                  <span class="block">ជាមួយបទពិសោធន៍ថ្មី</span>
+                  <span class="block">តាមរយៈដំណើរកំសាន្តក្នុងតំបន់</span>
                 </h2>
                 <p
                   class="text-lg md:text-xl text-accent dark:text-white max-w-xl mx-auto lg:mx-0 animate-slide-in-up"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  យើងខ្ញុំជឿជាក់ថា ការធ្វើដំណើរគឺជាការរៀនសូត្រ។
-                  សូមមកស្វែងរកបទពិសោធន៍ដែលមិនអាចបំភ្លេចបាន
-                  ទាំងតំបន់បេតិកភណ្ឌពិភពលោក និងសម្រស់ធម្មជាតិដ៏ប្លែក។
+                  មកស្គាល់កម្ពុជាតាមរយៈដំណើរកំសាន្តពិសេស
+                  ដែលនាំអ្នកឱ្យស្វែងយល់ពីប្រវត្តិសាស្រ្តដ៏សម្បូរបែប
+                  និងទេសភាពធម្មជាតិដ៏ស្រស់ស្អាត។
                 </p>
                 <a data-aos="zoom-in" href="./html/desti.html">
                   <button
-                    class="group flex justify-center py-6 mt-6 relative h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+                    class="group flex justify-center py-6 mt-6 relative cursor-pointer h-12 items-center overflow-hidden rounded-[10px] border border-neutral-200 bg-secondary dark:bg-dark-secondary px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
                   >
                     ចាប់ផ្តើមដំណើររបស់អ្នក
                   </button>
@@ -489,9 +551,9 @@
                 <div
                   class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                 >
-                  <a href=""><i class="fa-brands fa-facebook"></i></a>
-                  <a href=""><i class="fa-brands fa-github"></i></a>
-                  <a href=""><i class="fa-brands fa-telegram"></i></a>
+                  <a href="" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <a href="" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                 </div>
               </div>
               <div class="p-6 text-center transition-transform duration-500">
@@ -509,9 +571,9 @@
                 <div
                   class="flex justify-center text-teal-800 gap-2 mt-2 text-[22px]"
                 >
-                  <a href=""><i class="fa-brands fa-facebook"></i></a>
-                  <a href=""><i class="fa-brands fa-github"></i></a>
-                  <a href=""><i class="fa-brands fa-telegram"></i></a>
+                  <a href="https://www.facebook.com/lyzhia.eung" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="github.com/lyzhiaa" target="_blank"><i class="fa-brands fa-github"></i></a>
+                  <a href="@lyzhia" target="_blank"><i class="fa-brands fa-telegram"></i></a>
                 </div>
               </div>
             </div>
@@ -782,23 +844,27 @@
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        <div class="w-full my-6 p-6 mx-auto bg-white shadow-xl rounded-2xl">
-          <h3
-            class="text-2xl font-semibold text-primary dark:text-dark-primary mb-4"
-          >
+        <div
+          class="w-full my-6 p-6 mx-auto bg-white dark:bg-accent/50 shadow-xl rounded-2xl"
+        >
+          <h3 class="text-2xl font-semibold text-primary dark:text-white mb-4">
             តើលោកអ្នកមានចម្ងល់ឬសំណួរអ្វីមែនទេ?
           </h3>
-          <p class="text-gray-700 font-light mb-6">
+          <p class="text-gray-700 dark:text-white font-light mb-6">
             ប្រសិនជាមានចម្ងល់ ឬសំណួរទៅកាន់យើង សូមសរសេរមកខាងក្រោម
             និងបំពេញអុីម៉ែល។
           </p>
 
-          <form id="myForm" method="post">
+          <form
+            id="myForm"
+            method="post"
+            class="dark:text-gray-100 p-6 rounded-xl"
+          >
             <textarea
               id="message"
               name="message"
               placeholder="សរសេរចម្ងល់របស់អ្នក..."
-              class="w-full p-4 border rounded-lg mb-6 font-light resize-none"
+              class="w-full p-4 border rounded-lg mb-6 font-light resize-none bg-white text-gray-900 border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
               rows="5"
               required
             ></textarea>
@@ -809,7 +875,7 @@
                 id="email"
                 name="email"
                 oninput="validateEmail()"
-                class="block w-full p-4 text-md text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary"
+                class="block w-full p-4 text-md border rounded-lg bg-gray-50 text-gray-900 border-gray-300 focus:ring-primary dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"
                 placeholder="Email"
                 required
               />
@@ -818,13 +884,14 @@
                 id="submitBtn"
                 value="Send Email"
                 onclick="sendEmail()"
-                class="text-white absolute cursor-pointer end-2.5 bottom-2.5 bg-primary hover:bg-green-800 focus:ring-1 focus:ring-green-800 font-medium rounded-lg text-md px-6 py-2"
+                class="text-white absolute cursor-pointer end-2.5 bottom-2.5 bg-primary hover:bg-green-800 focus:ring-1 focus:ring-green-800 font-medium rounded-lg text-md px-6 py-2 dark:bg-dark-primary dark:hover:bg-dark-light-primary"
               >
                 បញ្ជូន
               </button>
             </div>
+
             <p id="emailError" class="text-red-500 text-sm mt-2 hidden">
-              Please enter a valid email address
+              សូមបញ្ចូលអាសយដ្ឋានអ៊ីមែលដែលត្រឹមត្រូវ
             </p>
           </form>
         </div>
@@ -944,4 +1011,5 @@
   <script src="../js/script.js"></script>
   <script src="../js/theme.js"></script>
   <script src="../js/sendMail.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </html>

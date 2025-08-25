@@ -3,7 +3,7 @@ export const placeDetailUI = (place) => {
     <div
         class="grid lg:container  gap-4 lg:mx-auto 
  grid-cols-[1fr_1fr_1fr] max-sm:grid-cols-2
- grid-rows-[48%_48%] max-lg:h-[70vh] max-sm:h-[60vh] md:h-[75vh] h-auto lg:h-[85vh]"
+ grid-rows-[48%_48%] max-lg:h-[70vh] max-sm:h-[60vh] md:h-[75vh] h-auto lg:h-[85vh] "
       >
         <!-- Item 1 -->
         <div

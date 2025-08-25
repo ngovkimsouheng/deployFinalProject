@@ -325,7 +325,7 @@ async function displayReviews(reviewManager) {
   reviewList.innerHTML = review
     .map(
       (review) => `
-        <div class="bg-white w-64  dark:bg-gray-800 p-4 rounded-lg font-primary shadow-sm border border-gray-200 dark:border-gray-600 ">
+        <div class="bg-white w-64  dark:bg-accent/50 p-4 rounded-lg font-primary shadow-sm border border-gray-200 dark:border-gray-600 ">
             <div class="flex justify-between  mb-3">
                 <div class="flex space-x-2">
                     <div class="w-8 h-8 bg-green-600 me-4 rounded-full flex items-center justify-center">
