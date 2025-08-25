@@ -424,9 +424,6 @@
   .left-180 {
     left: calc(var(--spacing) * 180);
   }
-  .left-\[-9999px\] {
-    left: -9999px;
-  }
   .-z-10 {
     z-index: calc(10 * -1);
   }
@@ -778,9 +775,6 @@
   .max-w-2xl {
     max-width: var(--container-2xl);
   }
-  .max-w-3xl {
-    max-width: var(--container-3xl);
-  }
   .max-w-4xl {
     max-width: var(--container-4xl);
   }
@@ -1051,10 +1045,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
-  .border-dashed {
-    --tw-border-style: dashed;
-    border-style: dashed;
-  }
   .border-blue-300 {
     border-color: var(--color-blue-300);
   }
@@ -1075,9 +1065,6 @@
   }
   .border-neutral-200 {
     border-color: var(--color-neutral-200);
-  }
-  .border-primary {
-    border-color: var(--color-primary);
   }
   .border-primary\/50 {
     border-color: color-mix(in srgb, #0A4536 50%, transparent);
@@ -1250,10 +1237,6 @@
   }
   .to-red-500 {
     --tw-gradient-to: var(--color-red-500);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-  .to-secondary {
-    --tw-gradient-to: var(--color-secondary);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-teal-200 {
@@ -1909,16 +1892,6 @@
       }
     }
   }
-  .hover\:bg-primary\/10 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, #0A4536 10%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-primary) 10%, transparent);
-        }
-      }
-    }
-  }
   .hover\:bg-primary\/90 {
     &:hover {
       @media (hover: hover) {
@@ -2194,11 +2167,6 @@
   .max-lg\:items-center {
     @media (width < 64rem) {
       align-items: center;
-    }
-  }
-  .max-lg\:items-start {
-    @media (width < 64rem) {
-      align-items: flex-start;
     }
   }
   .max-lg\:gap-4 {
@@ -2619,11 +2587,6 @@
   .sm\:grid-cols-2 {
     @media (width >= 40rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  .sm\:grid-cols-3 {
-    @media (width >= 40rem) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .sm\:gap-7 {
