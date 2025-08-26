@@ -17,7 +17,7 @@ export const placeDetail = (place) => {
       <h3 class="text-primary text-[22px] font-primary font-semibold">
         ${place.name}
       </h3>
-      <i class="fa-regular fa-heart text-xl text-gray-900"></i>
+      
     </div>
     <p class="text-gray-600 text-[17px] line-clamp-2 mt-2">
       ${place.description}

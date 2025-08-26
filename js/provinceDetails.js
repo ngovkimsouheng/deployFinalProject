@@ -45,7 +45,7 @@ async function fetchAllDetails() {
       <h3 class="text-primary dark:text-dark-secondary text-[22px] font-primary font-semibold">
         ${place.name}
       </h3>
-      <i class="fa-regular fa-heart text-xl text-gray-900 dark:text-white"></i>
+      
     </div>
     <p class="text-gray-600 dark:text-white text-[17px] line-clamp-2 mt-2">
       ${place.description}
@@ -70,7 +70,7 @@ async function fetchAllDetails() {
       <h3 class="text-primary dark:text-dark-secondary text-[22px] font-primary font-semibold">
         ${place.name}
       </h3>
-      <i class="fa-regular fa-heart text-xl text-gray-900 dark:text-white"></i>
+      
     </div>
     <p class="text-gray-600 dark:text-white text-[17px] line-clamp-2 mt-2">
       ${place.description}
@@ -95,7 +95,7 @@ async function fetchAllDetails() {
       <h3 class="text-primary dark:text-dark-secondary text-[22px] font-primary font-semibold">
         ${place.name}
       </h3>
-      <i class="fa-regular fa-heart text-xl text-gray-900 dark:text-white"></i>
+      
     </div>
     <p class="text-gray-600 dark:text-white text-[17px] line-clamp-2 mt-2">
       ${place.description}
@@ -120,7 +120,7 @@ async function fetchAllDetails() {
       <h3 class="text-primary dark:text-dark-secondary text-[22px] font-primary font-semibold">
         ${place.name}
       </h3>
-      <i class="fa-regular fa-heart text-xl text-gray-900 dark:text-white"></i>
+      
     </div>
     <p class="text-gray-600 dark:text-white text-[17px] line-clamp-2 mt-2">
       ${place.description}
