@@ -6,10 +6,10 @@ const categorySelect = document.querySelector("#categorySelect");
 const seeMoreBtn = document.querySelector("#seeMoreBtn");
 
 let allPlaces = [];
-let currentPlaces = []; // 🔥 track filtered or all places
-let displayedCount = 0; // how many cards are currently shown
-const initialCount = 8;   // show 2 rows (4 cards per row for lg) on first render
-const loadMoreCount = 100;  // how many more cards load per click
+let currentPlaces = [];
+let displayedCount = 0;
+const initialCount = 8; // show 2 rows (4 cards per row for lg) on first render
+const loadMoreCount = 100;
 
 // ================== Fetch Data ==================
 async function fetchCategories() {
@@ -52,8 +52,8 @@ function renderPlaces(places, isInitial = false) {
   if (places.length === 0) {
     popularPlacesCategories.innerHTML = `
       <div class="flex flex-col items-center justify-center">
-        <img src="../img/cannotfind.gif" alt="place not found" class="w-48 h-48 object-contain">
-        <p class="text-center text-gray-600 mt-2">រកមិនឃើញទេ</p>
+        <img src="../img/cannotfind.gif" alt="place not found" class="w-48 rounded-[10px] h-48 object-contain">
+        <p class="text-center text-secondary dark:text-dark-secondary text-2xl mt-2">មិនមានតំបន់ទេសចរណ៍ឈ្មោះនេះទេ</p>
       </div>
     `;
     seeMoreBtn.classList.add("hidden");
@@ -69,13 +69,16 @@ function renderPlaces(places, isInitial = false) {
   // how many to load
   const countToLoad = isInitial ? initialCount : loadMoreCount;
 
-  const cardsToShow = places.slice(displayedCount, displayedCount + countToLoad);
+  const cardsToShow = places.slice(
+    displayedCount,
+    displayedCount + countToLoad
+  );
 
   popularPlacesCategories.innerHTML += cardsToShow
     .map(
       (data) => `
-        <a href="./ParamDetail.html?placeUuid=${data.uuid}" 
-           class="block bg-white dark:bg-accent/50 rounded-lg shadow overflow-hidden hover:shadow-secondary/30 hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+        <a data-aos="flip-left" href="./ParamDetail.html?placeUuid=${data.uuid}" 
+           class="block bg-white dark:bg-accent/50 rounded-lg shadow overflow-hidden hover:shadow-secondary/50  hover:shadow-[1px_2px_20px] transition-all duration-300 ease-in-out transform ">
           <div class="relative h-64 w-full">
             <img src="${data.imageUrls[1]}" 
                  alt="${data.name}" 

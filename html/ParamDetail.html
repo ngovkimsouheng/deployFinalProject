@@ -27,7 +27,7 @@
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="../index.html" class="Logo">
+        <a href="/index.html" class="Logo">
           <img
             class="h-auto max-md:w-[100px] md:w-[140px]"
             src="../img/logo/logoHeader.png"
@@ -49,24 +49,20 @@
             class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
+              <a href="/index.html" class="text-accent hover:text-secondary transition-colors">ទំព័រដើម</a>
+            </li>
+            <li>
               <a
-                href="./post.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >បន្ថែមទីកន្លែង</a
+                href="about.html"
+                class="text-accent hover:text-secondary transition-colors"
+                >អំពីពួកយើង</a
               >
             </li>
             <li>
               <a
-                href="./update.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
-              >
-            </li>
-            <li>
-              <a
-                href="./delete.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >លុបទីកន្លែង</a
+                href="#"
+                class="text-secondary dark:text-dark-secondary transition-colors"
+                >គោលដៅ</a
               >
             </li>
           </ul>
@@ -77,7 +73,7 @@
             <button
               id="toggleTheme"
               type="button"
-              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 shadow-sm outline-none ring-0 transition-colors duration-500"
+              class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 shadow-sm outline-none ring-0 transition-colors duration-500"
               aria-label="Toggle dark mode"
             >
               <!-- SUN (visible in light, hides in dark) -->
@@ -104,18 +100,19 @@
                 />
               </svg>
             </button>
+
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              class="group relative w-fit inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 cursor-pointer bg-primary dark:bg-blue-950 px-[22px] font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              href="../html/loginnnn.html"
             >
-              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
+              <a href="../html/loginnnn.html">ចុះឈ្មោះ</a>
             </button>
 
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
-              data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
+              class="border-neutral-200 h-12 w-fit bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
               ផ្សេងៗ
@@ -141,27 +138,27 @@
               class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-blue-950"
             >
               <ul
-                class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                class="py-2 rounded-lg text-sm text-white bg-primary dark:bg-blue-950"
                 aria-labelledby="dropdownDelayButton"
               >
                 <li>
                   <a
-                    href="./post.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    href="../html/post.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >បន្ថែមទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="./update.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    href="../html/update.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="./delete.html"
-                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    href="../html/delete.html"
+                    class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >លុបទីកន្លែង</a
                   >
                 </li>
@@ -219,7 +216,7 @@
           class="max-w-full mx-auto md:my-8 max-md:my-5"
         >
           <h2
-            class="text-xl sm:text-2xl font-bold text-center dark:text-dark-secondary text-primary"
+            class="text-xl sm:text-2xl font-bold dark:text-dark-secondary text-primary"
           >
             មតិទាំងអស់
           </h2>
@@ -243,7 +240,7 @@
         <div class="flex justify-center md:justify-start gap-4">
           <a class="" href="./index.html">
             <img
-              src="img/lofoFooter.png"
+              src="../img/lofoFooter.png"
               alt="Logo 1"
               class="w-32 h-32 object-contain"
             />

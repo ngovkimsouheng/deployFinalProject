@@ -142,12 +142,8 @@ async function PlaceSuggestionsList() {
           </div>
           <div  class="p-4 text-accent dark:text-white text-[18px]">
             <p class="line-clamp-3">${place.description}...</p>
-            <ul class="list-disc pt-6 pl-6 space-y-1">
-              <li>${place.openHours}</li>
-              <li>${place.entryFee}</li>
-      
-            </ul>
-            <a class="text-teal-700 dark:text-dark-secondary float-end pb-6 " href="../html/ParamDetail.html?placeUuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
+            
+            <a class="text-teal-700 dark:text-dark-secondary float-end py-6 " href="../html/ParamDetail.html?placeUuid=${place.uuid}">ព័ត៌មានបន្ថែម</li>
           </div>
           </a>
       </div>

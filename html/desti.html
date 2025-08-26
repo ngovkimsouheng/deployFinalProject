@@ -35,7 +35,7 @@
       <nav
         class="lg:container mx-auto flex items-center justify-between px-4 py-2"
       >
-        <a href="../index.html" class="Logo">
+        <a href="/index.html" class="Logo">
           <img
             class="h-auto max-md:w-[100px] md:w-[140px]"
             src="../img/logo/logoHeader.png"
@@ -51,30 +51,26 @@
 
         <div
           id="nav-links"
-          class="hidden lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 transition-all duration-300 ease-in-out"
+          class="hidden bg-white lg:flex lg:items-center lg:gap-8 absolute top-16 left-0 w-full lg:static lg:w-auto p-4 max-sm:p-5 lg:p-0 shadow-lg lg:shadow-none transition-all duration-300 ease-in-out"
         >
           <ul
             class="flex font-primary max-lg:flex-col gap-6 lg:gap-8 text-lg max-lg:items-start font-medium"
           >
             <li>
+              <a href="/index.html" class="transition-colors text-accent hover:text-secondary">ទំព័រដើម</a>
+            </li>
+            <li>
               <a
-                href="./post.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >បន្ថែមទីកន្លែង</a
+                href="about.html"
+                class="text-accent hover:text-secondary transition-colors"
+                >អំពីពួកយើង</a
               >
             </li>
             <li>
               <a
-                href="./update.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
-              >
-            </li>
-            <li>
-              <a
-                href="./delete.html"
-                class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
-                >លុបទីកន្លែង</a
+                href="#"
+                class="text-secondary dark:text-dark-secondary transition-colors"
+                >គោលដៅ</a
               >
             </li>
           </ul>
@@ -112,18 +108,19 @@
                 />
               </svg>
             </button>
+
             <button
-              class="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 bg-primary dark:bg-blue-950 dark:hover:bg-blue-900 px-6 font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              class="group relative w-fit inline-flex h-12 items-center justify-center overflow-hidden rounded-[10px] border border-neutral-200 cursor-pointer bg-primary dark:bg-blue-950 px-[22px] font-medium text-white transition-all active:translate-y-[2px] active:shadow-none"
+              href="../html/loginnnn.html"
             >
-              <a href="./loginnnn.html">ចុះឈ្មោះ</a>
+              <a href="../html/loginnnn.html">ចុះឈ្មោះ</a>
             </button>
 
             <button
               id="dropdownDelayButton"
               data-dropdown-toggle="dropdownDelay"
               data-dropdown-delay="500"
-              data-dropdown-trigger="hover"
-              class="border-neutral-200 bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
+              class="border-neutral-200 h-12 w-fit bg-primary text-white cursor-pointer focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 text-center inline-flex items-center dark:bg-blue-950 dark:hover:bg-blue-900"
               type="button"
             >
               ផ្សេងៗ
@@ -154,21 +151,21 @@
               >
                 <li>
                   <a
-                    href="./post.html"
+                    href="../html/post.html"
                     class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >បន្ថែមទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="./update.html"
+                    href="../html/update.html"
                     class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >ធ្វើបច្ចុប្បន្នភាពទីកន្លែង</a
                   >
                 </li>
                 <li>
                   <a
-                    href="./delete.html"
+                    href="../html/delete.html"
                     class="block px-4 py-2 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-600 dark:hover:text-white"
                     >លុបទីកន្លែង</a
                   >
@@ -260,12 +257,12 @@
             <div
               data-aos="zoom-in"
               data-aos-delay="200"
-              class="absolute top-20 left-180 w-22 h-22 max-lg:top-80 max sm:left-170 max-sm:top-0 bg-teal-300 rounded-[10px] opacity-80"
+              class="absolute top-20 left-180 w-22 h-22 max-lg:top-80 max sm:left-170 max-sm:top-0 bg-teal-300 dark:bg-dark-light-primary rounded-[10px] opacity-80"
             ></div>
             <div
               data-aos="zoom-in"
               data-aos-delay="400"
-              class="absolute bottom-0 right-20 w-16 h-16 max-sm:bottom-0 bg-yellow-400 rounded-[10px]"
+              class="absolute bottom-0 right-20 w-16 h-16 max-sm:bottom-0 bg-yellow-400 dark:bg-dark-primary rounded-[10px]"
             ></div>
             <div
               data-aos="zoom-in"
@@ -795,7 +792,7 @@
         <div class="flex justify-center md:justify-start gap-4">
           <a class="" href="./index.html">
             <img
-              src="img/lofoFooter.png"
+              src="../img/lofoFooter.png"
               alt="Logo 1"
               class="w-32 h-32 object-contain"
             />

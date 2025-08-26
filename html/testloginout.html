@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Auth Button Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap");
+
+      body {
+        font-family: "Kantumruy Pro", sans-serif;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .demo-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      /* Your existing button styles */
+      .auth-button {
+        position: relative;
+        display: inline-flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid #e5e5e5;
+        cursor: pointer;
+        background: orange;
+        padding: 0 24px;
+        font-medium: 500;
+        color: white;
+        font-family: "Kantumruy Pro", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        border: none;
+        box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+      }
+
+      .auth-button:hover {
+        background: #ff7f17;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
+      }
+
+      .auth-button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 10px rgba(255, 165, 0, 0.3);
+      }
+
+      .auth-button.logout-state {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+        box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+      }
+
+      .auth-button.logout-state:hover {
+        background: linear-gradient(45deg, #ff5252, #d63031);
+        box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+      }
+
+      .auth-button.loading {
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      .loading-spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 8px;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .user-info {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 0;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .demo-section {
+        margin: 30px 0;
+        padding: 20px;
+        border: 2px dashed #ddd;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .status-indicator {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 10px;
+      }
+
+      .status-indicator.logged-out {
+        background: #ffe6e6;
+        color: #d32f2f;
+      }
+
+      .status-indicator.logged-in {
+        background: #e8f5e8;
+        color: #2e7d32;
+      }
+
+      .code-example {
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        font-size: 14px;
+        margin: 10px 0;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-container">
+      <h1>Dynamic Auth Button Demo</h1>
+
+      <!-- Status Display -->
+      <div class="demo-section">
+        <h3>Current Status:</h3>
+        <span class="status-indicator logged-out" id="statusIndicator">
+          <i class="fas fa-user-times"></i> Not Logged In
+        </span>
+        <div id="userInfo" class="user-info" style="display: none">
+          <strong>Welcome back!</strong><br />
+          <span id="userDetails">Loading user data...</span>
+        </div>
+      </div>
+
+      <!-- The Dynamic Button -->
+      <div class="demo-section">
+        <h3>Your Dynamic Auth Button:</h3>
+        <button class="auth-button" id="authButton">ចុះឈ្មោះ</button>
+      </div>
+
+      <!-- Code Example -->
+      <div class="demo-section">
+        <h3>Implementation Code:</h3>
+        <div class="code-example">
+          &lt;button class="auth-button" id="authButton"&gt; ចុះឈ្មោះ
+          &lt;/button&gt;
+        </div>
+      </div>
+
+      <!-- Test Buttons (for demo purposes) -->
+      <div class="demo-section">
+        <h3>Demo Controls (for testing):</h3>
+        <button
+          onclick="simulateLogin()"
+          style="
+            margin: 5px;
+            padding: 10px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+          "
+        >
+          Simulate Login
+        </button>
+        <button
+          onclick="simulateLogout()"
+          style="
+            margin: 5px;
+            padding: 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+          "
+        >
+          Simulate Logout
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // ================ AUTH STATE MANAGEMENT =================
+
+      // Simulate user data storage (in real app, this comes from your login system)
+      let currentUser = null;
+      let isLoggedIn = false;
+
+      // Get DOM elements
+      const authButton = document.getElementById("authButton");
+      const statusIndicator = document.getElementById("statusIndicator");
+      const userInfo = document.getElementById("userInfo");
+      const userDetails = document.getElementById("userDetails");
+
+      // ================ BUTTON STATE MANAGEMENT =================
+
+      function updateButtonState() {
+        if (isLoggedIn && currentUser) {
+          // Logged in state - show logout button
+          authButton.innerHTML =
+            '<i class="fas fa-sign-out-alt" style="margin-right: 8px;"></i>ចាកចេញ';
+          authButton.className = "auth-button logout-state";
+          authButton.onclick = handleLogout;
+
+          // Update status indicator
+          statusIndicator.className = "status-indicator logged-in";
+          statusIndicator.innerHTML =
+            '<i class="fas fa-user-check"></i> Logged In';
+
+          // Show user info
+          userInfo.style.display = "block";
+          userDetails.innerHTML = `
+                    Username: ${currentUser.username || "User"}<br>
+                    ${currentUser.email ? `Email: ${currentUser.email}` : ""}
+                `;
+        } else {
+          // Logged out state - show login/register button
+          authButton.innerHTML = "ចុះឈ្មោះ";
+          authButton.className = "auth-button";
+          authButton.onclick = handleLogin;
+
+          // Update status indicator
+          statusIndicator.className = "status-indicator logged-out";
+          statusIndicator.innerHTML =
+            '<i class="fas fa-user-times"></i> Not Logged In';
+
+          // Hide user info
+          userInfo.style.display = "none";
+        }
+      }
+
+      // ================ EVENT HANDLERS =================
+
+      function handleLogin() {
+        // Redirect to login page
+        window.location.href = "/html/loginnnn.html";
+      }
+
+      function handleLogout() {
+        // Show confirmation dialog
+        if (confirm("តើអ្នកប្រាកដថាចង់ចាកចេញមែនទេ?")) {
+          setButtonLoading(true);
+
+          // Simulate logout process
+          setTimeout(() => {
+            performLogout();
+            setButtonLoading(false);
+          }, 1000);
+        }
+      }
+
+      function performLogout() {
+        // Clear user data
+        currentUser = null;
+        isLoggedIn = false;
+
+        // Clear any stored data (localStorage, sessionStorage, etc.)
+        // localStorage.removeItem('userData'); // if you were using localStorage
+
+        // Update UI
+        updateButtonState();
+
+        // Show success message
+        alert("ចាកចេញដោយជោគជ័យ!");
+      }
+
+      function setButtonLoading(loading) {
+        if (loading) {
+          authButton.classList.add("loading");
+          authButton.innerHTML =
+            '<span class="loading-spinner"></span>កំពុងដំណើរការ...';
+          authButton.disabled = true;
+        } else {
+          authButton.classList.remove("loading");
+          authButton.disabled = false;
+          updateButtonState();
+        }
+      }
+
+      // ================ INTEGRATION WITH YOUR LOGIN SYSTEM =================
+
+      // Function to be called when user successfully logs in
+      function onLoginSuccess(userData) {
+        currentUser = userData.user || userData;
+        isLoggedIn = true;
+        updateButtonState();
+      }
+
+      // Function to check if user is already logged in (call this on page load)
+      function checkLoginStatus() {
+        // In your real implementation, check if user data exists
+        // const savedUser = localStorage.getItem('userData');
+        // if (savedUser) {
+        //     currentUser = JSON.parse(savedUser);
+        //     isLoggedIn = true;
+        // }
+        updateButtonState();
+      }
+
+      // ================ DEMO FUNCTIONS (remove these in production) =================
+
+      function simulateLogin() {
+        const mockUserData = {
+          user: {
+            username: "testuser",
+            email: "test@example.com",
+            firstname: "John",
+            lastname: "Doe",
+          },
+        };
+        onLoginSuccess(mockUserData);
+      }
+
+      function simulateLogout() {
+        performLogout();
+      }
+
+      // ================ INITIALIZATION =================
+
+      // Initialize button state when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        checkLoginStatus();
+      });
+
+      // ================ INTEGRATION CODE FOR YOUR LOGIN PAGE =================
+
+      /*
+        // Add this to your existing login success handler in the login page:
+        
+        if (result.success) {
+            // Your existing success code...
+            saveUserData(result.data);
+            showSuccess("loginSuccess", "Login successful! Redirecting...");
+            
+            // NEW: Call the button update function
+            if (typeof onLoginSuccess === 'function') {
+                onLoginSuccess(result.data);
+            }
+            
+            // Store user data for persistence across pages
+            // localStorage.setItem('userData', JSON.stringify(result.data));
+            
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 1500);
+        }
+        */
+
+      // ================ CROSS-PAGE COMMUNICATION =================
+
+      // Make functions available globally for other pages to use
+      window.authSystem = {
+        onLoginSuccess: onLoginSuccess,
+        performLogout: performLogout,
+        checkLoginStatus: checkLoginStatus,
+        isLoggedIn: () => isLoggedIn,
+        getCurrentUser: () => currentUser,
+        updateButtonState: updateButtonState,
+      };
+    </script>
+  </body>
+</html>
