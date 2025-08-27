@@ -2,7 +2,7 @@
 
 // API URLs
 const LOGIN_API = "https://derleng-api.eunglyzhia.social/api/v1/auth/login";
-const REGISTER_API = "https://derleng-api.eunglyzhia.social/v1/auth/register";
+const REGISTER_API = "https://derleng-api.eunglyzhia.social/api/v1/auth/register";
 
 // ================ Form switching =======================
 const container = document.querySelector(".container");
