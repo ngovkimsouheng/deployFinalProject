@@ -422,7 +422,7 @@
     </style>
 
     <script>
-      const API_BASE = "https://tos-der.sokpheng.com/api/v1";
+      const API_BASE = "https://derleng-api.eunglyzhia.social/api/v1";
       let allPlaces = [];
       let selectedPlace = null;
 
@@ -617,7 +617,7 @@
           const placeUuid = selectedPlace.uuid;
 
           const response = await fetch(
-            `https://tos-der.sokpheng.com/api/v1/places/${placeUuid}`,
+            `https://derleng-api.eunglyzhia.social/api/v1/places/${placeUuid}`,
             {
               method: "DELETE",
               headers: {
