@@ -1,9 +1,9 @@
-'use strict';
+"use strict";
 
-const provinces = document.getElementById('province_categories');
-const base_url = 'https://derleng-api.eunglyzhia.social/api/v1/categories';
+const provinces = document.getElementById("province_categories");
+const base_url = "https://derleng-api.eunglyzhia.social/api/v1/categories";
 
-const targetCategoryNames = ['Siem reap', 'Phnom Penh', 'Kom pot', 'Kep'];
+const targetCategoryNames = ["Siem reap", "Phnom Penh", "Kom pot", "Kep"];
 
 // section2
 async function fetchProvinceCategories() {
@@ -14,7 +14,7 @@ async function fetchProvinceCategories() {
     console.log(data);
 
     if (!Array.isArray(data)) {
-      console.error('Unexpected data format:', data);
+      console.error("Unexpected data format:", data);
       return;
     }
 
@@ -100,13 +100,13 @@ async function fetchProvinceCategories() {
 fetchProvinceCategories();
 
 // section4
-const base_url1 = 'https://tos-der.sokpheng.com/api/v1/places';
-const PlaceSuggestions = document.getElementById('place_Suggestion');
+const base_url1 = "https://derleng-api.eunglyzhia.social/api/v1/places";
+const PlaceSuggestions = document.getElementById("place_Suggestion");
 const targetPlaceInProvinceName = [
-  'ប្រាសាទអង្គរវត្ត',
-  'ឆ្នេរកែប',
-  'ដូងទេរ',
-  'ប្រាសាទភ្នំបាណន់',
+  "ប្រាសាទអង្គរវត្ត",
+  "ឆ្នេរកែប",
+  "ដូងទេរ",
+  "ប្រាសាទភ្នំបាណន់",
 ];
 
 async function PlaceSuggestionsList() {
@@ -115,7 +115,7 @@ async function PlaceSuggestionsList() {
     const data = await res.json();
 
     if (!Array.isArray(data)) {
-      console.error('Unexpected data format:', data);
+      console.error("Unexpected data format:", data);
       return;
     }
 
@@ -126,7 +126,7 @@ async function PlaceSuggestionsList() {
       )
     );
 
-    console.log('Filtered places:', filteredPlaces);
+    console.log("Filtered places:", filteredPlaces);
 
     PlaceSuggestions.innerHTML = filteredPlaces
       .map(
@@ -149,7 +149,7 @@ async function PlaceSuggestionsList() {
       </div>
       `
       )
-      .join('');
+      .join("");
   } catch (e) {
     console.error(e);
   }
