@@ -6,7 +6,7 @@ import { formReviewComponent } from "../components/formComponent.js";
 export async function deleteReview(reviewUuid) {
   try {
     const response = await fetch(
-      `https://tos-der.sokpheng.com/api/v1/reviews/${reviewUuid}`,
+      `https://derleng-api.eunglyzhia.social/api/v1/reviews/${reviewUuid}`,
       {
         method: "DELETE",
       }

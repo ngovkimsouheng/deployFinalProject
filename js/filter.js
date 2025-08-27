@@ -1,5 +1,5 @@
 "use strict";
-const base_url = "https://tos-der.sokpheng.com/api/v1/places";
+const base_url = "https://derleng-api.eunglyzhia.social/api/v1/places";
 const popularPlacesCategories = document.querySelector("#categories");
 const searchInput = document.querySelector("#searchInput");
 const categorySelect = document.querySelector("#categorySelect");

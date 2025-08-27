@@ -1,7 +1,7 @@
 'use strict';
 
 const provinces = document.getElementById('province_categories');
-const base_url = 'https://tos-der.sokpheng.com/api/v1/categories';
+const base_url = 'https://derleng-api.eunglyzhia.social/api/v1/categories';
 
 const targetCategoryNames = ['Siem reap', 'Phnom Penh', 'Kom pot', 'Kep'];
 

@@ -1,4 +1,4 @@
-const BASE_URL = "https://tos-der.sokpheng.com/api/v1/";
+const BASE_URL = "https://derleng-api.eunglyzhia.social/api/v1/";
 
 // Get data from API
 export async function getData(endpoint) {
