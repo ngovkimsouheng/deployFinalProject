@@ -50,19 +50,42 @@ function populateCategories(places) {
 // ================== Render Places ==================
 function renderPlaces(places, isInitial = false) {
   if (places.length === 0) {
-    popularPlacesCategories.innerHTML = `
-      <div class="flex flex-col items-center justify-center">
-        <img src="../img/cannotfind.gif" alt="place not found" class="w-48 rounded-[10px] h-48 object-contain">
-        <p class="text-center text-secondary dark:text-dark-secondary text-2xl mt-2">មិនមានតំបន់ទេសចរណ៍ឈ្មោះនេះទេ</p>
-      </div>
-    `;
-    seeMoreBtn.classList.add("hidden");
-    return;
-  }
+  // Reset the grid layout
+  popularPlacesCategories.className = "grid grid-cols-1 place-items-center";
+
+  // Show empty state
+  popularPlacesCategories.innerHTML = `
+    <div class="flex flex-col items-center justify-center">
+      <img src="../img/notFound.png" alt="place not found" 
+           class="w-48 h-48 object-contain rounded-[10px]">
+      <p class="text-center text-primary dark:text-dark-secondary text-md mt-1 pl-4">
+        មិនមានតំបន់ទេសចរណ៍ឈ្មោះនេះទេ
+      </p>
+    </div>
+  `;
+
+  seeMoreBtn.classList.add("hidden");
+  return;
+}
+
+  // if (places.length === 0) {
+  //   //
+  //   popularPlacesCategories.classList.replace("grid grid-cols-1")
+  //   //
+  //   popularPlacesCategories.innerHTML = `
+  //     <div >
+  //       <img src="../img/cannotfind.gif" alt="place not found" class="w-48 rounded-[10px] h-48 object-contain">
+  //       <p class="text-center text-secondary dark:text-dark-secondary text-2xl mt-2">មិនមានតំបន់ទេសចរណ៍ឈ្មោះនេះទេ</p>
+  //     </div>
+  //   `;
+  //   seeMoreBtn.classList.add("hidden");
+  //   return;
+  // }
 
   // Reset if initial render
   if (isInitial) {
     displayedCount = 0;
+    popularPlacesCategories.className = "grid grid-cols-1 sm:grid-cols-2 place-items-center md:grid-cols-3 lg:grid-cols-4 gap-6";
     popularPlacesCategories.innerHTML = "";
   }
 
